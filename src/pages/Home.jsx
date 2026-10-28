@@ -39,6 +39,7 @@ import Diversity1Icon from '@mui/icons-material/Diversity1';
 import { CLINIC_INFO, SERVICES_DATA, STATS_DATA, TESTIMONIALS_DATA, FAQ_DATA } from '../data/clinicData';
 import ServiceCard from '../components/ServiceCard';
 import MapRouting from '../components/MapRouting';
+import logoImg from '../assets/logo.jpeg';
 
 const Home = ({ onOpenAppointment }) => {
   const navigate = useNavigate();
@@ -229,19 +230,19 @@ const Home = ({ onOpenAppointment }) => {
                   <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', mb: 2 }}>
                     <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
                       <Box
+                        component="img"
+                        src={logoImg}
+                        alt="Caring Hands Logo"
                         sx={{
-                          width: 44,
-                          height: 44,
+                          width: 48,
+                          height: 48,
                           borderRadius: '50%',
-                          bgcolor: '#0284c7',
-                          display: 'flex',
-                          alignItems: 'center',
-                          justifyContent: 'center',
-                          color: '#ffffff'
+                          objectFit: 'contain',
+                          border: '2px solid #bae6fd',
+                          p: 0.3,
+                          bgcolor: '#ffffff'
                         }}
-                      >
-                        <FavoriteIcon sx={{ color: '#f43f5e' }} />
-                      </Box>
+                      />
                       <Box>
                         <Typography variant="subtitle1" fontWeight={800} color="#0284c7">
                           Greater Noida West Hub

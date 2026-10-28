@@ -16,6 +16,7 @@ import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import DirectionsIcon from '@mui/icons-material/Directions';
 import { CLINIC_INFO, SERVICES_DATA } from '../data/clinicData';
+import logoImg from '../assets/logo.jpeg';
 
 const Footer = ({ onOpenAppointment }) => {
   return (
@@ -35,18 +36,19 @@ const Footer = ({ onOpenAppointment }) => {
           <Grid item xs={12} md={4}>
             <Box sx={{ display: 'flex', alignItems: 'center', gap: 1.5, mb: 2 }}>
               <Box
+                component="img"
+                src={logoImg}
+                alt="Caring Hands Logo"
                 sx={{
-                  width: 44,
-                  height: 44,
+                  width: 50,
+                  height: 50,
                   borderRadius: '50%',
-                  bgcolor: '#0284c7',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center'
+                  objectFit: 'contain',
+                  border: '2px solid rgba(255,255,255,0.2)',
+                  bgcolor: '#ffffff',
+                  p: 0.3
                 }}
-              >
-                <FavoriteIcon sx={{ color: '#f43f5e', fontSize: 24 }} />
-              </Box>
+              />
               <Box>
                 <Typography variant="h6" fontWeight={900} color="#38bdf8">
                   CARING HANDS

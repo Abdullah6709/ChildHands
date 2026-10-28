@@ -30,6 +30,7 @@ import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
 import DirectionsIcon from '@mui/icons-material/Directions';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import { CLINIC_INFO, SERVICES_DATA } from '../data/clinicData';
+import logoImg from '../assets/logo.jpeg';
 
 const Navbar = ({ onOpenAppointment }) => {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -200,19 +201,20 @@ const Navbar = ({ onOpenAppointment }) => {
               }}
             >
               <Box
+                component="img"
+                src={logoImg}
+                alt="Caring Hands Logo"
                 sx={{
-                  width: 48,
-                  height: 48,
+                  width: 52,
+                  height: 52,
                   borderRadius: '50%',
-                  background: 'linear-gradient(135deg, #0284c7 0%, #06b6d4 100%)',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  boxShadow: '0 4px 12px rgba(2, 132, 199, 0.35)'
+                  objectFit: 'contain',
+                  boxShadow: '0 4px 14px rgba(2, 132, 199, 0.25)',
+                  border: '2px solid #e0f2fe',
+                  bgcolor: '#ffffff',
+                  p: 0.3
                 }}
-              >
-                <FavoriteIcon sx={{ color: '#f43f5e', fontSize: 26 }} />
-              </Box>
+              />
 
               <Box>
                 <Typography
@@ -403,8 +405,19 @@ const Navbar = ({ onOpenAppointment }) => {
         }}
       >
         <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mb: 2 }}>
-          <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
-            <FavoriteIcon sx={{ color: '#f43f5e', fontSize: 24 }} />
+          <Box sx={{ display: 'flex', alignItems: 'center', gap: 1.5 }}>
+            <Box
+              component="img"
+              src={logoImg}
+              alt="Caring Hands Logo"
+              sx={{
+                width: 38,
+                height: 38,
+                borderRadius: '50%',
+                objectFit: 'contain',
+                border: '1px solid #e0f2fe'
+              }}
+            />
             <Typography variant="subtitle1" fontWeight={800} color="#0284c7">
               CARING HANDS
             </Typography>
