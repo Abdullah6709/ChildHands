@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <circle cx="50" cy="50" r="48" fill="#FFFFFF" stroke="#0284c7" stroke-width="4"/>
+  <!-- Circular colorful hands stylized -->
+  <path d="M50 20 C54 20 57 24 57 29 C57 33 55 37 53 41 C51 37 49 33 49 29 C49 24 46 20 50 20 Z" fill="#ef4444" />
+  <circle cx="50" cy="50" r="16" fill="#fef08a" />
+  <path d="M50 43 C46 38 38 41 38 47 C38 54 50 61 50 61 C50 61 62 54 62 47 C62 41 54 38 50 43 Z" fill="#ef4444"/>
+  <circle cx="28" cy="40" r="7" fill="#3b82f6" />
+  <circle cx="72" cy="40" r="7" fill="#10b981" />
+  <circle cx="34" cy="68" r="7" fill="#f59e0b" />
+  <circle cx="66" cy="68" r="7" fill="#8b5cf6" />
+</svg>
