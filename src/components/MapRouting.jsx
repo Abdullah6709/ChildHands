@@ -155,9 +155,9 @@ const MapRouting = () => {
         const a =
           Math.sin(dLat / 2) * Math.sin(dLat / 2) +
           Math.cos((userLat * Math.PI) / 180) *
-            Math.cos((destination.lat * Math.PI) / 180) *
-            Math.sin(dLon / 2) *
-            Math.sin(dLon / 2);
+          Math.cos((destination.lat * Math.PI) / 180) *
+          Math.sin(dLon / 2) *
+          Math.sin(dLon / 2);
         const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
         const distKm = (R * c).toFixed(1);
         const estMinCar = Math.max(5, Math.round(distKm * 2.5));
@@ -446,7 +446,7 @@ const MapRouting = () => {
                 🚗 Landmark & Access Points:
               </Typography>
               <Box component="ul" sx={{ pl: 2.5, m: 0, fontSize: '0.85rem', color: '#757277', lineHeight: 1.7 }}>
-                <li>Near <strong>Char Murti Chowk</strong> & Gaur City 2</li>
+                <li>Near <strong>Ek Murti Chowk</strong> & Gaur City 2</li>
                 <li>Opposite Fusion Homes Main Gate 1</li>
                 <li>Closest Metro: <strong>Noida Sector 52 & Sector 76</strong> (Quick E-rickshaw / Auto available)</li>
                 <li>Ample visitor parking available within the complex</li>

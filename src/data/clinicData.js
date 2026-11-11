@@ -48,7 +48,7 @@ export const CLINIC_INFO = {
     full: "G-104, Fusion Homes, Amrapali Dream Valley, Greater Noida West 201318",
     lat: 28.5985,
     lng: 77.4472,
-    landmark: "Near Gaur City 2 & Char Murti Chowk",
+    landmark: "Near Gaur City 2 & Ak Murti Chowk",
     hours: "Monday – Saturday: 9:00 AM – 7:30 PM (Sunday by Appointment)"
   },
   branches: [
@@ -60,15 +60,6 @@ export const CLINIC_INFO = {
       lat: 28.5985,
       lng: 77.4472,
       isPrimary: true
-    },
-    {
-      id: "pune",
-      name: "Pune Child & Community Center",
-      address: "Ambi, Near Talegaon MIDC Rd, Dist Pune, Maharashtra 410507",
-      phone: "+91 9011262226",
-      lat: 18.7238,
-      lng: 73.6826,
-      isPrimary: false
     }
   ]
 };
@@ -384,7 +375,7 @@ export const FAQ_DATA = [
   },
   {
     q: "Where is the Caring Hands therapy center located in Greater Noida West?",
-    a: "Our clinic is at G-104, Fusion Homes, Amrapali Dream Valley, Greater Noida West (Noida Extension) 201318. It is conveniently accessible from Gaur City 1 & 2, Char Murti Chowk, Crossings Republik, and Noida Sector 52/76 Metro stations."
+    a: "Our clinic is at G-104, Fusion Homes, Amrapali Dream Valley, Greater Noida West (Noida Extension) 201318. It is conveniently accessible from Gaur City 1 & 2, Ak Murti Chowk, Crossings Republik, and Noida Sector 52/76 Metro stations."
   },
   {
     q: "Are parents allowed to observe or participate in therapy sessions?",
@@ -494,7 +485,7 @@ export const TRUST_PROJECTS = [
 export const BANK_DETAILS = {
   accountName: "Caring Hands",
   bankName: "Axis Bank",
-  branch: "Ravet Branch, Pune",
+  branch: "Axis Bank",
   accountNo: "919010084255237",
   ifsc: "UTIB0003144",
   note: "Contributions and therapy sponsorships are eligible for tax exemption under Caring Hands Trust."

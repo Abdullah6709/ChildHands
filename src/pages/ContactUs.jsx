@@ -219,7 +219,7 @@ const ContactUs = ({ onOpenAppointment }) => {
             </Card>
           </Grid>
 
-          {/* Card 4: Pune Center (Trust Head Office) */}
+          {/* Card 4: Email & Inquiries */}
           <Grid item xs={12} sm={6} md={3}>
             <Card
               sx={{
@@ -234,18 +234,32 @@ const ContactUs = ({ onOpenAppointment }) => {
               }}
             >
               <Box sx={{ width: 52, height: 52, borderRadius: '50%', bgcolor: '#FFFAEA', color: '#02476c', border: '1px solid #F6D469', display: 'flex', alignItems: 'center', justifyContent: 'center', mx: 'auto', mb: 2 }}>
-                <LocationOnIcon sx={{ fontSize: 26 }} />
+                <EmailIcon sx={{ fontSize: 26 }} />
               </Box>
               <Typography variant="subtitle1" fontWeight={800} color="#24102F" sx={{ fontFamily: '"Quicksand", sans-serif' }}>
-                Trust Head Office (Pune)
+                Email Inquiries
               </Typography>
               <Typography variant="body2" color="#757277" sx={{ fontSize: '0.82rem', mb: 1 }}>
-                Ambi, Near Talegaon MIDC Rd, Dist. Pune 410507
+                info@caringhands.org.in
               </Typography>
-              <Typography variant="caption" sx={{ color: '#02476c', fontWeight: 800, display: 'block', mb: 1 }}>
-                Mob: +91 9011262226
-              </Typography>
-              <Chip label="Community Trust Hub" size="small" sx={{ fontSize: '0.72rem', fontWeight: 700, borderRadius: 50, bgcolor: '#FFFAEA', color: '#02476c' }} />
+              <Button
+                variant="outlined"
+                size="small"
+                component="a"
+                href="mailto:info@caringhands.org.in"
+                sx={{
+                  fontWeight: 800,
+                  color: '#02476c',
+                  borderColor: '#02476c',
+                  borderRadius: 50,
+                  fontSize: '0.75rem',
+                  mb: 1,
+                  '&:hover': { borderColor: '#02476c', bgcolor: '#FFFAEA' }
+                }}
+              >
+                Send Email
+              </Button>
+              <Chip label="24/7 Response Desk" size="small" sx={{ fontSize: '0.72rem', fontWeight: 700, borderRadius: 50, bgcolor: '#FFFAEA', color: '#02476c', display: 'block' }} />
             </Card>
           </Grid>
         </Grid>
@@ -448,7 +462,7 @@ const ContactUs = ({ onOpenAppointment }) => {
                   Public Transit & Driving Notes:
                 </Typography>
                 <Box component="ul" sx={{ pl: 2.5, m: 0, fontSize: '0.88rem', color: '#757277', lineHeight: 1.7 }}>
-                  <li><strong>From Gaur City / Char Murti:</strong> Take the road towards Amrapali Dream Valley (approx 5-7 minutes drive).</li>
+                  <li><strong>From Gaur City / Ek Murti:</strong> Take the road towards Amrapali Dream Valley (approx 5-7 minutes drive).</li>
                   <li><strong>Nearest Metro Stations:</strong> Noida Sector 52 & Noida Sector 76. Regular shared autos, e-rickshaws, and cabs directly connect to Fusion Homes.</li>
                   <li><strong>From Ghaziabad / Indirapuram:</strong> Accessible via NH-24 / Crossings Republik exit.</li>
                   <li><strong>Parking:</strong> Secure designated visitor parking inside Fusion Homes complex.</li>
@@ -550,7 +564,7 @@ const ContactUs = ({ onOpenAppointment }) => {
                   Transparent & Registered
                 </Typography>
                 <Typography variant="caption" sx={{ color: '#EFECE7', display: 'block', mb: 2 }}>
-                  Official registration under Indian Trust Act • Headquartered in Pune & Noida Extension
+                  Official registration under Indian Trust Act • Greater Noida West Clinical Center
                 </Typography>
                 <Button
                   variant="contained"

@@ -96,7 +96,7 @@ const RouteMapPage = ({ onOpenAppointment }) => {
               <Box component="ul" sx={{ pl: 2.5, m: 0, fontSize: '0.88rem', color: '#24102F', lineHeight: 1.8 }}>
                 <li>Dedicated visitor car parking available at Fusion Homes Gate 1</li>
                 <li>Wheelchair ramp and child-friendly elevator access</li>
-                <li>Direct connectivity from Gaur City Roundabout & Char Murti Chowk</li>
+                <li>Direct connectivity from Gaur City Roundabout & Ek Murti Chowk</li>
                 <li>Auto stands and e-rickshaws stationed right outside the complex</li>
               </Box>
             </Card>

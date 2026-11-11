@@ -148,10 +148,10 @@ const Footer = ({ onOpenAppointment }) => {
             </Grid>
           </Grid>
 
-          {/* Centers & Contact Details */}
+          {/* Center Address & Contact Details */}
           <Grid item xs={12} sm={6} md={4}>
             <Typography variant="subtitle1" fontWeight={800} color="#F6D469" sx={{ mb: 2, fontFamily: '"Quicksand", sans-serif' }}>
-              Centers & Contact Details
+              Center Address & Contact
             </Typography>
 
             {/* Primary Center */}
@@ -160,32 +160,18 @@ const Footer = ({ onOpenAppointment }) => {
                 <LocationOnIcon sx={{ color: '#F6D469', fontSize: 20, mt: 0.3 }} />
                 <Box>
                   <Typography variant="body2" fontWeight={800} color="#ffffff">
-                    Greater Noida West Center (Therapy Hub)
+                    Caring Hands Child Development Center
                   </Typography>
-                  <Typography variant="caption" sx={{ color: 'rgba(255,255,255,0.8)', display: 'block', lineHeight: 1.5 }}>
+                  <Typography variant="caption" sx={{ color: 'rgba(255,255,255,0.85)', display: 'block', lineHeight: 1.6, mt: 0.5 }}>
                     G-104, Fusion Homes, Amrapali Dream Valley,<br />
-                    Greater Noida West 201318 (Near Gaur City 2)
+                    Greater Noida West (Noida Extension) – 201318<br />
+                    (Near Gaur City 2 & Char Murti Chowk)
                   </Typography>
-                  <Typography variant="caption" sx={{ color: '#F6D469', fontWeight: 700, display: 'block', mt: 0.5 }}>
-                    📞 Helpline: +91 8650909777
+                  <Typography variant="caption" sx={{ color: '#F6D469', fontWeight: 700, display: 'block', mt: 1 }}>
+                    🕒 Mon – Sat: 9:00 AM – 7:30 PM (Sunday by Appointment)
                   </Typography>
-                </Box>
-              </Box>
-            </Box>
-
-            {/* Pune Head Office */}
-            <Box sx={{ mb: 2 }}>
-              <Box sx={{ display: 'flex', alignItems: 'flex-start', gap: 1 }}>
-                <LocationOnIcon sx={{ color: '#F6D469', fontSize: 20, mt: 0.3 }} />
-                <Box>
-                  <Typography variant="body2" fontWeight={800} color="#ffffff">
-                    Head Office: Caring Hands Trust
-                  </Typography>
-                  <Typography variant="caption" sx={{ color: 'rgba(255,255,255,0.8)', display: 'block', lineHeight: 1.5 }}>
-                    C/o Kalashram Project, Mangarul Road, Ambi Village (Talegaon Dabhade), Taluka Maval, Dist. Pune 410507
-                  </Typography>
-                  <Typography variant="caption" sx={{ color: '#F6D469', fontWeight: 700, display: 'block', mt: 0.5 }}>
-                    📞 Contact: +91 90112 62226 / +91 86570 36835
+                  <Typography variant="caption" sx={{ color: '#F6D469', fontWeight: 800, display: 'block', mt: 0.5 }}>
+                    📞 Direct Helpline: +91 8650909777
                   </Typography>
                 </Box>
               </Box>

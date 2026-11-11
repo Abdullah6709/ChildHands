@@ -138,7 +138,7 @@ const Navbar = ({ onOpenAppointment }) => {
                 }}
               >
                 <LocationOnIcon sx={{ fontSize: 15, mr: 0.5, color: '#F6D469' }} />
-                <span>G-104 Fusion Homes, Greater Noida West & Talegaon, Pune</span>
+                <span>G-104 Fusion Homes, Greater Noida West</span>
               </Box>
             </Box>
 
