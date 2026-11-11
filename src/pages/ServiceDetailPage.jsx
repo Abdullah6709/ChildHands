@@ -60,17 +60,17 @@ const ServiceDetailPage = ({ onOpenAppointment }) => {
   const nextService = currentIndex < SERVICES_DATA.length - 1 ? SERVICES_DATA[currentIndex + 1] : null;
 
   return (
-    <Box sx={{ bgcolor: '#f8fafc', py: { xs: 5, md: 7 } }}>
+    <Box sx={{ bgcolor: '#FDFBF7', py: { xs: 5, md: 7 } }}>
       <Container maxWidth="xl">
         {/* Breadcrumb Navigation */}
         <Breadcrumbs sx={{ mb: 3 }}>
-          <Link to="/" style={{ color: '#64748b', textDecoration: 'none', fontWeight: 600 }}>
+          <Link to="/" style={{ color: '#757277', textDecoration: 'none', fontWeight: 600 }}>
             Home
           </Link>
-          <Link to="/services" style={{ color: '#64748b', textDecoration: 'none', fontWeight: 600 }}>
+          <Link to="/services" style={{ color: '#757277', textDecoration: 'none', fontWeight: 600 }}>
             Therapy Services
           </Link>
-          <Typography color={service.color} fontWeight={700}>
+          <Typography color="#02476c" fontWeight={700}>
             {service.title}
           </Typography>
         </Breadcrumbs>
@@ -80,28 +80,30 @@ const ServiceDetailPage = ({ onOpenAppointment }) => {
           elevation={0}
           sx={{
             p: { xs: 3.5, md: 5 },
-            borderRadius: 5,
-            mb: 6,
-            background: `linear-gradient(135deg, ${service.bgLight} 0%, #ffffff 70%)`,
-            border: `2px solid ${service.borderCol}`,
+            borderRadius: 4.5,
+            mb: 5,
+            background: `linear-gradient(135deg, ${service.bgLight} 0%, #ffffff 80%)`,
+            border: `1px solid #EFECE7`,
             position: 'relative',
             overflow: 'hidden'
           }}
         >
+          <Box sx={{ position: 'absolute', top: 0, left: 0, right: 0, height: 4, bgcolor: service.color }} />
+
           <Grid container spacing={4} alignItems="center">
             <Grid item xs={12} md={8}>
               <Box sx={{ display: 'flex', alignItems: 'center', gap: 2, mb: 2 }}>
                 <Box
                   sx={{
-                    width: 64,
-                    height: 64,
-                    borderRadius: 3.5,
+                    width: 58,
+                    height: 58,
+                    borderRadius: 3,
                     bgcolor: service.color,
                     color: '#ffffff',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
-                    boxShadow: `0 8px 20px ${service.color}40`,
+                    boxShadow: `0 8px 18px ${service.color}35`,
                     flexShrink: 0
                   }}
                 >
@@ -116,10 +118,12 @@ const ServiceDetailPage = ({ onOpenAppointment }) => {
                       color: service.color,
                       fontWeight: 800,
                       mb: 0.5,
-                      border: `1px solid ${service.borderCol}`
+                      border: `1px solid ${service.borderCol}`,
+                      borderRadius: 50,
+                      fontSize: '0.74rem'
                     }}
                   />
-                  <Typography variant="h2" fontWeight={900} color="#0f172a" sx={{ fontSize: { xs: '2rem', sm: '2.8rem' } }}>
+                  <Typography variant="h2" fontWeight={900} color="#24102F" sx={{ fontSize: { xs: '1.8rem', sm: '2.5rem' }, fontFamily: '"Quicksand", sans-serif' }}>
                     {service.title}
                   </Typography>
                 </Box>
@@ -129,12 +133,12 @@ const ServiceDetailPage = ({ onOpenAppointment }) => {
                 variant="h6"
                 fontWeight={700}
                 color={service.color}
-                sx={{ mb: 2, fontSize: { xs: '1.1rem', sm: '1.3rem' } }}
+                sx={{ mb: 2, fontSize: { xs: '1rem', sm: '1.15rem' }, fontFamily: '"Quicksand", sans-serif' }}
               >
                 "{service.tagline}"
               </Typography>
 
-              <Typography variant="body1" color="#334155" sx={{ lineHeight: 1.8, fontSize: '1.05rem', mb: 3.5, maxWidth: 800 }}>
+              <Typography variant="body1" color="#757277" sx={{ lineHeight: 1.8, fontSize: '1rem', mb: 3.5, maxWidth: 780 }}>
                 {service.overview}
               </Typography>
 
@@ -146,11 +150,13 @@ const ServiceDetailPage = ({ onOpenAppointment }) => {
                   startIcon={<CalendarMonthIcon />}
                   sx={{
                     bgcolor: service.color,
+                    color: '#ffffff',
                     fontWeight: 800,
                     px: 3.5,
-                    py: 1.3,
-                    borderRadius: 30,
-                    '&:hover': { bgcolor: service.color, filter: 'brightness(0.9)' }
+                    py: 1.2,
+                    borderRadius: 50,
+                    boxShadow: 'none',
+                    '&:hover': { bgcolor: service.color, filter: 'brightness(0.92)' }
                   }}
                 >
                   Book {service.title} Assessment
@@ -163,12 +169,12 @@ const ServiceDetailPage = ({ onOpenAppointment }) => {
                   href={`tel:${CLINIC_INFO.phone}`}
                   startIcon={<PhoneIcon />}
                   sx={{
-                    borderColor: service.color,
-                    color: service.color,
+                    borderColor: '#EFECE7',
+                    color: '#24102F',
                     fontWeight: 700,
-                    borderRadius: 30,
+                    borderRadius: 50,
                     bgcolor: '#ffffff',
-                    '&:hover': { bgcolor: service.bgLight }
+                    '&:hover': { borderColor: service.color, color: service.color, bgcolor: '#FFFAEA' }
                   }}
                 >
                   Call: {CLINIC_INFO.phone}
@@ -183,35 +189,35 @@ const ServiceDetailPage = ({ onOpenAppointment }) => {
                   p: 3,
                   borderRadius: 4,
                   bgcolor: '#ffffff',
-                  boxShadow: '0 12px 30px rgba(0,0,0,0.06)',
-                  border: '1px solid #e2e8f0'
+                  boxShadow: '0 4px 20px rgba(2, 71, 108, 0.04)',
+                  border: '1px solid #EFECE7'
                 }}
               >
-                <Typography variant="subtitle2" fontWeight={800} color="#0f172a" gutterBottom>
+                <Typography variant="subtitle2" fontWeight={900} color="#24102F" gutterBottom sx={{ fontFamily: '"Quicksand", sans-serif' }}>
                   Program Details at a Glance
                 </Typography>
                 <Divider sx={{ my: 1.5 }} />
 
-                <Box sx={{ display: 'flex', flexDirection: 'column', gap: 1.5, fontSize: '0.88rem' }}>
+                <Box sx={{ display: 'flex', flexDirection: 'column', gap: 1.5, fontSize: '0.86rem' }}>
                   <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
-                    <Typography color="#64748b" fontWeight={600}>Target Age:</Typography>
-                    <Typography color="#0f172a" fontWeight={700}>18 months – 14 years</Typography>
+                    <Typography color="#757277" fontWeight={500}>Target Age:</Typography>
+                    <Typography color="#24102F" fontWeight={700}>18 mos – 14 yrs</Typography>
                   </Box>
                   <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
-                    <Typography color="#64748b" fontWeight={600}>Session Format:</Typography>
-                    <Typography color="#0f172a" fontWeight={700}>1-on-1 Individualized</Typography>
+                    <Typography color="#757277" fontWeight={500}>Session Format:</Typography>
+                    <Typography color="#24102F" fontWeight={700}>1-on-1 Individualized</Typography>
                   </Box>
                   <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
-                    <Typography color="#64748b" fontWeight={600}>Session Duration:</Typography>
-                    <Typography color="#0f172a" fontWeight={700}>45 - 60 Minutes</Typography>
+                    <Typography color="#757277" fontWeight={500}>Session Duration:</Typography>
+                    <Typography color="#24102F" fontWeight={700}>45 – 60 Minutes</Typography>
                   </Box>
                   <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
-                    <Typography color="#64748b" fontWeight={600}>Evaluation:</Typography>
-                    <Typography color="#0f172a" fontWeight={700}>8-Week Milestone IEP</Typography>
+                    <Typography color="#757277" fontWeight={500}>Milestone Review:</Typography>
+                    <Typography color="#24102F" fontWeight={700}>8-Week Objective IEP</Typography>
                   </Box>
                   <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
-                    <Typography color="#64748b" fontWeight={600}>Center Location:</Typography>
-                    <Typography color="#0284c7" fontWeight={700}>Fusion Homes, Gr. Noida</Typography>
+                    <Typography color="#757277" fontWeight={500}>Clinical Location:</Typography>
+                    <Typography color="#02476c" fontWeight={800}>Fusion Homes, Gr. Noida</Typography>
                   </Box>
                 </Box>
               </Card>
@@ -220,25 +226,25 @@ const ServiceDetailPage = ({ onOpenAppointment }) => {
         </Paper>
 
         {/* Detailed Clinical Sections: Indications & Methods */}
-        <Grid container spacing={4} sx={{ mb: 6 }}>
+        <Grid container spacing={4} sx={{ mb: 5 }}>
           {/* Left Column: Signs & Symptoms */}
           <Grid item xs={12} md={6}>
-            <Card sx={{ p: { xs: 3, sm: 4 }, height: '100%', borderRadius: 4, border: '1px solid #e2e8f0' }}>
-              <Box sx={{ display: 'flex', alignItems: 'center', gap: 1.5, mb: 2 }}>
-                <HelpOutlineIcon sx={{ color: service.color, fontSize: 28 }} />
-                <Typography variant="h5" fontWeight={900} color="#0f172a">
+            <Card sx={{ p: { xs: 3, sm: 4 }, height: '100%', borderRadius: 4, border: '1px solid #EFECE7', bgcolor: '#ffffff' }}>
+              <Box sx={{ display: 'flex', alignItems: 'center', gap: 1.2, mb: 1.5 }}>
+                <HelpOutlineIcon sx={{ color: service.color, fontSize: 24 }} />
+                <Typography variant="h5" fontWeight={900} color="#24102F" sx={{ fontFamily: '"Quicksand", sans-serif' }}>
                   When Should A Child Seek {service.title}?
                 </Typography>
               </Box>
-              <Typography variant="body2" color="#64748b" sx={{ mb: 3 }}>
-                If you observe any of the following developmental milestones lagging behind, an early therapeutic evaluation is highly recommended:
+              <Typography variant="body2" color="#757277" sx={{ mb: 3 }}>
+                If you observe any of the following developmental milestones lagging behind, early intervention is strongly recommended:
               </Typography>
 
-              <Box sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
+              <Box sx={{ display: 'flex', flexDirection: 'column', gap: 1.8 }}>
                 {service.indications.map((item, idx) => (
-                  <Box key={idx} sx={{ display: 'flex', alignItems: 'flex-start', gap: 1.5 }}>
-                    <CheckCircleOutlineIcon sx={{ color: service.color, mt: 0.2, fontSize: 20 }} />
-                    <Typography variant="body2" color="#334155" fontWeight={500} lineHeight={1.6}>
+                  <Box key={idx} sx={{ display: 'flex', alignItems: 'flex-start', gap: 1.2 }}>
+                    <CheckCircleOutlineIcon sx={{ color: service.color, mt: 0.2, fontSize: 18, flexShrink: 0 }} />
+                    <Typography variant="body2" color="#24102F" fontWeight={500} lineHeight={1.5}>
                       {item}
                     </Typography>
                   </Box>
@@ -249,29 +255,29 @@ const ServiceDetailPage = ({ onOpenAppointment }) => {
 
           {/* Right Column: Techniques & Clinical Approach */}
           <Grid item xs={12} md={6}>
-            <Card sx={{ p: { xs: 3, sm: 4 }, height: '100%', borderRadius: 4, border: '1px solid #e2e8f0' }}>
-              <Box sx={{ display: 'flex', alignItems: 'center', gap: 1.5, mb: 2 }}>
-                <VerifiedIcon sx={{ color: service.color, fontSize: 28 }} />
-                <Typography variant="h5" fontWeight={900} color="#0f172a">
+            <Card sx={{ p: { xs: 3, sm: 4 }, height: '100%', borderRadius: 4, border: '1px solid #EFECE7', bgcolor: '#ffffff' }}>
+              <Box sx={{ display: 'flex', alignItems: 'center', gap: 1.2, mb: 1.5 }}>
+                <VerifiedIcon sx={{ color: service.color, fontSize: 24 }} />
+                <Typography variant="h5" fontWeight={900} color="#24102F" sx={{ fontFamily: '"Quicksand", sans-serif' }}>
                   Clinical Techniques & Tools Used
                 </Typography>
               </Box>
-              <Typography variant="body2" color="#64748b" sx={{ mb: 3 }}>
+              <Typography variant="body2" color="#757277" sx={{ mb: 3 }}>
                 Our licensed pediatric therapists use evidence-backed, certified therapeutic modalities in a safe, joyful environment:
               </Typography>
 
-              <Box sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
+              <Box sx={{ display: 'flex', flexDirection: 'column', gap: 1.5 }}>
                 {service.techniques.map((item, idx) => (
                   <Box
                     key={idx}
                     sx={{
-                      p: 2,
-                      bgcolor: service.bgLight,
+                      p: 1.8,
+                      bgcolor: '#FFFAEA',
                       borderRadius: 2.5,
-                      border: `1px solid ${service.borderCol}`
+                      border: '1px solid #F6D469'
                     }}
                   >
-                    <Typography variant="subtitle2" fontWeight={800} color="#0f172a">
+                    <Typography variant="subtitle2" fontWeight={800} color="#24102F">
                       {item}
                     </Typography>
                   </Box>
@@ -288,16 +294,16 @@ const ServiceDetailPage = ({ onOpenAppointment }) => {
             p: 4,
             borderRadius: 4,
             bgcolor: '#ffffff',
-            border: `2px solid ${service.borderCol}`,
-            mb: 6,
+            border: '1px solid #EFECE7',
+            mb: 5,
             textAlign: 'center'
           }}
         >
-          <Chip label="Measurable Therapeutic Results" size="small" sx={{ bgcolor: service.bgLight, color: service.color, fontWeight: 800, mb: 1.5 }} />
-          <Typography variant="h4" fontWeight={900} color="#0f172a" gutterBottom>
+          <Chip label="Measurable Therapeutic Results" size="small" sx={{ bgcolor: service.bgLight, color: service.color, fontWeight: 800, mb: 1.5, borderRadius: 50 }} />
+          <Typography variant="h4" fontWeight={900} color="#24102F" gutterBottom sx={{ fontSize: { xs: '1.6rem', sm: '2rem' }, fontFamily: '"Quicksand", sans-serif' }}>
             Expected Outcomes
           </Typography>
-          <Typography variant="h6" fontWeight={600} color="#475569" sx={{ maxWidth: 850, mx: 'auto', mt: 1 }}>
+          <Typography variant="body1" fontWeight={500} color="#757277" sx={{ maxWidth: 780, mx: 'auto', mt: 1, fontSize: '1.05rem', lineHeight: 1.6 }}>
             "{service.outcomes}"
           </Typography>
         </Paper>
@@ -311,7 +317,7 @@ const ServiceDetailPage = ({ onOpenAppointment }) => {
             flexWrap: 'wrap',
             gap: 2,
             pt: 3,
-            borderTop: '1px solid #e2e8f0'
+            borderTop: '1px solid #EFECE7'
           }}
         >
           {prevService ? (
@@ -319,7 +325,7 @@ const ServiceDetailPage = ({ onOpenAppointment }) => {
               component={Link}
               to={`/services/${prevService.id}`}
               startIcon={<ArrowBackIcon />}
-              sx={{ fontWeight: 700, color: '#334155' }}
+              sx={{ fontWeight: 800, color: '#02476c', borderRadius: 50 }}
             >
               Previous: {prevService.title}
             </Button>
@@ -329,7 +335,7 @@ const ServiceDetailPage = ({ onOpenAppointment }) => {
             component={Link}
             to="/services"
             variant="outlined"
-            sx={{ fontWeight: 700 }}
+            sx={{ fontWeight: 800, color: '#02476c', borderColor: '#02476c', borderRadius: 50 }}
           >
             All 9 Therapies
           </Button>
@@ -339,7 +345,7 @@ const ServiceDetailPage = ({ onOpenAppointment }) => {
               component={Link}
               to={`/services/${nextService.id}`}
               endIcon={<ArrowForwardIcon />}
-              sx={{ fontWeight: 700, color: '#334155' }}
+              sx={{ fontWeight: 800, color: '#02476c', borderRadius: 50 }}
             >
               Next: {nextService.title}
             </Button>

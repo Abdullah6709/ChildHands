@@ -24,7 +24,10 @@ import PsychologyIcon from '@mui/icons-material/Psychology';
 import GroupsIcon from '@mui/icons-material/Groups';
 import HandymanIcon from '@mui/icons-material/Handyman';
 import SchoolIcon from '@mui/icons-material/School';
-import { CLINIC_INFO } from '../data/clinicData';
+import VolunteerActivismIcon from '@mui/icons-material/VolunteerActivism';
+import EmojiEventsIcon from '@mui/icons-material/EmojiEvents';
+
+import { CLINIC_INFO, WE_CARE_ABOUT } from '../data/clinicData';
 
 const TEAM_MEMBERS = [
   {
@@ -32,28 +35,28 @@ const TEAM_MEMBERS = [
     role: "Senior Pediatric Speech-Language Pathologist",
     creds: "MASLP, RCI Certified • 11+ Yrs Exp",
     specialty: "Speech Delay, Stammering, Oral Placement Therapy (OPT), Apraxia",
-    color: "#0284c7"
+    color: "#02476c"
   },
   {
     name: "Rohit Malhotra",
     role: "Sensory Integration & Occupational Therapist",
     creds: "BOT, MOT (Pediatrics) • 9+ Yrs Exp",
     specialty: "Sensory Processing Disorder (SPD), Fine Motor Planning, Handwriting",
-    color: "#ea580c"
+    color: "#E76100"
   },
   {
     name: "Pooja Deshmukh",
     role: "Certified ABA & Behavioral Interventionist",
     creds: "M.Sc Applied Psychology, BCBA Certified • 8+ Yrs Exp",
     specialty: "Autism Spectrum Disorder, Behavior Modification, Social Skills",
-    color: "#0d9488"
+    color: "#59C36A"
   },
   {
     name: "Meenakshi Joshi",
     role: "Head of Special Education & Inclusive Learning",
     creds: "B.Ed (Special Ed), M.A. • 10+ Yrs Exp",
     specialty: "Dyslexia, ADHD IEPs, Pre-school Readiness, Remedial Learning",
-    color: "#e11d48"
+    color: "#FF1C74"
   }
 ];
 
@@ -87,81 +90,223 @@ const MILESTONES_STEPS = [
 
 const AboutUs = ({ onOpenAppointment }) => {
   return (
-    <Box sx={{ bgcolor: '#f8fafc', py: { xs: 6, md: 8 } }}>
+    <Box sx={{ bgcolor: '#FDFBF7', py: { xs: 6, md: 8 } }}>
       <Container maxWidth="xl">
-        {/* Breadcrumb / Title */}
+        {/* Breadcrumb / Title Header */}
         <Box sx={{ textAlign: 'center', maxWidth: 850, mx: 'auto', mb: 7 }}>
           <Chip
-            icon={<FavoriteIcon sx={{ color: '#f43f5e !important' }} />}
-            label="About Caring Hands Child Development Center"
+            icon={<FavoriteIcon sx={{ color: '#E76100 !important' }} />}
+            label="About Caring Hands Trust & Development Center"
             size="small"
-            sx={{ bgcolor: '#ffffff', color: '#0284c7', fontWeight: 800, mb: 2, border: '1px solid #bae6fd' }}
+            sx={{
+              bgcolor: '#FFFAEA',
+              color: '#02476c',
+              fontWeight: 800,
+              mb: 2,
+              border: '1px solid #F6D469',
+              borderRadius: 50,
+              px: 1.5,
+              py: 0.5
+            }}
           />
-          <Typography variant="h1" sx={{ fontSize: { xs: '2.4rem', sm: '3.4rem' }, fontWeight: 900, color: '#0f172a', mb: 2 }}>
+          <Typography
+            variant="h1"
+            sx={{
+              fontSize: { xs: '2.4rem', sm: '3.4rem' },
+              fontWeight: 900,
+              color: '#24102F',
+              fontFamily: '"Quicksand", sans-serif',
+              mb: 2
+            }}
+          >
             "Small Steps... Big Futures... ☀️"
           </Typography>
-          <Typography variant="h6" sx={{ color: '#475569', fontWeight: 500, lineHeight: 1.6 }}>
-            Inspired by the foundational values of Caring Hands (caringhands.org.in), we are dedicated to creating a world where every child with speech delays, sensory challenges, or neurodevelopmental differences receives world-class clinical guidance filled with unconditional warmth.
+          <Typography
+            sx={{
+              fontFamily: '"Schoolbell", cursive',
+              color: '#02476c',
+              fontSize: { xs: '1.25rem', sm: '1.55rem' },
+              fontWeight: 700,
+              mb: 2
+            }}
+          >
+            Give a helping hand for a child ☀️
+          </Typography>
+          <Typography variant="h6" sx={{ color: '#757277', fontWeight: 500, lineHeight: 1.7, fontSize: { xs: '1rem', sm: '1.15rem' } }}>
+            Inspired by the foundational mission of <strong>Caring Hands (caringhands.org.in)</strong>, we are committed to creating an inclusive world where every child with speech delays, sensory challenges, ADHD, autism, or learning differences receives world-class clinical guidance backed by unconditional warmth.
           </Typography>
         </Box>
 
-        {/* Mission & Vision Cards */}
-        <Grid container spacing={4} sx={{ mb: 8 }}>
-          <Grid item xs={12} md={6}>
-            <Card
-              sx={{
-                p: { xs: 3, sm: 4 },
-                height: '100%',
-                background: 'linear-gradient(135deg, #f0f9ff 0%, #ffffff 100%)',
-                border: '2px solid #bae6fd',
-                borderRadius: 4
-              }}
-            >
-              <Box sx={{ display: 'flex', alignItems: 'center', gap: 1.5, mb: 2 }}>
-                <Box sx={{ width: 44, height: 44, borderRadius: 2.5, bgcolor: '#0284c7', color: '#ffffff', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                  <AutoAwesomeIcon />
-                </Box>
-                <Typography variant="h4" fontWeight={900} color="#0284c7">
-                  Our Mission
-                </Typography>
-              </Box>
-              <Typography variant="body1" color="#334155" sx={{ lineHeight: 1.8, fontSize: '1.05rem' }}>
-                To deliver accessible, evidence-based, multidisciplinary pediatric therapies under one roof. We strive to empower each child to communicate freely, navigate their sensory world with calm confidence, gain independence in everyday tasks, and achieve their full potential in school and life.
+        {/* Our Heritage & Story Section */}
+        <Paper
+          elevation={0}
+          sx={{
+            p: { xs: 3.5, md: 6 },
+            borderRadius: 5,
+            bgcolor: '#ffffff',
+            border: '1px solid #EFECE7',
+            mb: 8,
+            boxShadow: '0 8px 30px rgba(2, 71, 108, 0.04)'
+          }}
+        >
+          <Grid container spacing={5} alignItems="center">
+            <Grid item xs={12} md={6}>
+              <Chip
+                label="Our Story Since 2015"
+                size="small"
+                sx={{ bgcolor: '#FFFAEA', color: '#02476c', fontWeight: 800, mb: 2, border: '1px solid #F6D469' }}
+              />
+              <Typography variant="h2" sx={{ fontSize: { xs: '2rem', sm: '2.5rem' }, fontWeight: 900, color: '#24102F', mb: 2.5, fontFamily: '"Quicksand", sans-serif' }}>
+                A Journey of Compassion, Inclusion & Hope
               </Typography>
-            </Card>
-          </Grid>
-
-          <Grid item xs={12} md={6}>
-            <Card
-              sx={{
-                p: { xs: 3, sm: 4 },
-                height: '100%',
-                background: 'linear-gradient(135deg, #fff1f2 0%, #ffffff 100%)',
-                border: '2px solid #fecdd3',
-                borderRadius: 4
-              }}
-            >
-              <Box sx={{ display: 'flex', alignItems: 'center', gap: 1.5, mb: 2 }}>
-                <Box sx={{ width: 44, height: 44, borderRadius: 2.5, bgcolor: '#f43f5e', color: '#ffffff', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                  <FavoriteIcon />
-                </Box>
-                <Typography variant="h4" fontWeight={900} color="#e11d48">
-                  Our Philosophy
-                </Typography>
-              </Box>
-              <Typography variant="body1" color="#334155" sx={{ lineHeight: 1.8, fontSize: '1.05rem' }}>
-                <strong>Every Child Matters ❤️</strong>. We reject one-size-fits-all therapy. Instead, we honor the neurodiversity of each little learner, designing playful therapeutic pathways that spark curiosity rather than fear. When children feel safe and celebrated, learning happens naturally.
+              <Typography variant="body1" sx={{ color: '#757277', lineHeight: 1.8, mb: 2 }}>
+                Founded with a deep philanthropic ethos, <strong>Caring Hands</strong> has been actively transforming lives since 2015. What began as a community endeavor to support vulnerable individuals and families has evolved into an expansive ecosystem spanning child developmental therapies, inclusive education, skill empowerment, and holistic healthcare.
               </Typography>
-            </Card>
-          </Grid>
-        </Grid>
+              <Typography variant="body1" sx={{ color: '#757277', lineHeight: 1.8, mb: 3 }}>
+                Our dedicated Child Development Center in Greater Noida West brings together licensed pediatric speech pathologists, occupational therapists, sensory integration practitioners, and special educators to deliver personalized, joyful milestone progress.
+              </Typography>
 
-        {/* 5-Step Developmental Journey */}
+              <Box sx={{ display: 'flex', gap: 2, flexWrap: 'wrap' }}>
+                <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
+                  <EmojiEventsIcon sx={{ color: '#F6D469', fontSize: 26 }} />
+                  <Typography variant="body2" fontWeight={800} color="#24102F">
+                    9+ Years of Dedicated Impact
+                  </Typography>
+                </Box>
+                <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
+                  <VolunteerActivismIcon sx={{ color: '#02476c', fontSize: 26 }} />
+                  <Typography variant="body2" fontWeight={800} color="#24102F">
+                    500+ Milestone Success Stories
+                  </Typography>
+                </Box>
+              </Box>
+            </Grid>
+
+            <Grid item xs={12} md={6}>
+              <Box
+                sx={{
+                  bgcolor: '#02476c',
+                  color: '#ffffff',
+                  p: { xs: 3.5, sm: 5 },
+                  borderRadius: 4.5,
+                  position: 'relative',
+                  overflow: 'hidden'
+                }}
+              >
+                <Box
+                  sx={{
+                    position: 'absolute',
+                    top: -20,
+                    right: -20,
+                    width: 120,
+                    height: 120,
+                    bgcolor: 'rgba(246, 212, 105, 0.15)',
+                    borderRadius: '50%'
+                  }}
+                />
+                <Typography variant="caption" sx={{ color: '#F6D469', fontWeight: 800, letterSpacing: '0.08em', textTransform: 'uppercase' }}>
+                  The Caring Hands Philosophy
+                </Typography>
+                <Typography variant="h4" fontWeight={900} sx={{ my: 2, color: '#ffffff', fontFamily: '"Quicksand", sans-serif' }}>
+                  "Every Child Matters. Every Milestone Counts."
+                </Typography>
+                <Typography variant="body1" sx={{ color: '#EFECE7', lineHeight: 1.8, mb: 3 }}>
+                  We discard rigid, one-size-fits-all treatments. Instead, we honor the innate neurodiversity and personality of every child, designing playful therapy pathways that inspire curiosity rather than anxiety.
+                </Typography>
+                <Button
+                  variant="contained"
+                  onClick={() => onOpenAppointment()}
+                  sx={{
+                    bgcolor: '#F6D469',
+                    color: '#24102F',
+                    fontWeight: 900,
+                    px: 3.5,
+                    py: 1.2,
+                    borderRadius: 50,
+                    '&:hover': { bgcolor: '#fcb720' }
+                  }}
+                >
+                  Schedule An Assessment
+                </Button>
+              </Box>
+            </Grid>
+          </Grid>
+        </Paper>
+
+        {/* 5 Core Pillars from caringhands.org.in */}
+        <Box sx={{ mb: 8 }}>
+          <Box sx={{ textAlign: 'center', maxWidth: 700, mx: 'auto', mb: 5 }}>
+            <Chip
+              label="Our Core Pillars"
+              size="small"
+              sx={{ bgcolor: '#FFFAEA', color: '#02476c', fontWeight: 800, mb: 1.5, border: '1px solid #F6D469' }}
+            />
+            <Typography variant="h2" fontWeight={900} color="#24102F" sx={{ fontFamily: '"Quicksand", sans-serif' }}>
+              We Care About
+            </Typography>
+            <Typography variant="body1" color="#757277">
+              The foundational commitments driving Caring Hands across our centers and communities.
+            </Typography>
+          </Box>
+
+          <Grid container spacing={3}>
+            {WE_CARE_ABOUT.map((item, idx) => (
+              <Grid item xs={12} sm={6} md={2.4} key={idx}>
+                <Card
+                  sx={{
+                    p: 3,
+                    height: '100%',
+                    borderRadius: 4,
+                    border: '1px solid #EFECE7',
+                    bgcolor: '#ffffff',
+                    textAlign: 'center',
+                    transition: 'all 0.3s ease',
+                    '&:hover': { transform: 'translateY(-6px)', boxShadow: '0 12px 28px rgba(2, 71, 108, 0.08)' }
+                  }}
+                >
+                  <Box
+                    sx={{
+                      width: 54,
+                      height: 54,
+                      borderRadius: '50%',
+                      bgcolor: '#FFFAEA',
+                      color: '#02476c',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      mx: 'auto',
+                      mb: 2,
+                      fontSize: '1.6rem',
+                      border: '1px solid #F6D469'
+                    }}
+                  >
+                    {item.icon}
+                  </Box>
+                  <Typography variant="subtitle1" fontWeight={800} color="#24102F" sx={{ fontFamily: '"Quicksand", sans-serif', mb: 1 }}>
+                    {item.title}
+                  </Typography>
+                  <Typography variant="body2" color="#757277" sx={{ fontSize: '0.86rem', lineHeight: 1.6 }}>
+                    {item.desc}
+                  </Typography>
+                </Card>
+              </Grid>
+            ))}
+          </Grid>
+        </Box>
+
+        {/* 5-Step Developmental Roadmap */}
         <Box sx={{ mb: 9 }}>
           <Box sx={{ textAlign: 'center', maxWidth: 700, mx: 'auto', mb: 5 }}>
-            <Chip label="Our Clinical Framework" size="small" sx={{ bgcolor: '#dcfce7', color: '#16a34a', fontWeight: 800, mb: 1.5 }} />
-            <Typography variant="h2" fontWeight={900} color="#0f172a">
+            <Chip
+              label="Our Clinical Framework"
+              size="small"
+              sx={{ bgcolor: '#FFFAEA', color: '#02476c', fontWeight: 800, mb: 1.5, border: '1px solid #F6D469' }}
+            />
+            <Typography variant="h2" fontWeight={900} color="#24102F" sx={{ fontFamily: '"Quicksand", sans-serif' }}>
               The 5-Step Roadmap to Progress
+            </Typography>
+            <Typography variant="body1" color="#757277">
+              A transparent, outcome-oriented clinical progression crafted for quantifiable milestone gains.
             </Typography>
           </Box>
 
@@ -174,24 +319,36 @@ const AboutUs = ({ onOpenAppointment }) => {
                     p: 3,
                     height: '100%',
                     borderRadius: 3.5,
-                    border: '1px solid #e2e8f0',
+                    border: '1px solid #EFECE7',
                     bgcolor: '#ffffff',
                     position: 'relative',
                     transition: 'transform 0.2s',
-                    '&:hover': { transform: 'translateY(-4px)', borderColor: '#0284c7' }
+                    '&:hover': { transform: 'translateY(-4px)', borderColor: '#02476c' }
                   }}
                 >
-                  <Typography
-                    variant="h3"
-                    fontWeight={900}
-                    sx={{ color: '#e2e8f0', mb: 1, letterSpacing: '-0.04em' }}
+                  <Box
+                    sx={{
+                      width: 42,
+                      height: 42,
+                      borderRadius: 50,
+                      bgcolor: '#FFFAEA',
+                      color: '#02476c',
+                      border: '1px solid #F6D469',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      fontWeight: 900,
+                      fontSize: '1rem',
+                      fontFamily: '"Quicksand", sans-serif',
+                      mb: 2
+                    }}
                   >
                     {item.step}
-                  </Typography>
-                  <Typography variant="subtitle1" fontWeight={800} color="#0284c7" sx={{ mb: 1, lineHeight: 1.3 }}>
+                  </Box>
+                  <Typography variant="subtitle1" fontWeight={800} color="#02476c" sx={{ mb: 1, lineHeight: 1.3, fontFamily: '"Quicksand", sans-serif' }}>
                     {item.title}
                   </Typography>
-                  <Typography variant="body2" color="#64748b" sx={{ lineHeight: 1.6, fontSize: '0.88rem' }}>
+                  <Typography variant="body2" color="#757277" sx={{ lineHeight: 1.6, fontSize: '0.88rem' }}>
                     {item.desc}
                   </Typography>
                 </Paper>
@@ -203,11 +360,15 @@ const AboutUs = ({ onOpenAppointment }) => {
         {/* Clinical Team */}
         <Box sx={{ mb: 9 }}>
           <Box sx={{ textAlign: 'center', maxWidth: 700, mx: 'auto', mb: 5 }}>
-            <Chip label="Our Experts" size="small" color="primary" sx={{ fontWeight: 800, mb: 1.5 }} />
-            <Typography variant="h2" fontWeight={900} color="#0f172a" sx={{ mb: 1.5 }}>
-              Multidisciplinary Specialists
+            <Chip
+              label="Our Clinical Specialists"
+              size="small"
+              sx={{ bgcolor: '#FFFAEA', color: '#02476c', fontWeight: 800, mb: 1.5, border: '1px solid #F6D469' }}
+            />
+            <Typography variant="h2" fontWeight={900} color="#24102F" sx={{ mb: 1.5, fontFamily: '"Quicksand", sans-serif' }}>
+              Multidisciplinary Pediatric Team
             </Typography>
-            <Typography variant="body1" color="#64748b">
+            <Typography variant="body1" color="#757277">
               Qualified, passionate pediatric practitioners dedicated to your child's milestone success.
             </Typography>
           </Box>
@@ -221,11 +382,13 @@ const AboutUs = ({ onOpenAppointment }) => {
                     height: '100%',
                     textAlign: 'center',
                     borderRadius: 4,
-                    border: '1px solid #e2e8f0',
+                    border: '1px solid #EFECE7',
+                    bgcolor: '#ffffff',
                     display: 'flex',
                     flexDirection: 'column',
                     justifyContent: 'space-between',
-                    '&:hover': { boxShadow: '0 12px 28px rgba(0,0,0,0.08)' }
+                    transition: 'all 0.3s ease',
+                    '&:hover': { boxShadow: '0 12px 28px rgba(2, 71, 108, 0.08)', transform: 'translateY(-4px)' }
                   }}
                 >
                   <Box>
@@ -238,20 +401,21 @@ const AboutUs = ({ onOpenAppointment }) => {
                         bgcolor: member.color,
                         fontSize: '1.6rem',
                         fontWeight: 800,
-                        boxShadow: `0 8px 20px ${member.color}40`
+                        boxShadow: `0 8px 20px ${member.color}35`,
+                        border: '3px solid #ffffff'
                       }}
                     >
                       {member.name[3]}
                     </Avatar>
-                    <Typography variant="h6" fontWeight={800} color="#0f172a">
+                    <Typography variant="h6" fontWeight={800} color="#24102F" sx={{ fontFamily: '"Quicksand", sans-serif' }}>
                       {member.name}
                     </Typography>
                     <Typography variant="caption" sx={{ color: member.color, fontWeight: 700, display: 'block', mb: 1 }}>
                       {member.role}
                     </Typography>
-                    <Chip label={member.creds} size="small" sx={{ fontSize: '0.7rem', fontWeight: 600, mb: 2 }} />
+                    <Chip label={member.creds} size="small" sx={{ fontSize: '0.7rem', fontWeight: 600, mb: 2, borderRadius: 50 }} />
                     <Divider sx={{ my: 1.5 }} />
-                    <Typography variant="body2" color="#64748b" sx={{ fontSize: '0.82rem', lineHeight: 1.6 }}>
+                    <Typography variant="body2" color="#757277" sx={{ fontSize: '0.84rem', lineHeight: 1.6 }}>
                       <strong>Focus:</strong> {member.specialty}
                     </Typography>
                   </Box>
@@ -262,7 +426,13 @@ const AboutUs = ({ onOpenAppointment }) => {
                       size="small"
                       fullWidth
                       onClick={() => onOpenAppointment()}
-                      sx={{ borderColor: member.color, color: member.color, fontWeight: 700 }}
+                      sx={{
+                        borderColor: member.color,
+                        color: member.color,
+                        fontWeight: 800,
+                        borderRadius: 50,
+                        '&:hover': { bgcolor: `${member.color}10`, borderColor: member.color }
+                      }}
                     >
                       Consult Specialist
                     </Button>
@@ -280,42 +450,46 @@ const AboutUs = ({ onOpenAppointment }) => {
             p: { xs: 3, sm: 5 },
             borderRadius: 5,
             bgcolor: '#ffffff',
-            border: '2px solid #e2e8f0',
+            border: '1px solid #EFECE7',
             mb: 8
           }}
         >
           <Grid container spacing={4} alignItems="center">
             <Grid item xs={12} md={6}>
-              <Chip label="Fusion Homes Greater Noida West" size="small" sx={{ bgcolor: '#e0f2fe', color: '#0369a1', fontWeight: 800, mb: 1.5 }} />
-              <Typography variant="h3" fontWeight={900} color="#0f172a" sx={{ mb: 2 }}>
+              <Chip
+                label="Fusion Homes Greater Noida West"
+                size="small"
+                sx={{ bgcolor: '#FFFAEA', color: '#02476c', fontWeight: 800, mb: 1.5, border: '1px solid #F6D469' }}
+              />
+              <Typography variant="h3" fontWeight={900} color="#24102F" sx={{ mb: 2, fontFamily: '"Quicksand", sans-serif' }}>
                 Purpose-Built Pediatric Therapy Center
               </Typography>
-              <Typography variant="body1" color="#475569" sx={{ lineHeight: 1.7, mb: 3 }}>
-                Located at <strong>G-104, Fusion Homes, Amrapali Dream Valley, Greater Noida West</strong>, our center is ergonomically designed to provide maximum safety, stimulation, and sensory comfort for children of all ages:
+              <Typography variant="body1" color="#757277" sx={{ lineHeight: 1.7, mb: 3 }}>
+                Located at <strong>G-104, Fusion Homes, Amrapali Dream Valley, Greater Noida West</strong>, our clinic is ergonomically designed to provide maximum safety, stimulation, and sensory comfort for children of all ages:
               </Typography>
 
               <Box sx={{ display: 'flex', flexDirection: 'column', gap: 1.8 }}>
                 <Box sx={{ display: 'flex', gap: 1.5 }}>
-                  <VerifiedIcon sx={{ color: '#16a34a', mt: 0.3 }} />
-                  <Typography variant="body2" color="#334155">
+                  <VerifiedIcon sx={{ color: '#59C36A', mt: 0.3 }} />
+                  <Typography variant="body2" color="#24102F">
                     <strong>Sensory Integration Gym:</strong> Equipped with vestibular bolster swings, platform swings, climbing rock walls, and sensory crash mats.
                   </Typography>
                 </Box>
                 <Box sx={{ display: 'flex', gap: 1.5 }}>
-                  <VerifiedIcon sx={{ color: '#0284c7', mt: 0.3 }} />
-                  <Typography variant="body2" color="#334155">
+                  <VerifiedIcon sx={{ color: '#02476c', mt: 0.3 }} />
+                  <Typography variant="body2" color="#24102F">
                     <strong>Speech & OPT Suite:</strong> Acoustic sound-insulated room with specialized jaw grading tools, therapeutic straws, and speech mirrors.
                   </Typography>
                 </Box>
                 <Box sx={{ display: 'flex', gap: 1.5 }}>
-                  <VerifiedIcon sx={{ color: '#ea580c', mt: 0.3 }} />
-                  <Typography variant="body2" color="#334155">
+                  <VerifiedIcon sx={{ color: '#E76100', mt: 0.3 }} />
+                  <Typography variant="body2" color="#24102F">
                     <strong>Occupational Therapy Zone:</strong> Fine motor puzzles, tactile tables, handwriting stations, and self-care simulation corners.
                   </Typography>
                 </Box>
                 <Box sx={{ display: 'flex', gap: 1.5 }}>
-                  <VerifiedIcon sx={{ color: '#db2777', mt: 0.3 }} />
-                  <Typography variant="body2" color="#334155">
+                  <VerifiedIcon sx={{ color: '#FF1C74', mt: 0.3 }} />
+                  <Typography variant="body2" color="#24102F">
                     <strong>Quiet Counseling Room:</strong> Warm, relaxing space for confidential parent guidance, anxiety reduction, and family counseling.
                   </Typography>
                 </Box>
@@ -326,35 +500,48 @@ const AboutUs = ({ onOpenAppointment }) => {
               <Box
                 sx={{
                   p: 4,
-                  borderRadius: 4,
-                  bgcolor: '#0f172a',
+                  borderRadius: 4.5,
+                  bgcolor: '#02476c',
                   color: '#ffffff',
                   textAlign: 'center'
                 }}
               >
-                <Typography variant="h5" fontWeight={900} color="#38bdf8" gutterBottom>
+                <Typography variant="h5" fontWeight={900} sx={{ color: '#F6D469', mb: 1, fontFamily: '"Quicksand", sans-serif' }}>
                   Ready to Visit Us?
                 </Typography>
-                <Typography variant="body2" sx={{ color: '#cbd5e1', mb: 3 }}>
+                <Typography variant="body2" sx={{ color: '#EFECE7', mb: 3 }}>
                   Take a walkthrough of our therapy rooms, meet our senior therapists, and observe a complimentary quick assessment.
                 </Typography>
                 <Box sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
                   <Button
                     variant="contained"
-                    color="secondary"
                     size="large"
                     onClick={() => onOpenAppointment()}
                     startIcon={<CalendarMonthIcon />}
-                    sx={{ fontWeight: 800 }}
+                    sx={{
+                      bgcolor: '#F6D469',
+                      color: '#24102F',
+                      fontWeight: 900,
+                      borderRadius: 50,
+                      py: 1.2,
+                      '&:hover': { bgcolor: '#fcb720' }
+                    }}
                   >
                     Book An Assessment
                   </Button>
                   <Button
                     variant="outlined"
                     component={Link}
-                    to="/contact#map"
+                    to="/map-routing"
                     startIcon={<DirectionsIcon />}
-                    sx={{ color: '#38bdf8', borderColor: '#38bdf8', fontWeight: 700 }}
+                    sx={{
+                      color: '#ffffff',
+                      borderColor: 'rgba(255,255,255,0.4)',
+                      fontWeight: 700,
+                      borderRadius: 50,
+                      py: 1,
+                      '&:hover': { borderColor: '#F6D469', color: '#F6D469' }
+                    }}
                   >
                     View Map Directions (Fusion Homes)
                   </Button>

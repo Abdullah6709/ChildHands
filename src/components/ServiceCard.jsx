@@ -7,7 +7,7 @@ import {
   Typography,
   Button,
   Chip,
-  Divider
+  Stack
 } from '@mui/material';
 import RecordVoiceOverIcon from '@mui/icons-material/RecordVoiceOver';
 import SentimentSatisfiedAltIcon from '@mui/icons-material/SentimentSatisfiedAlt';
@@ -20,18 +20,19 @@ import FamilyRestroomIcon from '@mui/icons-material/FamilyRestroom';
 import MenuBookIcon from '@mui/icons-material/MenuBook';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
+import CheckCircleOutlineIcon from '@mui/icons-material/CheckCircleOutline';
 
 // Icon Map
 const iconComponents = {
-  RecordVoiceOver: <RecordVoiceOverIcon sx={{ fontSize: 32 }} />,
-  SentimentSatisfiedAlt: <SentimentSatisfiedAltIcon sx={{ fontSize: 32 }} />,
-  PanTool: <PanToolIcon sx={{ fontSize: 32 }} />,
-  Work: <WorkIcon sx={{ fontSize: 32 }} />,
-  Extension: <ExtensionIcon sx={{ fontSize: 32 }} />,
-  Groups: <GroupsIcon sx={{ fontSize: 32 }} />,
-  Psychology: <PsychologyIcon sx={{ fontSize: 32 }} />,
-  FamilyRestroom: <FamilyRestroomIcon sx={{ fontSize: 32 }} />,
-  MenuBook: <MenuBookIcon sx={{ fontSize: 32 }} />
+  RecordVoiceOver: <RecordVoiceOverIcon sx={{ fontSize: 28 }} />,
+  SentimentSatisfiedAlt: <SentimentSatisfiedAltIcon sx={{ fontSize: 28 }} />,
+  PanTool: <PanToolIcon sx={{ fontSize: 28 }} />,
+  Work: <WorkIcon sx={{ fontSize: 28 }} />,
+  Extension: <ExtensionIcon sx={{ fontSize: 28 }} />,
+  Groups: <GroupsIcon sx={{ fontSize: 28 }} />,
+  Psychology: <PsychologyIcon sx={{ fontSize: 28 }} />,
+  FamilyRestroom: <FamilyRestroomIcon sx={{ fontSize: 28 }} />,
+  MenuBook: <MenuBookIcon sx={{ fontSize: 28 }} />
 };
 
 const ServiceCard = ({ service, onBook }) => {
@@ -43,194 +44,167 @@ const ServiceCard = ({ service, onBook }) => {
         flexDirection: 'column',
         borderRadius: 4,
         overflow: 'hidden',
-        border: `2px solid ${service.borderCol}`,
-        transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+        border: '1px solid #e2e8f0',
         bgcolor: '#ffffff',
+        transition: 'all 0.25s cubic-bezier(0.4, 0, 0.2, 1)',
+        position: 'relative',
         '&:hover': {
-          transform: 'translateY(-6px)',
-          boxShadow: `0 16px 32px ${service.color}25`,
-          borderColor: service.color
+          transform: 'translateY(-5px)',
+          boxShadow: '0 16px 32px rgba(15, 23, 42, 0.08)',
+          borderColor: service.color,
+          '& .service-icon-box': {
+            transform: 'scale(1.05)',
+          }
         }
       }}
     >
-      {/* Top Banner Ribbon */}
-      <Box
-        sx={{
-          bgcolor: service.bgLight,
-          px: 2.5,
-          py: 1.5,
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'space-between',
-          borderBottom: `1px solid ${service.borderCol}`
-        }}
-      >
-        <Chip
-          label="Therapy Program"
-          size="small"
-          sx={{
-            bgcolor: '#ffffff',
-            color: service.color,
-            fontWeight: 800,
-            fontSize: '0.72rem',
-            border: `1px solid ${service.borderCol}`
-          }}
-        />
-        <Box
-          sx={{
-            width: 10,
-            height: 10,
-            borderRadius: '50%',
-            bgcolor: service.color
-          }}
-        />
-      </Box>
+      {/* Top subtle color indicator line */}
+      <Box sx={{ height: 4, width: '100%', bgcolor: service.color }} />
 
-      <CardContent sx={{ p: 3, flexGrow: 1, display: 'flex', flexDirection: 'column' }}>
-        {/* Icon & Title Row */}
-        <Box sx={{ display: 'flex', alignItems: 'flex-start', gap: 2, mb: 2 }}>
+      <CardContent sx={{ p: { xs: 2.5, sm: 3 }, flexGrow: 1, display: 'flex', flexDirection: 'column' }}>
+        {/* Header: Icon & Category Tag */}
+        <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', mb: 2 }}>
           <Box
+            className="service-icon-box"
             sx={{
-              width: 58,
-              height: 58,
+              width: 52,
+              height: 52,
               borderRadius: 3,
-              bgcolor: service.color,
-              color: '#ffffff',
+              bgcolor: service.bgLight,
+              color: service.color,
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
-              boxShadow: `0 6px 16px ${service.color}40`,
+              transition: 'transform 0.2s ease',
               flexShrink: 0
             }}
           >
-            {iconComponents[service.iconName] || <ExtensionIcon sx={{ fontSize: 32 }} />}
+            {iconComponents[service.iconName] || <ExtensionIcon sx={{ fontSize: 28 }} />}
           </Box>
 
-          <Box>
-            <Typography
-              component={Link}
-              to={`/services/${service.id}`}
-              variant="h6"
-              sx={{
-                fontWeight: 800,
-                color: '#0f172a',
-                lineHeight: 1.25,
-                fontSize: '1.2rem',
-                mb: 0.5,
-                textDecoration: 'none',
-                display: 'block',
-                '&:hover': { color: service.color }
-              }}
-            >
-              {service.title}
-            </Typography>
-            <Typography
-              variant="caption"
-              sx={{
-                display: 'block',
-                fontWeight: 700,
-                color: service.color,
-                fontSize: '0.82rem',
-                lineHeight: 1.3
-              }}
-            >
-              {service.tagline}
-            </Typography>
-          </Box>
+          <Chip
+            label={service.tagline}
+            size="small"
+            sx={{
+              bgcolor: service.bgLight,
+              color: service.color,
+              fontWeight: 700,
+              fontSize: '0.74rem',
+              borderRadius: 6,
+              border: `1px solid ${service.borderCol}`
+            }}
+          />
         </Box>
+
+        {/* Title */}
+        <Typography
+          component={Link}
+          to={`/services/${service.id}`}
+          variant="h6"
+          sx={{
+            fontFamily: '"Quicksand", sans-serif',
+            fontWeight: 700,
+            color: '#24102F',
+            fontSize: '1.25rem',
+            lineHeight: 1.3,
+            mb: 1,
+            textDecoration: 'none',
+            display: 'block',
+            transition: 'color 0.2s ease',
+            '&:hover': { color: service.color }
+          }}
+        >
+          {service.title}
+        </Typography>
 
         {/* Short Description */}
         <Typography
           variant="body2"
           sx={{
-            color: '#475569',
-            lineHeight: 1.6,
-            mb: 2,
-            fontSize: '0.9rem',
+            color: '#757277',
+            lineHeight: 1.62,
+            mb: 2.5,
+            fontSize: '0.88rem',
             flexGrow: 1
           }}
         >
           {service.shortDesc}
         </Typography>
 
-        {/* Key indications tag */}
-        <Box sx={{ mb: 2.5 }}>
+        {/* Key indications - clean 2 points */}
+        <Box sx={{ mb: 3 }}>
           <Typography
             variant="caption"
             sx={{
               display: 'block',
               fontWeight: 700,
-              color: '#64748b',
-              mb: 0.8,
+              color: '#AA96B4',
+              mb: 1,
               textTransform: 'uppercase',
-              letterSpacing: '0.04em'
+              letterSpacing: '0.04em',
+              fontSize: '0.7rem'
             }}
           >
-            Key Indications & Focus:
+            Target Areas & Symptoms
           </Typography>
-          <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 0.8 }}>
+          <Stack spacing={0.8}>
             {service.indications.slice(0, 2).map((item, idx) => (
-              <Chip
-                key={idx}
-                label={item.length > 34 ? `${item.slice(0, 34)}...` : item}
-                size="small"
-                sx={{
-                  bgcolor: '#f1f5f9',
-                  color: '#334155',
-                  fontSize: '0.72rem',
-                  fontWeight: 600,
-                  borderRadius: 1.5
-                }}
-              />
+              <Box key={idx} sx={{ display: 'flex', alignItems: 'flex-start', gap: 1 }}>
+                <CheckCircleOutlineIcon sx={{ fontSize: 16, color: service.color, mt: 0.2, flexShrink: 0 }} />
+                <Typography variant="body2" sx={{ fontSize: '0.84rem', color: '#24102F', lineHeight: 1.4 }}>
+                  {item.length > 48 ? `${item.slice(0, 48)}...` : item}
+                </Typography>
+              </Box>
             ))}
-          </Box>
+          </Stack>
         </Box>
 
-        <Divider sx={{ mb: 2 }} />
-
-        {/* Action Buttons with dedicated route links */}
-        <Box sx={{ display: 'flex', gap: 1.5 }}>
+        {/* Action Buttons */}
+        <Box sx={{ display: 'flex', gap: 1.5, pt: 1, borderTop: '1px solid #EFECE7' }}>
           <Button
             component={Link}
             to={`/services/${service.id}`}
             variant="outlined"
             size="small"
-            endIcon={<ArrowForwardIcon />}
             sx={{
               flex: 1,
-              borderColor: service.color,
-              color: service.color,
+              borderColor: '#EFECE7',
+              color: '#24102F',
               fontWeight: 700,
               fontSize: '0.82rem',
               py: 0.8,
+              borderRadius: 100,
               '&:hover': {
                 borderColor: service.color,
+                color: service.color,
                 bgcolor: service.bgLight
               }
             }}
           >
-            View Details
+            Details
           </Button>
 
           <Button
             variant="contained"
             size="small"
             onClick={() => onBook(service.title)}
-            startIcon={<CalendarMonthIcon />}
+            startIcon={<CalendarMonthIcon sx={{ fontSize: 16 }} />}
             sx={{
-              flex: 1,
-              bgcolor: service.color,
+              flex: 1.2,
+              bgcolor: '#02476c',
+              color: '#ffffff',
               fontWeight: 700,
               fontSize: '0.82rem',
               py: 0.8,
-              boxShadow: `0 4px 12px ${service.color}40`,
+              borderRadius: 100,
+              boxShadow: 'none',
               '&:hover': {
-                bgcolor: service.color,
-                filter: 'brightness(0.9)'
+                bgcolor: '#01324d',
+                boxShadow: `0 4px 12px rgba(2, 71, 108, 0.3)`
               }
             }}
           >
-            Book Now
+            Book Slot
           </Button>
         </Box>
       </CardContent>

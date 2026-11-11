@@ -15,6 +15,7 @@ import LocationOnIcon from '@mui/icons-material/LocationOn';
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import DirectionsIcon from '@mui/icons-material/Directions';
+import VolunteerActivismIcon from '@mui/icons-material/VolunteerActivism';
 import { CLINIC_INFO, SERVICES_DATA } from '../data/clinicData';
 import logoImg from '../assets/logo.jpeg';
 
@@ -23,56 +24,58 @@ const Footer = ({ onOpenAppointment }) => {
     <Box
       component="footer"
       sx={{
-        bgcolor: '#0f172a',
-        color: '#f8fafc',
-        pt: { xs: 6, md: 8 },
+        bgcolor: '#02476c', // Caring Hands signature deep blue
+        color: '#ffffff',
+        pt: { xs: 7, md: 9 },
         pb: 4,
-        borderTop: '4px solid #0284c7'
+        borderTop: '5px solid #F6D469' // Caring Hands golden yellow
       }}
     >
       <Container maxWidth="xl">
         <Grid container spacing={4}>
-          {/* Brand & About Column */}
+          {/* Brand & About Column (Directly matching caringhands.org.in) */}
           <Grid item xs={12} md={4}>
-            <Box sx={{ display: 'flex', alignItems: 'center', gap: 1.5, mb: 2 }}>
+            <Box sx={{ display: 'flex', alignItems: 'center', gap: 1.5, mb: 2.5 }}>
               <Box
                 component="img"
                 src={logoImg}
                 alt="Caring Hands Logo"
                 sx={{
-                  width: 50,
-                  height: 50,
+                  width: 52,
+                  height: 52,
                   borderRadius: '50%',
                   objectFit: 'contain',
-                  border: '2px solid rgba(255,255,255,0.2)',
+                  border: '2px solid #F6D469',
                   bgcolor: '#ffffff',
                   p: 0.3
                 }}
               />
               <Box>
-                <Typography variant="h6" fontWeight={900} color="#38bdf8">
+                <Typography variant="h6" fontWeight={800} color="#F6D469" sx={{ fontFamily: '"Quicksand", sans-serif', letterSpacing: '0.01em' }}>
                   CARING HANDS
                 </Typography>
-                <Typography variant="caption" sx={{ color: '#94a3b8', fontWeight: 700, letterSpacing: '0.04em' }}>
+                <Typography variant="caption" sx={{ color: 'rgba(255,255,255,0.85)', fontWeight: 700, letterSpacing: '0.04em', textTransform: 'uppercase' }}>
                   Child Development Center
                 </Typography>
               </Box>
             </Box>
 
-            <Typography variant="body2" sx={{ color: '#cbd5e1', lineHeight: 1.7, mb: 2 }}>
-              Dedicated to nurturing young potential with evidence-based pediatric therapies. We believe that with the right compassionate guidance, every child can thrive and build a bright tomorrow.
+            <Typography variant="body2" sx={{ color: 'rgba(255, 255, 255, 0.85)', lineHeight: 1.75, mb: 2.5 }}>
+              At <strong>Caring Hands</strong>, we are committed to creating a world where no one is left behind, and every child can access clinical resources and loving guidance to rewrite their destinies.
             </Typography>
 
             <Box sx={{ display: 'flex', gap: 1, flexWrap: 'wrap', mb: 3 }}>
               <Chip
-                label="Small Steps... Big Futures... ☀️"
+                icon={<VolunteerActivismIcon sx={{ color: '#24102F !important', fontSize: 16 }} />}
+                label="Give a helping hand for a child ☀️"
                 size="small"
-                sx={{ bgcolor: 'rgba(56, 189, 248, 0.15)', color: '#38bdf8', fontWeight: 700 }}
+                sx={{ bgcolor: '#F6D469', color: '#24102F', fontWeight: 800 }}
               />
               <Chip
-                label="Every Child Matters ❤️"
+                icon={<FavoriteIcon sx={{ color: '#FF1C74 !important', fontSize: 14 }} />}
+                label="Every Child Matters"
                 size="small"
-                sx={{ bgcolor: 'rgba(244, 63, 94, 0.15)', color: '#fb7185', fontWeight: 700 }}
+                sx={{ bgcolor: 'rgba(255,255,255,0.15)', color: '#ffffff', fontWeight: 700 }}
               />
             </Box>
 
@@ -82,8 +85,14 @@ const Footer = ({ onOpenAppointment }) => {
                 size="small"
                 component={Link}
                 to="/book-appointment"
-                color="secondary"
-                sx={{ fontWeight: 700 }}
+                sx={{
+                  bgcolor: '#F6D469',
+                  color: '#24102F',
+                  fontWeight: 800,
+                  borderRadius: 100,
+                  px: 2.5,
+                  '&:hover': { bgcolor: '#FCB720' }
+                }}
               >
                 Book Assessment
               </Button>
@@ -92,18 +101,18 @@ const Footer = ({ onOpenAppointment }) => {
                 size="small"
                 component={Link}
                 to="/map-routing"
-                startIcon={<DirectionsIcon />}
-                sx={{ color: '#38bdf8', borderColor: '#38bdf8', fontWeight: 700 }}
+                startIcon={<DirectionsIcon sx={{ fontSize: 16 }} />}
+                sx={{ color: '#ffffff', borderColor: 'rgba(255, 255, 255, 0.4)', fontWeight: 700, borderRadius: 100, px: 2, '&:hover': { borderColor: '#ffffff', bgcolor: 'rgba(255,255,255,0.1)' } }}
               >
                 Route Map
               </Button>
             </Box>
           </Grid>
 
-          {/* Core Services Links with Dedicated Routes */}
+          {/* Core Clinical Therapies */}
           <Grid item xs={12} sm={6} md={4}>
-            <Typography variant="subtitle1" fontWeight={800} color="#38bdf8" sx={{ mb: 2 }}>
-              Our 9 Specialized Therapies
+            <Typography variant="subtitle1" fontWeight={800} color="#F6D469" sx={{ mb: 2, fontFamily: '"Quicksand", sans-serif' }}>
+              Specialized Child Therapies
             </Typography>
             <Grid container spacing={1}>
               {SERVICES_DATA.map((srv) => (
@@ -115,12 +124,12 @@ const Footer = ({ onOpenAppointment }) => {
                       display: 'flex',
                       alignItems: 'center',
                       gap: 1,
-                      color: '#cbd5e1',
+                      color: 'rgba(255, 255, 255, 0.85)',
                       textDecoration: 'none',
                       fontSize: '0.86rem',
                       py: 0.5,
-                      transition: 'color 0.2s',
-                      '&:hover': { color: '#38bdf8', pl: 0.5 }
+                      transition: 'all 0.2s',
+                      '&:hover': { color: '#F6D469', pl: 0.5 }
                     }}
                   >
                     <Box
@@ -141,42 +150,42 @@ const Footer = ({ onOpenAppointment }) => {
 
           {/* Centers & Contact Details */}
           <Grid item xs={12} sm={6} md={4}>
-            <Typography variant="subtitle1" fontWeight={800} color="#38bdf8" sx={{ mb: 2 }}>
-              Visit Our Centers
+            <Typography variant="subtitle1" fontWeight={800} color="#F6D469" sx={{ mb: 2, fontFamily: '"Quicksand", sans-serif' }}>
+              Centers & Contact Details
             </Typography>
 
             {/* Primary Center */}
             <Box sx={{ mb: 2.5 }}>
               <Box sx={{ display: 'flex', alignItems: 'flex-start', gap: 1, mb: 0.8 }}>
-                <LocationOnIcon sx={{ color: '#f43f5e', fontSize: 20, mt: 0.3 }} />
+                <LocationOnIcon sx={{ color: '#F6D469', fontSize: 20, mt: 0.3 }} />
                 <Box>
                   <Typography variant="body2" fontWeight={800} color="#ffffff">
                     Greater Noida West Center (Therapy Hub)
                   </Typography>
-                  <Typography variant="caption" sx={{ color: '#94a3b8', display: 'block', lineHeight: 1.5 }}>
+                  <Typography variant="caption" sx={{ color: 'rgba(255,255,255,0.8)', display: 'block', lineHeight: 1.5 }}>
                     G-104, Fusion Homes, Amrapali Dream Valley,<br />
                     Greater Noida West 201318 (Near Gaur City 2)
                   </Typography>
-                  <Typography variant="caption" sx={{ color: '#38bdf8', fontWeight: 700, display: 'block', mt: 0.5 }}>
+                  <Typography variant="caption" sx={{ color: '#F6D469', fontWeight: 700, display: 'block', mt: 0.5 }}>
                     📞 Helpline: +91 8650909777
                   </Typography>
                 </Box>
               </Box>
             </Box>
 
-            {/* Pune Center */}
+            {/* Pune Head Office */}
             <Box sx={{ mb: 2 }}>
               <Box sx={{ display: 'flex', alignItems: 'flex-start', gap: 1 }}>
-                <LocationOnIcon sx={{ color: '#38bdf8', fontSize: 20, mt: 0.3 }} />
+                <LocationOnIcon sx={{ color: '#F6D469', fontSize: 20, mt: 0.3 }} />
                 <Box>
-                  <Typography variant="body2" fontWeight={700} color="#ffffff">
-                    Pune Branch (Trust Center)
+                  <Typography variant="body2" fontWeight={800} color="#ffffff">
+                    Head Office: Caring Hands Trust
                   </Typography>
-                  <Typography variant="caption" sx={{ color: '#94a3b8', display: 'block', lineHeight: 1.5 }}>
-                    Ambi, Near Talegaon MIDC Rd, Dist Pune, Maharashtra 410507
+                  <Typography variant="caption" sx={{ color: 'rgba(255,255,255,0.8)', display: 'block', lineHeight: 1.5 }}>
+                    C/o Kalashram Project, Mangarul Road, Ambi Village (Talegaon Dabhade), Taluka Maval, Dist. Pune 410507
                   </Typography>
-                  <Typography variant="caption" sx={{ color: '#38bdf8', fontWeight: 600, display: 'block', mt: 0.5 }}>
-                    📞 Contact: +91 9011262226
+                  <Typography variant="caption" sx={{ color: '#F6D469', fontWeight: 700, display: 'block', mt: 0.5 }}>
+                    📞 Contact: +91 90112 62226 / +91 86570 36835
                   </Typography>
                 </Box>
               </Box>
@@ -189,8 +198,8 @@ const Footer = ({ onOpenAppointment }) => {
                 size="small"
                 component="a"
                 href={`tel:${CLINIC_INFO.phone}`}
-                startIcon={<PhoneIcon />}
-                sx={{ bgcolor: '#0284c7', fontWeight: 700 }}
+                startIcon={<PhoneIcon sx={{ fontSize: 16 }} />}
+                sx={{ bgcolor: '#01324d', color: '#ffffff', fontWeight: 700, borderRadius: 100, py: 0.9, '&:hover': { bgcolor: '#002236' } }}
               >
                 Call: 8650909777
               </Button>
@@ -202,8 +211,8 @@ const Footer = ({ onOpenAppointment }) => {
                 href={`https://wa.me/91${CLINIC_INFO.phone}?text=Hello%20Caring%20Hands`}
                 target="_blank"
                 rel="noopener noreferrer"
-                startIcon={<WhatsAppIcon />}
-                sx={{ bgcolor: '#22c55e', '&:hover': { bgcolor: '#16a34a' }, fontWeight: 700 }}
+                startIcon={<WhatsAppIcon sx={{ fontSize: 16 }} />}
+                sx={{ bgcolor: '#59C36A', color: '#ffffff', '&:hover': { bgcolor: '#22c55e' }, fontWeight: 700, borderRadius: 100, py: 0.9 }}
               >
                 WhatsApp
               </Button>
@@ -211,7 +220,7 @@ const Footer = ({ onOpenAppointment }) => {
           </Grid>
         </Grid>
 
-        <Divider sx={{ my: 4, borderColor: 'rgba(255,255,255,0.1)' }} />
+        <Divider sx={{ my: 4, borderColor: 'rgba(255,255,255,0.15)' }} />
 
         {/* Bottom bar */}
         <Box
@@ -222,27 +231,27 @@ const Footer = ({ onOpenAppointment }) => {
             alignItems: 'center',
             gap: 2,
             fontSize: '0.82rem',
-            color: '#64748b'
+            color: 'rgba(255,255,255,0.7)'
           }}
         >
-          <Typography variant="caption" sx={{ color: '#94a3b8' }}>
-            © {new Date().getFullYear()} Caring Hands Child Development Center. All rights reserved. Ref: caringhands.org.in
+          <Typography variant="caption" sx={{ color: 'rgba(255,255,255,0.7)' }}>
+            © {new Date().getFullYear()} Caring Hands Child Development Center. Registered Trust • Official Domain: caringhands.org.in
           </Typography>
 
           <Box sx={{ display: 'flex', gap: 2.5 }}>
-            <Box component={Link} to="/" sx={{ color: '#94a3b8', textDecoration: 'none', '&:hover': { color: '#ffffff' } }}>
+            <Box component={Link} to="/" sx={{ color: 'rgba(255,255,255,0.8)', textDecoration: 'none', '&:hover': { color: '#F6D469' } }}>
               Home
             </Box>
-            <Box component={Link} to="/about" sx={{ color: '#94a3b8', textDecoration: 'none', '&:hover': { color: '#ffffff' } }}>
+            <Box component={Link} to="/about" sx={{ color: 'rgba(255,255,255,0.8)', textDecoration: 'none', '&:hover': { color: '#F6D469' } }}>
               About Us
             </Box>
-            <Box component={Link} to="/services" sx={{ color: '#94a3b8', textDecoration: 'none', '&:hover': { color: '#ffffff' } }}>
-              Services
+            <Box component={Link} to="/services" sx={{ color: 'rgba(255,255,255,0.8)', textDecoration: 'none', '&:hover': { color: '#F6D469' } }}>
+              Therapies
             </Box>
-            <Box component={Link} to="/map-routing" sx={{ color: '#94a3b8', textDecoration: 'none', '&:hover': { color: '#ffffff' } }}>
+            <Box component={Link} to="/map-routing" sx={{ color: 'rgba(255,255,255,0.8)', textDecoration: 'none', '&:hover': { color: '#F6D469' } }}>
               Map Routing
             </Box>
-            <Box component={Link} to="/contact" sx={{ color: '#94a3b8', textDecoration: 'none', '&:hover': { color: '#ffffff' } }}>
+            <Box component={Link} to="/contact" sx={{ color: 'rgba(255,255,255,0.8)', textDecoration: 'none', '&:hover': { color: '#F6D469' } }}>
               Contact Us
             </Box>
           </Box>

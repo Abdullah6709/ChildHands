@@ -33,29 +33,29 @@ const clinicIcon = new L.DivIcon({
   className: 'custom-clinic-marker',
   html: `
     <div style="
-      background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%);
-      width: 44px;
-      height: 44px;
+      background: linear-gradient(135deg, #02476c 0%, #012d45 100%);
+      width: 46px;
+      height: 46px;
       border-radius: 50% 50% 50% 0;
       transform: rotate(-45deg);
-      border: 3px solid #ffffff;
-      box-shadow: 0 4px 15px rgba(2, 132, 199, 0.5);
+      border: 3px solid #F6D469;
+      box-shadow: 0 4px 15px rgba(2, 71, 108, 0.5);
       display: flex;
       align-items: center;
       justify-content: center;
     ">
       <div style="
         transform: rotate(45deg);
-        color: white;
+        color: #F6D469;
         font-weight: 800;
         font-size: 18px;
         line-height: 1;
-      ">❤️</div>
+      ">☀️</div>
     </div>
   `,
-  iconSize: [44, 44],
-  iconAnchor: [22, 44],
-  popupAnchor: [0, -40]
+  iconSize: [46, 46],
+  iconAnchor: [23, 46],
+  popupAnchor: [0, -42]
 });
 
 // Custom Pin for Origin
@@ -196,21 +196,36 @@ const MapRouting = () => {
         sx={{
           p: { xs: 2.5, md: 3.5 },
           mb: 3,
-          background: 'linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%)',
-          border: '1px solid #bae6fd',
-          borderRadius: 4
+          bgcolor: '#ffffff',
+          border: '1px solid #e2e8f0',
+          borderRadius: 4,
+          boxShadow: '0 4px 20px rgba(0,0,0,0.03)'
         }}
       >
         <Grid container spacing={3} alignItems="center">
           <Grid item xs={12} md={7}>
             <Box sx={{ display: 'flex', alignItems: 'center', gap: 1.5, mb: 1 }}>
-              <NavigationIcon sx={{ color: '#0284c7', fontSize: 28 }} />
-              <Typography variant="h5" fontWeight={800} color="#0f172a">
-                Live Map Route Planner to Caring Hands
+              <Box
+                sx={{
+                  width: 40,
+                  height: 40,
+                  borderRadius: 2.5,
+                  bgcolor: '#FFFAEA',
+                  color: '#02476c',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  border: '1px solid #F6D469'
+                }}
+              >
+                <NavigationIcon sx={{ fontSize: 22 }} />
+              </Box>
+              <Typography variant="h5" fontWeight={800} color="#24102F" sx={{ fontFamily: '"Quicksand", sans-serif' }}>
+                Live Route Planner & Directions
               </Typography>
             </Box>
-            <Typography variant="body2" color="#475569" sx={{ mb: 2 }}>
-              Plan your travel route to <strong>G-104, Fusion Homes, Greater Noida West</strong>. Select your origin or use live GPS to see driving distance, travel duration, and open turn-by-turn navigation in Google Maps.
+            <Typography variant="body2" color="#757277" sx={{ mb: 2.5, lineHeight: 1.6 }}>
+              Directions to <strong>G-104 Fusion Homes, Greater Noida West</strong>. Select your starting hub or click below to calculate live distance and turn-by-turn guidance in Google Maps.
             </Typography>
 
             {/* Presets and GPS Button */}
@@ -218,13 +233,12 @@ const MapRouting = () => {
               <TextField
                 select
                 size="small"
-                label="Choose Starting Point / Area"
+                label="Choose Starting Area"
                 value={selectedPreset}
                 onChange={handlePresetChange}
                 sx={{
                   minWidth: { xs: '100%', sm: 260 },
-                  bgcolor: '#ffffff',
-                  borderRadius: 2
+                  bgcolor: '#ffffff'
                 }}
               >
                 {selectedPreset === 'gps' && (
@@ -244,18 +258,19 @@ const MapRouting = () => {
                 startIcon={<MyLocationIcon />}
                 sx={{
                   bgcolor: '#ffffff',
-                  borderColor: '#0284c7',
-                  color: '#0284c7',
-                  fontWeight: 600,
-                  '&:hover': { bgcolor: '#f0f9ff' }
+                  borderColor: '#02476c',
+                  color: '#02476c',
+                  fontWeight: 700,
+                  borderRadius: 50,
+                  '&:hover': { bgcolor: '#FFFAEA', borderColor: '#02476c' }
                 }}
               >
-                {geoLoading ? 'Detecting GPS...' : 'Use My GPS'}
+                {geoLoading ? 'Detecting...' : 'Use My GPS'}
               </Button>
             </Box>
 
             {geoError && (
-              <Alert severity="warning" sx={{ mt: 1.5, py: 0.5 }}>
+              <Alert severity="warning" sx={{ mt: 1.5, py: 0.5, borderRadius: 2 }}>
                 {geoError}
               </Alert>
             )}
@@ -267,42 +282,35 @@ const MapRouting = () => {
               elevation={0}
               sx={{
                 p: 2.5,
-                bgcolor: '#ffffff',
-                borderRadius: 3,
-                border: '1px solid #cbd5e1',
-                boxShadow: '0 8px 24px rgba(2, 132, 199, 0.08)'
+                bgcolor: '#FDFBF7',
+                borderRadius: 3.5,
+                border: '1px solid #EFECE7'
               }}
             >
-              <Typography variant="caption" sx={{ color: '#64748b', fontWeight: 700, textTransform: 'uppercase' }}>
-                ROUTE FROM: {routeInfo.originName}
+              <Typography variant="caption" sx={{ color: '#757277', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.04em' }}>
+                FROM: {routeInfo.originName}
               </Typography>
               <Box sx={{ display: 'flex', alignItems: 'baseline', gap: 1, my: 1 }}>
-                <Typography variant="h4" fontWeight={900} color="#0284c7">
+                <Typography variant="h4" fontWeight={900} color="#02476c" sx={{ fontFamily: '"Quicksand", sans-serif' }}>
                   {routeInfo.distance}
                 </Typography>
-                <Typography variant="body2" color="#64748b" fontWeight={600}>
+                <Typography variant="body2" color="#757277" fontWeight={600}>
                   driving distance
                 </Typography>
               </Box>
 
-              <Box sx={{ display: 'flex', gap: 2, flexWrap: 'wrap', mb: 2 }}>
+              <Box sx={{ display: 'flex', gap: 1, flexWrap: 'wrap', mb: 2 }}>
                 <Chip
-                  icon={<DirectionsCarIcon />}
+                  icon={<DirectionsCarIcon sx={{ fontSize: 16 }} />}
                   label={`Car: ~${routeInfo.timeCar}`}
                   size="small"
-                  sx={{ bgcolor: '#e0f2fe', color: '#0369a1', fontWeight: 700 }}
+                  sx={{ bgcolor: '#ffffff', color: '#02476c', fontWeight: 600, border: '1px solid #EFECE7', borderRadius: 50 }}
                 />
                 <Chip
-                  icon={<TwoWheelerIcon />}
+                  icon={<TwoWheelerIcon sx={{ fontSize: 16 }} />}
                   label={`Bike: ~${routeInfo.timeBike}`}
                   size="small"
-                  sx={{ bgcolor: '#dcfce7', color: '#15803d', fontWeight: 700 }}
-                />
-                <Chip
-                  icon={<DirectionsTransitIcon />}
-                  label="Cab / Auto accessible"
-                  size="small"
-                  sx={{ bgcolor: '#fef3c7', color: '#b45309', fontWeight: 700 }}
+                  sx={{ bgcolor: '#ffffff', color: '#59C36A', fontWeight: 600, border: '1px solid #EFECE7', borderRadius: 50 }}
                 />
               </Box>
 
@@ -315,12 +323,15 @@ const MapRouting = () => {
                 rel="noopener noreferrer"
                 startIcon={<OpenInNewIcon />}
                 sx={{
-                  background: 'linear-gradient(135deg, #0284c7 0%, #0369a1 100%)',
-                  fontWeight: 700,
-                  py: 1.1
+                  bgcolor: '#02476c',
+                  color: '#ffffff',
+                  fontWeight: 800,
+                  py: 1.1,
+                  borderRadius: 50,
+                  '&:hover': { bgcolor: '#012d45' }
                 }}
               >
-                Open Turn-by-Turn in Google Maps
+                Open Google Maps Navigation
               </Button>
             </Paper>
           </Grid>
@@ -357,16 +368,16 @@ const MapRouting = () => {
               <Marker position={destCoords} icon={clinicIcon}>
                 <Popup>
                   <Box sx={{ p: 0.5, maxWidth: 220 }}>
-                    <Typography variant="subtitle2" fontWeight={800} color="#0284c7">
+                    <Typography variant="subtitle2" fontWeight={800} color="#02476c">
                       CARING HANDS
                     </Typography>
-                    <Typography variant="caption" sx={{ display: 'block', color: '#f43f5e', fontWeight: 700 }}>
+                    <Typography variant="caption" sx={{ display: 'block', color: '#E76100', fontWeight: 700 }}>
                       Child Development Center
                     </Typography>
-                    <Typography variant="body2" sx={{ fontSize: '0.8rem', my: 0.5, color: '#334155' }}>
+                    <Typography variant="body2" sx={{ fontSize: '0.8rem', my: 0.5, color: '#24102F' }}>
                       {destination.full}
                     </Typography>
-                    <Typography variant="caption" sx={{ display: 'block', color: '#16a34a', fontWeight: 700, mb: 1 }}>
+                    <Typography variant="caption" sx={{ display: 'block', color: '#59C36A', fontWeight: 700, mb: 1 }}>
                       📞 Mob: {destination.phone || CLINIC_INFO.phone}
                     </Typography>
                     <Button
@@ -375,7 +386,7 @@ const MapRouting = () => {
                       fullWidth
                       component="a"
                       href={`tel:${CLINIC_INFO.phone}`}
-                      sx={{ fontSize: '0.75rem', py: 0.3 }}
+                      sx={{ fontSize: '0.75rem', py: 0.5, bgcolor: '#02476c', borderRadius: 50 }}
                     >
                       Call Center
                     </Button>
@@ -387,7 +398,7 @@ const MapRouting = () => {
               <Marker position={originCoords} icon={originIcon}>
                 <Popup>
                   <Box sx={{ p: 0.5 }}>
-                    <Typography variant="subtitle2" fontWeight={700} color="#10b981">
+                    <Typography variant="subtitle2" fontWeight={700} color="#59C36A">
                       Starting Location
                     </Typography>
                     <Typography variant="body2" sx={{ fontSize: '0.8rem' }}>
@@ -400,7 +411,7 @@ const MapRouting = () => {
               {/* Polyline Route */}
               <Polyline
                 positions={[originCoords, destCoords]}
-                color="#0284c7"
+                color="#02476c"
                 weight={5}
                 dashArray="8, 8"
                 opacity={0.85}
@@ -411,19 +422,19 @@ const MapRouting = () => {
 
         {/* Location Info & Travel Guidelines */}
         <Grid item xs={12} lg={4}>
-          <Card sx={{ p: 3, height: '100%', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+          <Card sx={{ p: 3, height: '100%', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', border: '1px solid #EFECE7', borderRadius: 4 }}>
             <Box>
               <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, mb: 1.5 }}>
-                <LocationOnIcon sx={{ color: '#f43f5e', fontSize: 26 }} />
-                <Typography variant="h6" fontWeight={800} color="#0f172a">
+                <LocationOnIcon sx={{ color: '#E76100', fontSize: 26 }} />
+                <Typography variant="h6" fontWeight={800} color="#24102F" sx={{ fontFamily: '"Quicksand", sans-serif' }}>
                   Center Address Details
                 </Typography>
               </Box>
 
-              <Typography variant="subtitle1" fontWeight={700} color="#0284c7">
+              <Typography variant="subtitle1" fontWeight={700} color="#02476c">
                 Caring Hands Child Development Center
               </Typography>
-              <Typography variant="body2" color="#334155" sx={{ mt: 0.5, lineHeight: 1.6 }}>
+              <Typography variant="body2" color="#24102F" sx={{ mt: 0.5, lineHeight: 1.6 }}>
                 <strong>G-104, Fusion Homes</strong>,<br />
                 Amrapali Dream Valley,<br />
                 Greater Noida West (Noida Extension) – 201318
@@ -431,10 +442,10 @@ const MapRouting = () => {
 
               <Divider sx={{ my: 2 }} />
 
-              <Typography variant="subtitle2" fontWeight={700} color="#0f172a" sx={{ mb: 1 }}>
+              <Typography variant="subtitle2" fontWeight={700} color="#24102F" sx={{ mb: 1 }}>
                 🚗 Landmark & Access Points:
               </Typography>
-              <Box component="ul" sx={{ pl: 2.5, m: 0, fontSize: '0.85rem', color: '#475569', lineHeight: 1.7 }}>
+              <Box component="ul" sx={{ pl: 2.5, m: 0, fontSize: '0.85rem', color: '#757277', lineHeight: 1.7 }}>
                 <li>Near <strong>Char Murti Chowk</strong> & Gaur City 2</li>
                 <li>Opposite Fusion Homes Main Gate 1</li>
                 <li>Closest Metro: <strong>Noida Sector 52 & Sector 76</strong> (Quick E-rickshaw / Auto available)</li>
@@ -444,18 +455,18 @@ const MapRouting = () => {
               <Divider sx={{ my: 2 }} />
 
               <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, mb: 1 }}>
-                <AccessTimeIcon sx={{ color: '#0284c7', fontSize: 20 }} />
-                <Typography variant="subtitle2" fontWeight={700}>
+                <AccessTimeIcon sx={{ color: '#02476c', fontSize: 20 }} />
+                <Typography variant="subtitle2" fontWeight={700} color="#24102F">
                   Therapy Timings:
                 </Typography>
               </Box>
-              <Typography variant="body2" color="#475569">
+              <Typography variant="body2" color="#757277">
                 {destination.hours}
               </Typography>
             </Box>
 
-            <Box sx={{ mt: 3, pt: 2, borderTop: '1px solid #f1f5f9' }}>
-              <Typography variant="caption" sx={{ color: '#64748b', display: 'block', mb: 1, fontWeight: 600 }}>
+            <Box sx={{ mt: 3, pt: 2, borderTop: '1px solid #EFECE7' }}>
+              <Typography variant="caption" sx={{ color: '#757277', display: 'block', mb: 1, fontWeight: 600 }}>
                 Direct Assistance On Your Way:
               </Typography>
               <Box sx={{ display: 'flex', gap: 1.5 }}>
@@ -465,7 +476,7 @@ const MapRouting = () => {
                   component="a"
                   href={`tel:${CLINIC_INFO.phone}`}
                   startIcon={<PhoneIcon />}
-                  sx={{ borderColor: '#0284c7', color: '#0284c7', fontWeight: 700 }}
+                  sx={{ borderColor: '#02476c', color: '#02476c', fontWeight: 700, borderRadius: 50 }}
                 >
                   Call Reception
                 </Button>
@@ -477,7 +488,7 @@ const MapRouting = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   startIcon={<WhatsAppIcon />}
-                  sx={{ bgcolor: '#22c55e', '&:hover': { bgcolor: '#16a34a' }, fontWeight: 700 }}
+                  sx={{ bgcolor: '#59C36A', '&:hover': { bgcolor: '#46a354' }, fontWeight: 700, borderRadius: 50 }}
                 >
                   WhatsApp
                 </Button>

@@ -12,23 +12,28 @@ import {
   ListItem,
   ListItemButton,
   ListItemText,
+  ListItemIcon,
   Menu,
   MenuItem,
   Container,
   Chip,
+  Divider,
   useTheme,
   useMediaQuery
 } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
 import PhoneIcon from '@mui/icons-material/Phone';
-import EmailIcon from '@mui/icons-material/Email';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
 import DirectionsIcon from '@mui/icons-material/Directions';
-import FavoriteIcon from '@mui/icons-material/Favorite';
+import HomeIcon from '@mui/icons-material/Home';
+import InfoIcon from '@mui/icons-material/Info';
+import MedicalServicesIcon from '@mui/icons-material/MedicalServices';
+import ContactSupportIcon from '@mui/icons-material/ContactSupport';
+import AccessTimeIcon from '@mui/icons-material/AccessTime';
 import { CLINIC_INFO, SERVICES_DATA } from '../data/clinicData';
 import logoImg from '../assets/logo.jpeg';
 
@@ -58,22 +63,22 @@ const Navbar = ({ onOpenAppointment }) => {
   };
 
   const navLinks = [
-    { name: 'Home', path: '/' },
-    { name: 'About Us', path: '/about' },
-    { name: 'Services', path: '/services', hasDropdown: true },
-    { name: 'Map & Route', path: '/map-routing', icon: <DirectionsIcon fontSize="small" sx={{ mr: 0.5 }} /> },
-    { name: 'Contact Us', path: '/contact' },
+    { name: 'Home', path: '/', icon: <HomeIcon fontSize="small" /> },
+    { name: 'About Us', path: '/about', icon: <InfoIcon fontSize="small" /> },
+    { name: 'Child Therapies', path: '/services', hasDropdown: true, icon: <MedicalServicesIcon fontSize="small" /> },
+    { name: 'Route & Map', path: '/map-routing', icon: <DirectionsIcon fontSize="small" /> },
+    { name: 'Contact Us', path: '/contact', icon: <ContactSupportIcon fontSize="small" /> },
   ];
 
   return (
     <>
-      {/* Top Notification Bar */}
+      {/* Top Notification Bar - Aligned with Caring Hands (caringhands.org.in) */}
       <Box
         sx={{
-          bgcolor: '#0f172a',
-          color: '#e2e8f0',
+          bgcolor: '#02476c', // Caring Hands deep blue
+          color: '#ffffff',
           py: 0.8,
-          fontSize: '0.85rem',
+          fontSize: '0.82rem',
           borderBottom: '1px solid rgba(255,255,255,0.1)'
         }}
       >
@@ -81,92 +86,96 @@ const Navbar = ({ onOpenAppointment }) => {
           <Box
             sx={{
               display: 'flex',
-              flexDirection: { xs: 'column', sm: 'row' },
               justifyContent: 'space-between',
               alignItems: 'center',
+              flexWrap: 'wrap',
               gap: 1
             }}
           >
-            {/* Left Info: Contact & Address */}
-            <Box sx={{ display: 'flex', alignItems: 'center', gap: { xs: 1.5, md: 3 }, flexWrap: 'wrap' }}>
+            {/* Left: Quick phone and location */}
+            <Box sx={{ display: 'flex', alignItems: 'center', gap: { xs: 2, md: 3 }, flexWrap: 'wrap' }}>
               <Box
                 component="a"
                 href={`tel:${CLINIC_INFO.phone}`}
                 sx={{
-                  display: 'flex',
+                  display: 'inline-flex',
                   alignItems: 'center',
-                  color: '#38bdf8',
+                  color: '#F6D469', // Caring Hands golden yellow
                   textDecoration: 'none',
-                  fontWeight: 600,
-                  '&:hover': { textDecoration: 'underline' }
-                }}
-              >
-                <PhoneIcon sx={{ fontSize: 16, mr: 0.5, color: '#38bdf8' }} />
-                Mob: {CLINIC_INFO.displayPhone}
-              </Box>
-
-              <Box
-                component={Link}
-                to="/map-routing"
-                sx={{
-                  display: { xs: 'none', md: 'flex' },
-                  alignItems: 'center',
-                  color: '#cbd5e1',
-                  textDecoration: 'none',
+                  fontWeight: 700,
+                  transition: 'color 0.2s',
                   '&:hover': { color: '#ffffff' }
                 }}
               >
-                <LocationOnIcon sx={{ fontSize: 16, mr: 0.5, color: '#f43f5e' }} />
-                G-104, Fusion Homes, Greater Noida West
+                <PhoneIcon sx={{ fontSize: 15, mr: 0.6 }} />
+                <span>Helpline: <strong>{CLINIC_INFO.displayPhone}</strong></span>
               </Box>
 
               <Box
                 component="a"
                 href="mailto:info@caringhands.org.in"
                 sx={{
-                  display: { xs: 'none', lg: 'flex' },
+                  display: { xs: 'none', md: 'inline-flex' },
                   alignItems: 'center',
-                  color: '#cbd5e1',
+                  color: 'rgba(255, 255, 255, 0.9)',
                   textDecoration: 'none',
+                  '&:hover': { color: '#F6D469' }
+                }}
+              >
+                <span>info@caringhands.org.in</span>
+              </Box>
+
+              <Box
+                component={Link}
+                to="/map-routing"
+                sx={{
+                  display: { xs: 'none', lg: 'inline-flex' },
+                  alignItems: 'center',
+                  color: 'rgba(255, 255, 255, 0.85)',
+                  textDecoration: 'none',
+                  transition: 'color 0.2s',
                   '&:hover': { color: '#ffffff' }
                 }}
               >
-                <EmailIcon sx={{ fontSize: 16, mr: 0.5 }} />
-                info@caringhands.org.in
+                <LocationOnIcon sx={{ fontSize: 15, mr: 0.5, color: '#F6D469' }} />
+                <span>G-104 Fusion Homes, Greater Noida West & Talegaon, Pune</span>
               </Box>
             </Box>
 
-            {/* Right Badges & WhatsApp */}
+            {/* Right: Emotional motto & WhatsApp */}
             <Box sx={{ display: 'flex', alignItems: 'center', gap: 1.5 }}>
-              <Chip
-                label="Every Child Matters ❤️"
-                size="small"
+              <Typography
+                variant="caption"
                 sx={{
-                  bgcolor: 'rgba(244, 63, 94, 0.2)',
-                  color: '#fb7185',
+                  color: '#F6D469',
                   fontWeight: 700,
-                  fontSize: '0.75rem',
-                  display: { xs: 'none', sm: 'flex' }
+                  display: { xs: 'none', sm: 'block' },
+                  fontSize: '0.8rem',
+                  letterSpacing: '0.02em'
                 }}
-              />
+              >
+                "Give a helping hand for a child" ☀️
+              </Typography>
               <Button
                 component="a"
                 href={`https://wa.me/91${CLINIC_INFO.phone}?text=Hello%20Caring%20Hands,%20I%20would%20like%20to%20inquire%20about%20child%20therapy%20services.`}
                 target="_blank"
                 rel="noopener noreferrer"
                 size="small"
-                startIcon={<WhatsAppIcon sx={{ fontSize: '1.1rem !important' }} />}
+                startIcon={<WhatsAppIcon sx={{ fontSize: '1rem !important' }} />}
                 sx={{
-                  bgcolor: '#22c55e',
+                  bgcolor: '#59C36A',
                   color: '#ffffff',
                   fontSize: '0.75rem',
-                  py: 0.3,
+                  fontWeight: 700,
+                  py: 0.35,
                   px: 1.5,
-                  borderRadius: 20,
-                  '&:hover': { bgcolor: '#16a34a' }
+                  borderRadius: 50,
+                  boxShadow: 'none',
+                  '&:hover': { bgcolor: '#22c55e', transform: 'none' }
                 }}
               >
-                WhatsApp Us
+                WhatsApp
               </Button>
             </Box>
           </Box>
@@ -178,10 +187,11 @@ const Navbar = ({ onOpenAppointment }) => {
         position="sticky"
         elevation={0}
         sx={{
-          bgcolor: 'rgba(255, 255, 255, 0.95)',
-          backdropFilter: 'blur(12px)',
-          borderBottom: '1px solid #e2e8f0',
-          color: '#0f172a'
+          bgcolor: 'rgba(255, 255, 255, 0.96)',
+          backdropFilter: 'blur(16px)',
+          borderBottom: '1px solid #EFECE7',
+          color: '#24102F',
+          transition: 'all 0.3s ease'
         }}
       >
         <Container maxWidth="xl">
@@ -197,7 +207,7 @@ const Navbar = ({ onOpenAppointment }) => {
                 textDecoration: 'none',
                 color: 'inherit',
                 flexGrow: { xs: 1, md: 0 },
-                mr: { md: 4 }
+                mr: { md: 5 }
               }}
             >
               <Box
@@ -205,14 +215,14 @@ const Navbar = ({ onOpenAppointment }) => {
                 src={logoImg}
                 alt="Caring Hands Logo"
                 sx={{
-                  width: 52,
-                  height: 52,
+                  width: { xs: 44, sm: 50 },
+                  height: { xs: 44, sm: 50 },
                   borderRadius: '50%',
                   objectFit: 'contain',
-                  boxShadow: '0 4px 14px rgba(2, 132, 199, 0.25)',
-                  border: '2px solid #e0f2fe',
+                  border: '2px solid #F6D469',
                   bgcolor: '#ffffff',
-                  p: 0.3
+                  p: 0.3,
+                  boxShadow: '0 4px 14px rgba(2, 71, 108, 0.12)'
                 }}
               />
 
@@ -220,11 +230,12 @@ const Navbar = ({ onOpenAppointment }) => {
                 <Typography
                   variant="h6"
                   sx={{
-                    fontWeight: 900,
+                    fontFamily: '"Quicksand", sans-serif',
+                    fontWeight: 800,
                     lineHeight: 1.1,
-                    fontSize: { xs: '1.05rem', sm: '1.25rem' },
-                    color: '#0284c7',
-                    letterSpacing: '-0.02em'
+                    fontSize: { xs: '1.1rem', sm: '1.28rem' },
+                    color: '#02476c',
+                    letterSpacing: '-0.01em'
                   }}
                 >
                   CARING HANDS
@@ -234,8 +245,8 @@ const Navbar = ({ onOpenAppointment }) => {
                   sx={{
                     display: 'block',
                     fontWeight: 700,
-                    color: '#64748b',
-                    fontSize: { xs: '0.68rem', sm: '0.75rem' },
+                    color: '#854d0e',
+                    fontSize: { xs: '0.66rem', sm: '0.73rem' },
                     letterSpacing: '0.04em',
                     textTransform: 'uppercase'
                   }}
@@ -246,7 +257,7 @@ const Navbar = ({ onOpenAppointment }) => {
             </Box>
 
             {/* Desktop Navigation Links */}
-            <Box sx={{ display: { xs: 'none', md: 'flex' }, alignItems: 'center', gap: 1, flexGrow: 1 }}>
+            <Box sx={{ display: { xs: 'none', md: 'flex' }, alignItems: 'center', gap: 0.5, flexGrow: 1 }}>
               {navLinks.map((link) => {
                 const isActive = location.pathname === link.path || (link.path === '/services' && location.pathname.startsWith('/services'));
                 if (link.hasDropdown) {
@@ -254,14 +265,16 @@ const Navbar = ({ onOpenAppointment }) => {
                     <Box key={link.name}>
                       <Button
                         onClick={handleServicesClick}
-                        endIcon={<KeyboardArrowDownIcon />}
+                        endIcon={<KeyboardArrowDownIcon sx={{ fontSize: 18 }} />}
                         sx={{
-                          color: isActive ? '#0284c7' : '#334155',
-                          fontWeight: isActive ? 700 : 600,
-                          fontSize: '0.95rem',
-                          px: 2,
-                          bgcolor: isActive ? 'rgba(2, 132, 199, 0.08)' : 'transparent',
-                          '&:hover': { bgcolor: 'rgba(2, 132, 199, 0.08)', color: '#0284c7' }
+                          color: isActive ? '#02476c' : '#24102F',
+                          fontWeight: isActive ? 800 : 600,
+                          fontSize: '0.92rem',
+                          px: 1.8,
+                          py: 0.8,
+                          borderRadius: 50,
+                          bgcolor: isActive ? 'rgba(2, 71, 108, 0.08)' : 'transparent',
+                          '&:hover': { bgcolor: 'rgba(2, 71, 108, 0.06)', color: '#02476c' }
                         }}
                       >
                         {link.name}
@@ -271,12 +284,13 @@ const Navbar = ({ onOpenAppointment }) => {
                         open={Boolean(servicesAnchor)}
                         onClose={handleServicesClose}
                         sx={{
-                          mt: 1,
+                          mt: 1.2,
                           '& .MuiPaper-root': {
-                            borderRadius: 3,
-                            boxShadow: '0 12px 30px rgba(0,0,0,0.12)',
+                            borderRadius: 3.5,
+                            boxShadow: '0 16px 36px rgba(36, 16, 47, 0.12)',
                             p: 1,
-                            minWidth: 280
+                            minWidth: 300,
+                            border: '1px solid #EFECE7'
                           }
                         }}
                       >
@@ -285,15 +299,18 @@ const Navbar = ({ onOpenAppointment }) => {
                           to="/services"
                           onClick={handleServicesClose}
                           sx={{
-                            fontWeight: 700,
-                            color: '#0284c7',
-                            borderBottom: '1px solid #f1f5f9',
-                            pb: 1,
-                            mb: 0.5
+                            fontWeight: 800,
+                            color: '#02476c',
+                            borderRadius: 2,
+                            py: 1,
+                            mb: 0.5,
+                            bgcolor: 'rgba(2, 71, 108, 0.05)',
+                            '&:hover': { bgcolor: 'rgba(2, 71, 108, 0.1)' }
                           }}
                         >
-                          View All 9 Services Overview
+                          Explore All 9 Therapies Overview
                         </MenuItem>
+                        <Divider sx={{ my: 0.5 }} />
                         {SERVICES_DATA.map((srv) => (
                           <MenuItem
                             key={srv.id}
@@ -301,10 +318,11 @@ const Navbar = ({ onOpenAppointment }) => {
                             to={`/services/${srv.id}`}
                             onClick={handleServicesClose}
                             sx={{
-                              fontSize: '0.9rem',
-                              borderRadius: 1.5,
-                              py: 0.8,
-                              '&:hover': { bgcolor: srv.bgLight, color: srv.color }
+                              fontSize: '0.88rem',
+                              borderRadius: 2,
+                              py: 0.75,
+                              color: '#24102F',
+                              '&:hover': { bgcolor: srv.bgLight, color: srv.color, fontWeight: 700 }
                             }}
                           >
                             <Box
@@ -329,14 +347,15 @@ const Navbar = ({ onOpenAppointment }) => {
                     key={link.name}
                     component={Link}
                     to={link.path}
-                    startIcon={link.icon}
                     sx={{
-                      color: isActive ? '#0284c7' : '#334155',
-                      fontWeight: isActive ? 700 : 600,
-                      fontSize: '0.95rem',
-                      px: 2,
-                      bgcolor: isActive ? 'rgba(2, 132, 199, 0.08)' : 'transparent',
-                      '&:hover': { bgcolor: 'rgba(2, 132, 199, 0.08)', color: '#0284c7' }
+                      color: isActive ? '#02476c' : '#24102F',
+                      fontWeight: isActive ? 800 : 600,
+                      fontSize: '0.92rem',
+                      px: 1.8,
+                      py: 0.8,
+                      borderRadius: 50,
+                      bgcolor: isActive ? 'rgba(2, 71, 108, 0.08)' : 'transparent',
+                      '&:hover': { bgcolor: 'rgba(2, 71, 108, 0.06)', color: '#0284c7' }
                     }}
                   >
                     {link.name}
@@ -345,21 +364,26 @@ const Navbar = ({ onOpenAppointment }) => {
               })}
             </Box>
 
-            {/* Desktop Action Buttons */}
+            {/* Desktop Action Buttons with Caring Hands Yellow CTA */}
             <Box sx={{ display: { xs: 'none', md: 'flex' }, alignItems: 'center', gap: 1.5 }}>
               <Button
                 variant="outlined"
                 component="a"
                 href={`tel:${CLINIC_INFO.phone}`}
-                startIcon={<PhoneIcon />}
+                startIcon={<PhoneIcon sx={{ fontSize: 17 }} />}
+                size="medium"
                 sx={{
-                  borderColor: '#0284c7',
-                  color: '#0284c7',
+                  borderColor: '#02476c',
+                  color: '#02476c',
                   fontWeight: 700,
-                  '&:hover': { borderColor: '#0369a1', bgcolor: 'rgba(2, 132, 199, 0.05)' }
+                  fontSize: '0.88rem',
+                  py: 0.8,
+                  px: 2,
+                  borderRadius: 50,
+                  '&:hover': { borderColor: '#01324d', bgcolor: 'rgba(2, 71, 108, 0.05)' }
                 }}
               >
-                Call Clinic
+                Call: {CLINIC_INFO.phone}
               </Button>
 
               <Button
@@ -367,12 +391,18 @@ const Navbar = ({ onOpenAppointment }) => {
                 color="secondary"
                 component={Link}
                 to="/book-appointment"
-                startIcon={<CalendarMonthIcon />}
-                className="pulse-button"
+                startIcon={<CalendarMonthIcon sx={{ fontSize: 18 }} />}
+                size="medium"
                 sx={{
-                  fontWeight: 700,
-                  px: 3,
-                  py: 1.2
+                  bgcolor: '#F6D469',
+                  color: '#24102F',
+                  fontWeight: 800,
+                  fontSize: '0.9rem',
+                  px: 2.8,
+                  py: 1,
+                  borderRadius: 50,
+                  boxShadow: '0 4px 14px rgba(246, 212, 105, 0.4)',
+                  '&:hover': { bgcolor: '#FCB720' }
                 }}
               >
                 Book Assessment
@@ -385,9 +415,9 @@ const Navbar = ({ onOpenAppointment }) => {
               aria-label="open drawer"
               edge="end"
               onClick={handleDrawerToggle}
-              sx={{ display: { md: 'none' }, color: '#0284c7' }}
+              sx={{ display: { md: 'none' }, color: '#02476c' }}
             >
-              <MenuIcon fontSize="large" />
+              <MenuIcon fontSize="medium" />
             </IconButton>
           </Toolbar>
         </Container>
@@ -401,11 +431,11 @@ const Navbar = ({ onOpenAppointment }) => {
         ModalProps={{ keepMounted: true }}
         sx={{
           display: { xs: 'block', md: 'none' },
-          '& .MuiDrawer-paper': { boxSizing: 'border-box', width: 300, p: 2 }
+          '& .MuiDrawer-paper': { boxSizing: 'border-box', width: 310, p: 2.5, bgcolor: '#ffffff' }
         }}
       >
         <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mb: 2 }}>
-          <Box sx={{ display: 'flex', alignItems: 'center', gap: 1.5 }}>
+          <Box sx={{ display: 'flex', alignItems: 'center', gap: 1.2 }}>
             <Box
               component="img"
               src={logoImg}
@@ -415,57 +445,59 @@ const Navbar = ({ onOpenAppointment }) => {
                 height: 38,
                 borderRadius: '50%',
                 objectFit: 'contain',
-                border: '1px solid #e0f2fe'
+                border: '1.5px solid #e0f2fe'
               }}
             />
-            <Typography variant="subtitle1" fontWeight={800} color="#0284c7">
-              CARING HANDS
-            </Typography>
+            <Box>
+              <Typography variant="subtitle1" fontWeight={800} color="#0284c7" lineHeight={1.1}>
+                CARING HANDS
+              </Typography>
+              <Typography variant="caption" color="#64748b" fontWeight={600}>
+                Child Development
+              </Typography>
+            </Box>
           </Box>
-          <IconButton onClick={handleDrawerToggle}>
+          <IconButton onClick={handleDrawerToggle} size="small">
             <CloseIcon />
           </IconButton>
         </Box>
 
-        <Typography variant="caption" sx={{ color: '#64748b', display: 'block', mb: 2, fontWeight: 600 }}>
-          "Small Steps... Big Futures... ☀️"
+        <Divider sx={{ my: 1.5 }} />
+
+        <Typography variant="caption" sx={{ color: '#0284c7', display: 'block', mb: 2, fontWeight: 700 }}>
+          "Small Steps... Big Futures... ❤️"
         </Typography>
 
         <List sx={{ mb: 2 }}>
-          {navLinks.map((link) => (
-            <ListItem key={link.name} disablePadding sx={{ mb: 0.5 }}>
-              <ListItemButton
-                component={Link}
-                to={link.path}
-                onClick={handleDrawerToggle}
-                sx={{
-                  borderRadius: 2,
-                  bgcolor: location.pathname === link.path ? 'rgba(2, 132, 199, 0.1)' : 'transparent',
-                  color: location.pathname === link.path ? '#0284c7' : '#334155'
-                }}
-              >
-                <ListItemText primary={link.name} primaryTypographyProps={{ fontWeight: 600 }} />
-              </ListItemButton>
-            </ListItem>
-          ))}
-          <ListItem disablePadding sx={{ mb: 0.5 }}>
-            <ListItemButton
-              component={Link}
-              to="/book-appointment"
-              onClick={handleDrawerToggle}
-              sx={{
-                borderRadius: 2,
-                bgcolor: location.pathname === '/book-appointment' ? 'rgba(244, 63, 94, 0.1)' : 'transparent',
-                color: '#e11d48',
-                fontWeight: 700
-              }}
-            >
-              <ListItemText primary="📅 Book Assessment Page" primaryTypographyProps={{ fontWeight: 700 }} />
-            </ListItemButton>
-          </ListItem>
+          {navLinks.map((link) => {
+            const isActive = location.pathname === link.path;
+            return (
+              <ListItem key={link.name} disablePadding sx={{ mb: 0.6 }}>
+                <ListItemButton
+                  component={Link}
+                  to={link.path}
+                  onClick={handleDrawerToggle}
+                  sx={{
+                    borderRadius: 2.5,
+                    bgcolor: isActive ? 'rgba(2, 132, 199, 0.08)' : 'transparent',
+                    color: isActive ? '#0284c7' : '#334155',
+                    py: 1
+                  }}
+                >
+                  <ListItemIcon sx={{ minWidth: 36, color: isActive ? '#0284c7' : '#64748b' }}>
+                    {link.icon}
+                  </ListItemIcon>
+                  <ListItemText
+                    primary={link.name}
+                    primaryTypographyProps={{ fontWeight: isActive ? 700 : 600, fontSize: '0.95rem' }}
+                  />
+                </ListItemButton>
+              </ListItem>
+            );
+          })}
         </List>
 
-        <Box sx={{ display: 'flex', flexDirection: 'column', gap: 1.5, mt: 'auto' }}>
+        <Box sx={{ display: 'flex', flexDirection: 'column', gap: 1.5, mt: 'auto', pt: 2 }}>
           <Button
             variant="contained"
             color="secondary"
@@ -474,6 +506,7 @@ const Navbar = ({ onOpenAppointment }) => {
             to="/book-appointment"
             onClick={handleDrawerToggle}
             startIcon={<CalendarMonthIcon />}
+            sx={{ py: 1.2, fontWeight: 700 }}
           >
             Book Assessment
           </Button>
@@ -483,7 +516,7 @@ const Navbar = ({ onOpenAppointment }) => {
             component="a"
             href={`tel:${CLINIC_INFO.phone}`}
             startIcon={<PhoneIcon />}
-            sx={{ borderColor: '#0284c7', color: '#0284c7' }}
+            sx={{ borderColor: '#cbd5e1', color: '#0284c7', py: 1, fontWeight: 600 }}
           >
             Call: {CLINIC_INFO.phone}
           </Button>

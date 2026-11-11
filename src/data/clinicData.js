@@ -318,3 +318,106 @@ export const FAQ_DATA = [
     answer: "Yes! Many children benefit from integrated therapies (e.g. Speech Therapy + Sensory Integration + Occupational Therapy). We design coordinated Individualized Education Plans (IEP) where all therapists align on shared goals."
   }
 ];
+
+export const WE_CARE_ABOUT = [
+  {
+    title: "Offering a Childhood to Every Child",
+    subtitle: "Joyful Play & Clinical Growth",
+    desc: "Every child deserves a nurturing childhood free from barriers. Play-based therapy, sensory integration, and emotional warmth.",
+    icon: "ChildFriendly",
+    color: "#02476c",
+    bg: "#e0f2fe"
+  },
+  {
+    title: "Imparting Education for Empowerment",
+    subtitle: "Inclusive Learning & IEPs",
+    desc: "Empowering young minds through specialized education, remedial learning, and individualized development roadmaps.",
+    icon: "MenuBook",
+    color: "#E76100",
+    bg: "#ffedd5"
+  },
+  {
+    title: "Nurturing Speech & Communication",
+    subtitle: "Clear Words, Confident Voice",
+    desc: "Overcoming speech delays, articulation difficulties, and oral motor weaknesses with certified speech-language therapists.",
+    icon: "RecordVoiceOver",
+    color: "#59C36A",
+    bg: "#dcfce7"
+  },
+  {
+    title: "Sensory & Physical Equilibrium",
+    subtitle: "Modern Sensory Gym",
+    desc: "Suspended swings, deep proprioceptive therapy, and vestibular activities to balance sensory systems for focused learning.",
+    icon: "Spa",
+    color: "#297fb0",
+    bg: "#f0f9ff"
+  },
+  {
+    title: "Family Guidance & Parental Harmony",
+    subtitle: "Co-Regulation Coaching",
+    desc: "Direct guidance, stress reduction, and positive home intervention routines to empower parents as lifelong advocates.",
+    icon: "FamilyRestroom",
+    color: "#FF1C74",
+    bg: "#ffe4e6"
+  }
+];
+
+export const TRUST_PROJECTS = [
+  {
+    id: "child-development-center",
+    title: "Child Development Center (Gr. Noida West)",
+    tag: "Main Therapy Hub",
+    desc: "State-of-the-art clinical center providing 9 specialized pediatric therapies: Speech, Sensory Gym, OT, ABA & Special Education.",
+    location: "G-104, Fusion Homes, Greater Noida West",
+    color: "#02476c"
+  },
+  {
+    id: "kalashram",
+    title: "Kalashram Project",
+    tag: "Children's Shelter & Care",
+    desc: "Providing safe residential shelter, quality education, healthcare, and loving care for rescued and abandoned children.",
+    location: "Ambi Village, Talegaon Dabhade, Pune",
+    color: "#E76100"
+  },
+  {
+    id: "center-for-education",
+    title: "Caring Hands Center for Education",
+    tag: "Inclusive Schooling",
+    desc: "Dedicated to providing inclusive, high-quality foundational education for children from underprivileged backgrounds.",
+    location: "Pune & Regional Centers",
+    color: "#59C36A"
+  },
+  {
+    id: "naval-taj-dham",
+    title: "Nav-Taz Dham",
+    tag: "Elderly Care Center",
+    desc: "A 50-bed compassionate residential care home ensuring dignity, medical attention, and community for senior citizens.",
+    location: "Talegaon, Pune",
+    color: "#297fb0"
+  },
+  {
+    id: "swayamsidha",
+    title: "Swayamsidha",
+    tag: "Women Empowerment",
+    desc: "Counseling, vocational skill training, and livelihood generation enabling women in crisis to gain financial independence.",
+    location: "Maharashtra Communities",
+    color: "#FF1C74"
+  },
+  {
+    id: "seva-kutir",
+    title: "Adv. Ramrao Chogale Seva Kutir",
+    tag: "Youth Empowerment",
+    desc: "Empowering young boys through academic support, computer literacy, vocational mentorship, and moral leadership.",
+    location: "Pali Village, Mira-Bhayandar",
+    color: "#FCB720"
+  }
+];
+
+export const BANK_DETAILS = {
+  accountName: "Caring Hands",
+  bankName: "Axis Bank",
+  branch: "Ravet Branch, Pune",
+  accountNo: "919010084255237",
+  ifsc: "UTIB0003144",
+  note: "Contributions and therapy sponsorships are eligible for tax exemption under Caring Hands Trust."
+};

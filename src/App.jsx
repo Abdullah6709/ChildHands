@@ -120,14 +120,16 @@ function App() {
                 href={`https://wa.me/91${CLINIC_INFO.phone}?text=Hello%20Caring%20Hands,%20I%20would%20like%20to%20inquire%20about%20child%20therapy.`}
                 target="_blank"
                 rel="noopener noreferrer"
+                size="medium"
                 sx={{
                   bgcolor: '#22c55e',
                   color: '#ffffff',
-                  boxShadow: '0 8px 24px rgba(34, 197, 94, 0.45)',
-                  '&:hover': { bgcolor: '#16a34a' }
+                  boxShadow: '0 6px 20px rgba(34, 197, 94, 0.35)',
+                  '&:hover': { bgcolor: '#16a34a', transform: 'scale(1.05)' },
+                  transition: 'transform 0.2s'
                 }}
               >
-                <WhatsAppIcon sx={{ fontSize: 28 }} />
+                <WhatsAppIcon sx={{ fontSize: 26 }} />
               </Fab>
             </Tooltip>
 
@@ -136,14 +138,16 @@ function App() {
               <Fab
                 component="a"
                 href={`tel:${CLINIC_INFO.phone}`}
+                size="medium"
                 sx={{
                   bgcolor: '#0284c7',
                   color: '#ffffff',
-                  boxShadow: '0 8px 24px rgba(2, 132, 199, 0.45)',
-                  '&:hover': { bgcolor: '#0369a1' }
+                  boxShadow: '0 6px 20px rgba(2, 132, 199, 0.35)',
+                  '&:hover': { bgcolor: '#0369a1', transform: 'scale(1.05)' },
+                  transition: 'transform 0.2s'
                 }}
               >
-                <PhoneIcon sx={{ fontSize: 26 }} />
+                <PhoneIcon sx={{ fontSize: 24 }} />
               </Fab>
             </Tooltip>
           </Box>

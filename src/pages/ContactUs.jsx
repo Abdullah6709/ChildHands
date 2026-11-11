@@ -24,8 +24,10 @@ import SendIcon from '@mui/icons-material/Send';
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import DirectionsIcon from '@mui/icons-material/Directions';
 import FavoriteIcon from '@mui/icons-material/Favorite';
+import AccountBalanceIcon from '@mui/icons-material/AccountBalance';
+import VerifiedUserIcon from '@mui/icons-material/VerifiedUser';
 
-import { CLINIC_INFO, SERVICES_DATA } from '../data/clinicData';
+import { CLINIC_INFO, SERVICES_DATA, BANK_DETAILS } from '../data/clinicData';
 import MapRouting from '../components/MapRouting';
 
 const ContactUs = ({ onOpenAppointment }) => {
@@ -57,21 +59,50 @@ const ContactUs = ({ onOpenAppointment }) => {
   };
 
   return (
-    <Box sx={{ bgcolor: '#f8fafc', py: { xs: 6, md: 8 } }}>
+    <Box sx={{ bgcolor: '#FDFBF7', py: { xs: 6, md: 8 } }}>
       <Container maxWidth="xl">
         {/* Page Header */}
-        <Box sx={{ textAlign: 'center', maxWidth: 800, mx: 'auto', mb: 6 }}>
+        <Box sx={{ textAlign: 'center', maxWidth: 820, mx: 'auto', mb: 6 }}>
           <Chip
-            icon={<LocationOnIcon sx={{ color: '#f43f5e !important' }} />}
-            label="Get In Touch & Visit Us"
+            icon={<LocationOnIcon sx={{ color: '#E76100 !important' }} />}
+            label="Get In Touch & Visit Our Centers"
             size="small"
-            sx={{ bgcolor: '#ffffff', color: '#0284c7', fontWeight: 800, mb: 2, border: '1px solid #bae6fd' }}
+            sx={{
+              bgcolor: '#FFFAEA',
+              color: '#02476c',
+              fontWeight: 800,
+              mb: 2,
+              border: '1px solid #F6D469',
+              borderRadius: 50,
+              px: 1.5,
+              py: 0.5
+            }}
           />
-          <Typography variant="h1" sx={{ fontSize: { xs: '2.4rem', sm: '3.4rem' }, fontWeight: 900, color: '#0f172a', mb: 2 }}>
+          <Typography
+            variant="h1"
+            sx={{
+              fontSize: { xs: '2.4rem', sm: '3.4rem' },
+              fontWeight: 900,
+              color: '#24102F',
+              fontFamily: '"Quicksand", sans-serif',
+              mb: 2
+            }}
+          >
             Contact Caring Hands
           </Typography>
-          <Typography variant="h6" sx={{ color: '#475569', fontWeight: 500, lineHeight: 1.6 }}>
-            Have questions about your child's speech, sensory needs, or developmental milestones? We are here to listen, support, and guide you every step of the way.
+          <Typography
+            sx={{
+              fontFamily: '"Schoolbell", cursive',
+              color: '#02476c',
+              fontSize: { xs: '1.25rem', sm: '1.5rem' },
+              fontWeight: 700,
+              mb: 2
+            }}
+          >
+            Give a helping hand for a child ☀️
+          </Typography>
+          <Typography variant="h6" sx={{ color: '#757277', fontWeight: 500, lineHeight: 1.6, fontSize: { xs: '1rem', sm: '1.15rem' } }}>
+            Have questions about your child's speech milestones, sensory needs, or developmental therapy? Our compassionate team is here to listen, guide, and support you every step of the journey.
           </Typography>
         </Box>
 
@@ -83,21 +114,21 @@ const ContactUs = ({ onOpenAppointment }) => {
               sx={{
                 p: 3,
                 height: '100%',
-                borderRadius: 3.5,
+                borderRadius: 4,
                 textAlign: 'center',
-                border: '1px solid #e2e8f0',
+                border: '1px solid #EFECE7',
                 bgcolor: '#ffffff',
-                transition: 'transform 0.2s',
-                '&:hover': { transform: 'translateY(-4px)' }
+                transition: 'all 0.3s ease',
+                '&:hover': { transform: 'translateY(-4px)', boxShadow: '0 10px 25px rgba(2, 71, 108, 0.08)' }
               }}
             >
-              <Box sx={{ width: 50, height: 50, borderRadius: '50%', bgcolor: '#e0f2fe', color: '#0284c7', display: 'flex', alignItems: 'center', justifyContent: 'center', mx: 'auto', mb: 2 }}>
+              <Box sx={{ width: 52, height: 52, borderRadius: '50%', bgcolor: '#FFFAEA', color: '#02476c', border: '1px solid #F6D469', display: 'flex', alignItems: 'center', justifyContent: 'center', mx: 'auto', mb: 2 }}>
                 <PhoneIcon sx={{ fontSize: 26 }} />
               </Box>
-              <Typography variant="subtitle1" fontWeight={800} color="#0f172a">
+              <Typography variant="subtitle1" fontWeight={800} color="#24102F" sx={{ fontFamily: '"Quicksand", sans-serif' }}>
                 Direct Helpline
               </Typography>
-              <Typography variant="body2" color="#64748b" sx={{ mb: 1.5 }}>
+              <Typography variant="body2" color="#757277" sx={{ mb: 2 }}>
                 Speak with our coordinator
               </Typography>
               <Button
@@ -105,7 +136,13 @@ const ContactUs = ({ onOpenAppointment }) => {
                 size="small"
                 component="a"
                 href={`tel:${CLINIC_INFO.phone}`}
-                sx={{ fontWeight: 800, color: '#0284c7', borderColor: '#0284c7' }}
+                sx={{
+                  fontWeight: 800,
+                  color: '#02476c',
+                  borderColor: '#02476c',
+                  borderRadius: 50,
+                  '&:hover': { borderColor: '#02476c', bgcolor: '#FFFAEA' }
+                }}
               >
                 Call: {CLINIC_INFO.phone}
               </Button>
@@ -118,21 +155,21 @@ const ContactUs = ({ onOpenAppointment }) => {
               sx={{
                 p: 3,
                 height: '100%',
-                borderRadius: 3.5,
+                borderRadius: 4,
                 textAlign: 'center',
-                border: '1px solid #e2e8f0',
+                border: '1px solid #EFECE7',
                 bgcolor: '#ffffff',
-                transition: 'transform 0.2s',
-                '&:hover': { transform: 'translateY(-4px)' }
+                transition: 'all 0.3s ease',
+                '&:hover': { transform: 'translateY(-4px)', boxShadow: '0 10px 25px rgba(2, 71, 108, 0.08)' }
               }}
             >
-              <Box sx={{ width: 50, height: 50, borderRadius: '50%', bgcolor: '#dcfce7', color: '#16a34a', display: 'flex', alignItems: 'center', justifyContent: 'center', mx: 'auto', mb: 2 }}>
+              <Box sx={{ width: 52, height: 52, borderRadius: '50%', bgcolor: '#e8f7ec', color: '#59C36A', border: '1px solid #c2ebcb', display: 'flex', alignItems: 'center', justifyContent: 'center', mx: 'auto', mb: 2 }}>
                 <WhatsAppIcon sx={{ fontSize: 26 }} />
               </Box>
-              <Typography variant="subtitle1" fontWeight={800} color="#0f172a">
+              <Typography variant="subtitle1" fontWeight={800} color="#24102F" sx={{ fontFamily: '"Quicksand", sans-serif' }}>
                 WhatsApp Chat
               </Typography>
-              <Typography variant="body2" color="#64748b" sx={{ mb: 1.5 }}>
+              <Typography variant="body2" color="#757277" sx={{ mb: 2 }}>
                 Instant replies & booking
               </Typography>
               <Button
@@ -142,7 +179,13 @@ const ContactUs = ({ onOpenAppointment }) => {
                 href={`https://wa.me/91${CLINIC_INFO.phone}?text=Hello%20Caring%20Hands`}
                 target="_blank"
                 rel="noopener noreferrer"
-                sx={{ fontWeight: 800, bgcolor: '#22c55e', '&:hover': { bgcolor: '#16a34a' } }}
+                sx={{
+                  fontWeight: 800,
+                  bgcolor: '#59C36A',
+                  color: '#ffffff',
+                  borderRadius: 50,
+                  '&:hover': { bgcolor: '#46a354' }
+                }}
               >
                 Chat on WhatsApp
               </Button>
@@ -155,53 +198,54 @@ const ContactUs = ({ onOpenAppointment }) => {
               sx={{
                 p: 3,
                 height: '100%',
-                borderRadius: 3.5,
+                borderRadius: 4,
                 textAlign: 'center',
-                border: '1px solid #bae6fd',
-                bgcolor: '#f0f9ff',
-                transition: 'transform 0.2s',
-                '&:hover': { transform: 'translateY(-4px)' }
+                border: '1px solid #EFECE7',
+                bgcolor: '#ffffff',
+                transition: 'all 0.3s ease',
+                '&:hover': { transform: 'translateY(-4px)', boxShadow: '0 10px 25px rgba(2, 71, 108, 0.08)' }
               }}
             >
-              <Box sx={{ width: 50, height: 50, borderRadius: '50%', bgcolor: '#ffffff', color: '#f43f5e', display: 'flex', alignItems: 'center', justifyContent: 'center', mx: 'auto', mb: 2 }}>
+              <Box sx={{ width: 52, height: 52, borderRadius: '50%', bgcolor: '#FFFAEA', color: '#E76100', border: '1px solid #F6D469', display: 'flex', alignItems: 'center', justifyContent: 'center', mx: 'auto', mb: 2 }}>
                 <LocationOnIcon sx={{ fontSize: 26 }} />
               </Box>
-              <Typography variant="subtitle1" fontWeight={800} color="#0369a1">
-                Main Therapy Hub
+              <Typography variant="subtitle1" fontWeight={800} color="#02476c" sx={{ fontFamily: '"Quicksand", sans-serif' }}>
+                Child Development Hub
               </Typography>
-              <Typography variant="body2" color="#0c4a6e" sx={{ fontSize: '0.82rem', mb: 1 }}>
+              <Typography variant="body2" color="#757277" sx={{ fontSize: '0.82rem', mb: 1.5 }}>
                 G-104, Fusion Homes, Amrapali Dream Valley, Gr. Noida West
               </Typography>
-              <Chip label="Mon-Sat: 9am - 7:30pm" size="small" sx={{ fontSize: '0.7rem', fontWeight: 700 }} />
+              <Chip label="Mon-Sat: 9am - 7:30pm" size="small" sx={{ fontSize: '0.72rem', fontWeight: 700, borderRadius: 50, bgcolor: '#FFFAEA', color: '#02476c' }} />
             </Card>
           </Grid>
 
-          {/* Card 4: Pune Center */}
+          {/* Card 4: Pune Center (Trust Head Office) */}
           <Grid item xs={12} sm={6} md={3}>
             <Card
               sx={{
                 p: 3,
                 height: '100%',
-                borderRadius: 3.5,
+                borderRadius: 4,
                 textAlign: 'center',
-                border: '1px solid #e2e8f0',
+                border: '1px solid #EFECE7',
                 bgcolor: '#ffffff',
-                transition: 'transform 0.2s',
-                '&:hover': { transform: 'translateY(-4px)' }
+                transition: 'all 0.3s ease',
+                '&:hover': { transform: 'translateY(-4px)', boxShadow: '0 10px 25px rgba(2, 71, 108, 0.08)' }
               }}
             >
-              <Box sx={{ width: 50, height: 50, borderRadius: '50%', bgcolor: '#f1f5f9', color: '#475569', display: 'flex', alignItems: 'center', justifyContent: 'center', mx: 'auto', mb: 2 }}>
+              <Box sx={{ width: 52, height: 52, borderRadius: '50%', bgcolor: '#FFFAEA', color: '#02476c', border: '1px solid #F6D469', display: 'flex', alignItems: 'center', justifyContent: 'center', mx: 'auto', mb: 2 }}>
                 <LocationOnIcon sx={{ fontSize: 26 }} />
               </Box>
-              <Typography variant="subtitle1" fontWeight={800} color="#0f172a">
-                Pune Center (Trust)
+              <Typography variant="subtitle1" fontWeight={800} color="#24102F" sx={{ fontFamily: '"Quicksand", sans-serif' }}>
+                Trust Head Office (Pune)
               </Typography>
-              <Typography variant="body2" color="#64748b" sx={{ fontSize: '0.82rem', mb: 1 }}>
-                Ambi, Near Talegaon MIDC Rd, Dist Pune 410507
+              <Typography variant="body2" color="#757277" sx={{ fontSize: '0.82rem', mb: 1 }}>
+                Ambi, Near Talegaon MIDC Rd, Dist. Pune 410507
               </Typography>
-              <Typography variant="caption" sx={{ color: '#0284c7', fontWeight: 700, display: 'block' }}>
-                Mob: 9011262226
+              <Typography variant="caption" sx={{ color: '#02476c', fontWeight: 800, display: 'block', mb: 1 }}>
+                Mob: +91 9011262226
               </Typography>
+              <Chip label="Community Trust Hub" size="small" sx={{ fontSize: '0.72rem', fontWeight: 700, borderRadius: 50, bgcolor: '#FFFAEA', color: '#02476c' }} />
             </Card>
           </Grid>
         </Grid>
@@ -211,42 +255,43 @@ const ContactUs = ({ onOpenAppointment }) => {
           <MapRouting />
         </Box>
 
-        {/* Inquiry Form & FAQs Section */}
-        <Grid container spacing={4} alignItems="stretch">
+        {/* Inquiry Form & Visiting Details */}
+        <Grid container spacing={4} alignItems="stretch" sx={{ mb: 8 }}>
           {/* Contact Inquiry Form */}
           <Grid item xs={12} md={7}>
             <Paper
               elevation={0}
               sx={{
                 p: { xs: 3, sm: 4.5 },
-                borderRadius: 4,
+                borderRadius: 4.5,
                 bgcolor: '#ffffff',
-                border: '2px solid #e2e8f0',
-                height: '100%'
+                border: '1px solid #EFECE7',
+                height: '100%',
+                boxShadow: '0 4px 20px rgba(2, 71, 108, 0.03)'
               }}
             >
-              <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, mb: 1 }}>
-                <SendIcon sx={{ color: '#0284c7', fontSize: 24 }} />
-                <Typography variant="h5" fontWeight={900} color="#0f172a">
+              <Box sx={{ display: 'flex', alignItems: 'center', gap: 1.5, mb: 1 }}>
+                <SendIcon sx={{ color: '#02476c', fontSize: 24 }} />
+                <Typography variant="h5" fontWeight={900} color="#24102F" sx={{ fontFamily: '"Quicksand", sans-serif' }}>
                   Send Us An Inquiry
                 </Typography>
               </Box>
-              <Typography variant="body2" color="#64748b" sx={{ mb: 3 }}>
+              <Typography variant="body2" color="#757277" sx={{ mb: 3 }}>
                 Fill out the form below and our clinical coordinator will reach out to you within 2 business hours.
               </Typography>
 
               {submitted ? (
                 <Box sx={{ textAlign: 'center', py: 4 }}>
-                  <CheckCircleIcon sx={{ fontSize: 56, color: '#16a34a', mb: 1.5 }} />
-                  <Typography variant="h5" fontWeight={800} color="#0f172a" gutterBottom>
+                  <CheckCircleIcon sx={{ fontSize: 56, color: '#59C36A', mb: 1.5 }} />
+                  <Typography variant="h5" fontWeight={800} color="#24102F" gutterBottom sx={{ fontFamily: '"Quicksand", sans-serif' }}>
                     Thank You! Inquiry Submitted.
                   </Typography>
-                  <Chip label={`Reference: ${inquiryRef}`} color="primary" sx={{ fontWeight: 800, my: 1 }} />
-                  <Typography variant="body1" color="#334155" sx={{ mt: 1, mb: 3 }}>
+                  <Chip label={`Reference: ${inquiryRef}`} sx={{ fontWeight: 800, my: 1, bgcolor: '#FFFAEA', color: '#02476c', border: '1px solid #F6D469' }} />
+                  <Typography variant="body1" color="#757277" sx={{ mt: 1, mb: 3 }}>
                     We have received your message, <strong>{formState.name}</strong>. Our specialist will call you at{' '}
                     <strong>{formState.phone}</strong>.
                   </Typography>
-                  <Button variant="outlined" onClick={() => setSubmitted(false)}>
+                  <Button variant="outlined" onClick={() => setSubmitted(false)} sx={{ borderRadius: 50, borderColor: '#02476c', color: '#02476c' }}>
                     Send Another Message
                   </Button>
                 </Box>
@@ -326,22 +371,36 @@ const ContactUs = ({ onOpenAppointment }) => {
                     </Grid>
                   </Grid>
 
-                  <Box sx={{ mt: 3, display: 'flex', gap: 2, alignItems: 'center' }}>
+                  <Box sx={{ mt: 3, display: 'flex', gap: 2, alignItems: 'center', flexWrap: 'wrap' }}>
                     <Button
                       type="submit"
                       variant="contained"
-                      color="primary"
                       size="large"
                       startIcon={<SendIcon />}
-                      sx={{ px: 4, py: 1.2, fontWeight: 800 }}
+                      sx={{
+                        px: 4,
+                        py: 1.2,
+                        fontWeight: 900,
+                        bgcolor: '#02476c',
+                        color: '#ffffff',
+                        borderRadius: 50,
+                        '&:hover': { bgcolor: '#012d45' }
+                      }}
                     >
                       Submit Inquiry
                     </Button>
                     <Button
-                      variant="outlined"
-                      color="secondary"
+                      variant="contained"
                       onClick={() => onOpenAppointment()}
-                      sx={{ fontWeight: 700 }}
+                      sx={{
+                        fontWeight: 900,
+                        bgcolor: '#F6D469',
+                        color: '#24102F',
+                        borderRadius: 50,
+                        px: 3,
+                        py: 1.2,
+                        '&:hover': { bgcolor: '#fcb720' }
+                      }}
                     >
                       Instant Assessment Booking
                     </Button>
@@ -356,27 +415,28 @@ const ContactUs = ({ onOpenAppointment }) => {
             <Card
               sx={{
                 p: { xs: 3, sm: 4 },
-                borderRadius: 4,
-                border: '1px solid #e2e8f0',
+                borderRadius: 4.5,
+                border: '1px solid #EFECE7',
                 bgcolor: '#ffffff',
                 height: '100%',
                 display: 'flex',
                 flexDirection: 'column',
-                justifyContent: 'space-between'
+                justifyContent: 'space-between',
+                boxShadow: '0 4px 20px rgba(2, 71, 108, 0.03)'
               }}
             >
               <Box>
-                <Typography variant="h5" fontWeight={900} color="#0f172a" sx={{ mb: 2 }}>
+                <Typography variant="h5" fontWeight={900} color="#24102F" sx={{ mb: 2, fontFamily: '"Quicksand", sans-serif' }}>
                   How to Reach Us
                 </Typography>
 
                 <Box sx={{ display: 'flex', alignItems: 'flex-start', gap: 1.5, mb: 2 }}>
-                  <LocationOnIcon sx={{ color: '#f43f5e', mt: 0.3 }} />
+                  <LocationOnIcon sx={{ color: '#E76100', mt: 0.3 }} />
                   <Box>
-                    <Typography variant="subtitle2" fontWeight={800} color="#0f172a">
+                    <Typography variant="subtitle2" fontWeight={800} color="#24102F">
                       Center Address:
                     </Typography>
-                    <Typography variant="body2" color="#475569" sx={{ lineHeight: 1.6 }}>
+                    <Typography variant="body2" color="#757277" sx={{ lineHeight: 1.6 }}>
                       {CLINIC_INFO.primaryAddress.full}
                     </Typography>
                   </Box>
@@ -384,10 +444,10 @@ const ContactUs = ({ onOpenAppointment }) => {
 
                 <Divider sx={{ my: 2 }} />
 
-                <Typography variant="subtitle2" fontWeight={800} color="#0284c7" sx={{ mb: 1.5 }}>
+                <Typography variant="subtitle2" fontWeight={800} color="#02476c" sx={{ mb: 1.5, fontFamily: '"Quicksand", sans-serif' }}>
                   Public Transit & Driving Notes:
                 </Typography>
-                <Box component="ul" sx={{ pl: 2.5, m: 0, fontSize: '0.88rem', color: '#475569', lineHeight: 1.7 }}>
+                <Box component="ul" sx={{ pl: 2.5, m: 0, fontSize: '0.88rem', color: '#757277', lineHeight: 1.7 }}>
                   <li><strong>From Gaur City / Char Murti:</strong> Take the road towards Amrapali Dream Valley (approx 5-7 minutes drive).</li>
                   <li><strong>Nearest Metro Stations:</strong> Noida Sector 52 & Noida Sector 76. Regular shared autos, e-rickshaws, and cabs directly connect to Fusion Homes.</li>
                   <li><strong>From Ghaziabad / Indirapuram:</strong> Accessible via NH-24 / Crossings Republik exit.</li>
@@ -397,17 +457,17 @@ const ContactUs = ({ onOpenAppointment }) => {
                 <Divider sx={{ my: 2 }} />
 
                 <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
-                  <AccessTimeIcon sx={{ color: '#16a34a', fontSize: 20 }} />
-                  <Typography variant="subtitle2" fontWeight={800} color="#0f172a">
+                  <AccessTimeIcon sx={{ color: '#59C36A', fontSize: 20 }} />
+                  <Typography variant="subtitle2" fontWeight={800} color="#24102F">
                     Center Timings:
                   </Typography>
                 </Box>
-                <Typography variant="body2" color="#475569" sx={{ pl: 3.5, mt: 0.5 }}>
+                <Typography variant="body2" color="#757277" sx={{ pl: 3.5, mt: 0.5 }}>
                   {CLINIC_INFO.primaryAddress.hours}
                 </Typography>
               </Box>
 
-              <Box sx={{ mt: 3, pt: 2, borderTop: '1px solid #f1f5f9' }}>
+              <Box sx={{ mt: 3, pt: 2, borderTop: '1px solid #EFECE7' }}>
                 <Button
                   fullWidth
                   variant="contained"
@@ -416,7 +476,7 @@ const ContactUs = ({ onOpenAppointment }) => {
                   target="_blank"
                   rel="noopener noreferrer"
                   startIcon={<WhatsAppIcon />}
-                  sx={{ bgcolor: '#22c55e', '&:hover': { bgcolor: '#16a34a' }, fontWeight: 800, py: 1.2 }}
+                  sx={{ bgcolor: '#59C36A', '&:hover': { bgcolor: '#46a354' }, fontWeight: 800, py: 1.2, borderRadius: 50, color: '#ffffff' }}
                 >
                   Share Location on WhatsApp
                 </Button>
@@ -424,6 +484,93 @@ const ContactUs = ({ onOpenAppointment }) => {
             </Card>
           </Grid>
         </Grid>
+
+        {/* Bank & Trust Details from live site */}
+        <Paper
+          elevation={0}
+          sx={{
+            p: { xs: 3, sm: 4.5 },
+            borderRadius: 4.5,
+            bgcolor: '#02476c',
+            color: '#ffffff',
+            border: '2px solid #F6D469'
+          }}
+        >
+          <Grid container spacing={3} alignItems="center">
+            <Grid item xs={12} md={8}>
+              <Box sx={{ display: 'flex', alignItems: 'center', gap: 1.5, mb: 1 }}>
+                <AccountBalanceIcon sx={{ color: '#F6D469', fontSize: 32 }} />
+                <Typography variant="h5" fontWeight={900} sx={{ color: '#F6D469', fontFamily: '"Quicksand", sans-serif' }}>
+                  Official Trust Details • Caring Hands
+                </Typography>
+              </Box>
+              <Typography variant="body2" sx={{ color: '#EFECE7', lineHeight: 1.7, mb: 2 }}>
+                Caring Hands is an officially registered non-profit trust dedicated to child development and community welfare. For corporate partnerships, CSR initiatives, or fee transfers:
+              </Typography>
+              <Grid container spacing={2}>
+                <Grid item xs={12} sm={6}>
+                  <Typography variant="caption" sx={{ color: '#F6D469', fontWeight: 800, display: 'block' }}>
+                    ACCOUNT NAME
+                  </Typography>
+                  <Typography variant="body2" fontWeight={700}>
+                    {BANK_DETAILS.accountName}
+                  </Typography>
+                </Grid>
+                <Grid item xs={12} sm={6}>
+                  <Typography variant="caption" sx={{ color: '#F6D469', fontWeight: 800, display: 'block' }}>
+                    BANK & BRANCH
+                  </Typography>
+                  <Typography variant="body2" fontWeight={700}>
+                    {BANK_DETAILS.bankName} ({BANK_DETAILS.branch})
+                  </Typography>
+                </Grid>
+                <Grid item xs={12} sm={6}>
+                  <Typography variant="caption" sx={{ color: '#F6D469', fontWeight: 800, display: 'block' }}>
+                    ACCOUNT NUMBER
+                  </Typography>
+                  <Typography variant="body2" fontWeight={700}>
+                    {BANK_DETAILS.accountNumber}
+                  </Typography>
+                </Grid>
+                <Grid item xs={12} sm={6}>
+                  <Typography variant="caption" sx={{ color: '#F6D469', fontWeight: 800, display: 'block' }}>
+                    IFSC CODE
+                  </Typography>
+                  <Typography variant="body2" fontWeight={700}>
+                    {BANK_DETAILS.ifsc}
+                  </Typography>
+                </Grid>
+              </Grid>
+            </Grid>
+
+            <Grid item xs={12} md={4} sx={{ textAlign: { xs: 'left', md: 'center' } }}>
+              <Box sx={{ p: 2.5, borderRadius: 3, bgcolor: 'rgba(255,255,255,0.08)', border: '1px solid rgba(246, 212, 105, 0.3)' }}>
+                <VerifiedUserIcon sx={{ color: '#F6D469', fontSize: 40, mb: 1 }} />
+                <Typography variant="subtitle2" fontWeight={800} sx={{ color: '#ffffff', mb: 0.5 }}>
+                  Transparent & Registered
+                </Typography>
+                <Typography variant="caption" sx={{ color: '#EFECE7', display: 'block', mb: 2 }}>
+                  Official registration under Indian Trust Act • Headquartered in Pune & Noida Extension
+                </Typography>
+                <Button
+                  variant="contained"
+                  onClick={() => onOpenAppointment()}
+                  sx={{
+                    bgcolor: '#F6D469',
+                    color: '#24102F',
+                    fontWeight: 900,
+                    borderRadius: 50,
+                    py: 1,
+                    px: 3,
+                    '&:hover': { bgcolor: '#fcb720' }
+                  }}
+                >
+                  Book Consultation
+                </Button>
+              </Box>
+            </Grid>
+          </Grid>
+        </Paper>
       </Container>
     </Box>
   );

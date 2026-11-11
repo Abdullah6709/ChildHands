@@ -1,73 +1,106 @@
 import { createTheme } from '@mui/material/styles';
 
+// Theme aligned with Caring Hands (caringhands.org.in)
 export const theme = createTheme({
   palette: {
     primary: {
-      main: '#0284c7', // vibrant pediatric blue
-      light: '#38bdf8',
-      dark: '#0369a1',
+      main: '#02476c', // Caring Hands signature deep ocean blue
+      light: '#297fb0',
+      dark: '#01324d',
       contrastText: '#ffffff',
     },
     secondary: {
-      main: '#f43f5e', // warm heart pink / rose
-      light: '#fb7185',
-      dark: '#e11d48',
-      contrastText: '#ffffff',
+      main: '#F6D469', // Caring Hands signature warm golden yellow
+      light: '#fde047',
+      dark: '#FCB720',
+      contrastText: '#24102F',
     },
     success: {
-      main: '#10b981',
-      light: '#34d399',
-      dark: '#059669',
+      main: '#59C36A', // Caring Hands green
+      light: '#86efac',
+      dark: '#22c55e',
     },
     warning: {
-      main: '#f59e0b',
-      light: '#fbbf24',
-      dark: '#d97706',
+      main: '#E76100', // Caring Hands warm orange
+      light: '#fb923c',
+      dark: '#c2410c',
     },
     info: {
-      main: '#6366f1',
+      main: '#297fb0',
+      light: '#60a5fa',
+      dark: '#02476c',
+    },
+    error: {
+      main: '#FF1C74', // Caring Hands heart fuchsia/rose
+      light: '#f43f5e',
+      dark: '#be123c',
     },
     background: {
-      default: '#f8fafc',
+      default: '#FDFBF7', // warm soft off-white canvas
       paper: '#ffffff',
     },
     text: {
-      primary: '#0f172a',
-      secondary: '#475569',
+      primary: '#24102F', // Caring Hands deep dark text
+      secondary: '#757277', // Caring Hands subtitle grey
     },
+    divider: '#EFECE7',
   },
   typography: {
-    fontFamily: '"Outfit", "Quicksand", -apple-system, BlinkMacSystemFont, sans-serif',
+    fontFamily: '"DM Sans", "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
     h1: {
-      fontFamily: '"Outfit", sans-serif',
-      fontWeight: 800,
+      fontFamily: '"Quicksand", "DM Sans", sans-serif',
+      fontWeight: 700,
       letterSpacing: '-0.02em',
+      lineHeight: 1.18,
+      color: '#24102F',
     },
     h2: {
-      fontFamily: '"Outfit", sans-serif',
-      fontWeight: 800,
-      letterSpacing: '-0.01em',
+      fontFamily: '"Quicksand", "DM Sans", sans-serif',
+      fontWeight: 700,
+      letterSpacing: '-0.015em',
+      lineHeight: 1.22,
+      color: '#24102F',
     },
     h3: {
-      fontFamily: '"Outfit", sans-serif',
+      fontFamily: '"Quicksand", "DM Sans", sans-serif',
       fontWeight: 700,
+      letterSpacing: '-0.01em',
+      lineHeight: 1.25,
+      color: '#24102F',
     },
     h4: {
-      fontFamily: '"Outfit", sans-serif',
+      fontFamily: '"Quicksand", "DM Sans", sans-serif',
       fontWeight: 700,
+      lineHeight: 1.3,
+      color: '#24102F',
     },
     h5: {
-      fontFamily: '"Outfit", sans-serif',
-      fontWeight: 600,
+      fontFamily: '"Quicksand", "DM Sans", sans-serif',
+      fontWeight: 700,
+      lineHeight: 1.35,
+      color: '#24102F',
     },
     h6: {
-      fontFamily: '"Outfit", sans-serif',
+      fontFamily: '"Quicksand", "DM Sans", sans-serif',
       fontWeight: 600,
+      lineHeight: 1.4,
+      color: '#24102F',
+    },
+    body1: {
+      lineHeight: 1.68,
+      color: '#757277',
+      fontSize: '0.97rem',
+    },
+    body2: {
+      lineHeight: 1.62,
+      color: '#757277',
+      fontSize: '0.9rem',
     },
     button: {
       textTransform: 'none',
       fontWeight: 700,
-      fontFamily: '"Outfit", sans-serif',
+      fontFamily: '"DM Sans", sans-serif',
+      letterSpacing: '0.01em',
     },
   },
   shape: {
@@ -77,26 +110,41 @@ export const theme = createTheme({
     MuiButton: {
       styleOverrides: {
         root: {
-          borderRadius: 30,
-          padding: '10px 24px',
+          borderRadius: 100, // signature cleenhearts pill button
+          padding: '11px 26px',
           boxShadow: 'none',
-          transition: 'all 0.25s ease-in-out',
+          fontSize: '0.92rem',
+          transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
           '&:hover': {
             transform: 'translateY(-2px)',
-            boxShadow: '0 8px 20px rgba(2, 132, 199, 0.2)',
           },
         },
         containedPrimary: {
-          background: 'linear-gradient(135deg, #0284c7 0%, #0369a1 100%)',
+          backgroundColor: '#02476c',
+          color: '#ffffff',
+          boxShadow: '0 4px 14px rgba(2, 71, 108, 0.25)',
           '&:hover': {
-            background: 'linear-gradient(135deg, #0369a1 0%, #075985 100%)',
+            backgroundColor: '#01324d',
+            boxShadow: '0 6px 20px rgba(2, 71, 108, 0.35)',
           },
         },
         containedSecondary: {
-          background: 'linear-gradient(135deg, #f43f5e 0%, #e11d48 100%)',
-          boxShadow: '0 4px 14px rgba(244, 63, 94, 0.3)',
+          backgroundColor: '#F6D469',
+          color: '#24102F',
+          boxShadow: '0 4px 14px rgba(246, 212, 105, 0.35)',
           '&:hover': {
-            boxShadow: '0 6px 20px rgba(244, 63, 94, 0.4)',
+            backgroundColor: '#FCB720',
+            boxShadow: '0 6px 20px rgba(252, 183, 32, 0.45)',
+          },
+        },
+        outlined: {
+          borderWidth: '1.5px',
+          borderColor: '#02476c',
+          color: '#02476c',
+          '&:hover': {
+            borderWidth: '1.5px',
+            borderColor: '#01324d',
+            backgroundColor: 'rgba(2, 71, 108, 0.04)',
           },
         },
       },
@@ -105,9 +153,33 @@ export const theme = createTheme({
       styleOverrides: {
         root: {
           borderRadius: 20,
-          boxShadow: '0 4px 20px rgba(15, 23, 42, 0.06)',
-          border: '1px solid rgba(226, 232, 240, 0.8)',
-          transition: 'transform 0.3s ease, box-shadow 0.3s ease',
+          boxShadow: '0 4px 20px rgba(36, 16, 47, 0.05)',
+          border: '1px solid #EFECE7',
+          transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+        },
+      },
+    },
+    MuiChip: {
+      styleOverrides: {
+        root: {
+          borderRadius: 100,
+          fontWeight: 700,
+          fontFamily: '"DM Sans", sans-serif',
+        },
+      },
+    },
+    MuiOutlinedInput: {
+      styleOverrides: {
+        root: {
+          borderRadius: 14,
+          backgroundColor: '#ffffff',
+          '&:hover .MuiOutlinedInput-notchedOutline': {
+            borderColor: '#02476c',
+          },
+          '&.Mui-focused .MuiOutlinedInput-notchedOutline': {
+            borderColor: '#02476c',
+            borderWidth: '2px',
+          },
         },
       },
     },

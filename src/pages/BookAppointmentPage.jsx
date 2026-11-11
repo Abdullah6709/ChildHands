@@ -14,7 +14,8 @@ import {
   Alert,
   Paper,
   Breadcrumbs,
-  Divider
+  Divider,
+  Stack
 } from '@mui/material';
 import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
@@ -22,6 +23,10 @@ import PhoneIcon from '@mui/icons-material/Phone';
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 import VerifiedIcon from '@mui/icons-material/Verified';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
+import LockIcon from '@mui/icons-material/Lock';
+import AccessTimeIcon from '@mui/icons-material/AccessTime';
+import FavoriteIcon from '@mui/icons-material/Favorite';
+
 import { SERVICES_DATA, CLINIC_INFO } from '../data/clinicData';
 
 const BookAppointmentPage = () => {
@@ -57,63 +62,122 @@ const BookAppointmentPage = () => {
   };
 
   return (
-    <Box sx={{ bgcolor: '#f8fafc', py: { xs: 5, md: 7 } }}>
+    <Box sx={{ bgcolor: '#FDFBF7', py: { xs: 5, md: 7 } }}>
       <Container maxWidth="xl">
+        {/* Breadcrumbs */}
         <Breadcrumbs sx={{ mb: 3 }}>
-          <Link to="/" style={{ color: '#64748b', textDecoration: 'none', fontWeight: 600 }}>
+          <Link to="/" style={{ color: '#757277', textDecoration: 'none', fontWeight: 600, fontSize: '0.9rem' }}>
             Home
           </Link>
-          <Typography color="#0284c7" fontWeight={700}>
-            Book Assessment
+          <Typography color="#02476c" fontWeight={700} fontSize="0.9rem">
+            Book Child Assessment
           </Typography>
         </Breadcrumbs>
 
-        <Box sx={{ textAlign: 'center', maxWidth: 800, mx: 'auto', mb: 6 }}>
+        {/* Page Header */}
+        <Box sx={{ textAlign: 'center', maxWidth: 760, mx: 'auto', mb: 5 }}>
           <Chip
-            icon={<CalendarMonthIcon sx={{ color: '#f43f5e !important' }} />}
-            label="Child Developmental Assessment Booking"
+            icon={<FavoriteIcon sx={{ color: '#E76100 !important' }} />}
+            label="Schedule an In-Person Consultation"
             size="small"
-            sx={{ bgcolor: '#ffffff', color: '#0284c7', fontWeight: 800, mb: 1.5, border: '1px solid #bae6fd' }}
+            sx={{
+              bgcolor: '#FFFAEA',
+              color: '#02476c',
+              fontWeight: 800,
+              mb: 2,
+              px: 1.5,
+              py: 0.5,
+              border: '1px solid #F6D469',
+              borderRadius: 50
+            }}
           />
-          <Typography variant="h1" sx={{ fontSize: { xs: '2.2rem', sm: '3.2rem' }, fontWeight: 900, color: '#0f172a', mb: 2 }}>
-            Schedule Your Child's Assessment
+          <Typography
+            variant="h1"
+            sx={{
+              fontSize: { xs: '2rem', sm: '2.8rem' },
+              fontWeight: 900,
+              color: '#24102F',
+              fontFamily: '"Quicksand", sans-serif',
+              mb: 1.5
+            }}
+          >
+            Book Your Child's Assessment
           </Typography>
-          <Typography variant="h6" sx={{ color: '#475569', fontWeight: 500, lineHeight: 1.6 }}>
-            Take the first step toward your child's brighter future. Meet our senior pediatric specialists at G-104 Fusion Homes, Greater Noida West.
+          <Typography
+            sx={{
+              fontFamily: '"Schoolbell", cursive',
+              color: '#02476c',
+              fontSize: { xs: '1.2rem', sm: '1.45rem' },
+              fontWeight: 700,
+              mb: 1.5
+            }}
+          >
+            Give a helping hand for a child ☀️
+          </Typography>
+          <Typography variant="body1" sx={{ color: '#757277', fontSize: '1.05rem', lineHeight: 1.6 }}>
+            Take the first step toward your child's milestone leap. Meet senior pediatric specialists at G-104 Fusion Homes, Greater Noida West.
           </Typography>
         </Box>
 
         <Grid container spacing={4} justifyContent="center">
-          <Grid item xs={12} md={8}>
+          {/* Main Form Column */}
+          <Grid item xs={12} lg={8}>
             <Paper
               elevation={0}
               sx={{
                 p: { xs: 3, sm: 5 },
-                borderRadius: 4,
+                borderRadius: 4.5,
                 bgcolor: '#ffffff',
-                border: '2px solid #e2e8f0',
-                boxShadow: '0 12px 36px rgba(0,0,0,0.05)'
+                border: '1px solid #EFECE7',
+                boxShadow: '0 4px 20px rgba(2, 71, 108, 0.04)'
               }}
             >
               {submitted ? (
                 <Box sx={{ textAlign: 'center', py: 4 }}>
-                  <CheckCircleIcon sx={{ fontSize: 72, color: '#16a34a', mb: 2 }} />
-                  <Typography variant="h4" fontWeight={900} color="#0f172a" gutterBottom>
-                    Appointment Confirmed!
+                  <Box
+                    sx={{
+                      width: 72,
+                      height: 72,
+                      borderRadius: '50%',
+                      bgcolor: '#FFFAEA',
+                      color: '#59C36A',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      mx: 'auto',
+                      mb: 2,
+                      border: '2px solid #59C36A'
+                    }}
+                  >
+                    <CheckCircleIcon sx={{ fontSize: 44 }} />
+                  </Box>
+
+                  <Typography variant="h4" fontWeight={900} color="#24102F" gutterBottom sx={{ fontFamily: '"Quicksand", sans-serif' }}>
+                    Assessment Request Received!
                   </Typography>
+
                   <Chip
-                    label={`Booking ID: ${bookingRef}`}
-                    color="primary"
-                    sx={{ fontWeight: 800, fontSize: '1rem', py: 1.2, px: 2, my: 1.5 }}
+                    label={`Booking Reference: ${bookingRef}`}
+                    sx={{
+                      fontWeight: 800,
+                      fontSize: '0.9rem',
+                      py: 1,
+                      px: 2,
+                      my: 1.5,
+                      bgcolor: '#FFFAEA',
+                      color: '#02476c',
+                      border: '1px solid #F6D469',
+                      borderRadius: 50
+                    }}
                   />
-                  <Typography variant="body1" color="#334155" sx={{ mt: 2, mb: 3, maxWidth: 600, mx: 'auto' }}>
+
+                  <Typography variant="body1" color="#757277" sx={{ mt: 2, mb: 3, maxWidth: 580, mx: 'auto', lineHeight: 1.7 }}>
                     Dear <strong>{formData.parentName}</strong>, thank you for booking a developmental assessment for{' '}
-                    <strong>{formData.childName}</strong>. Our clinical team has reserved your preliminary slot for{' '}
-                    <strong>{formData.preferredDate || 'Upcoming Available Date'}</strong> ({formData.preferredTime}).
+                    <strong>{formData.childName}</strong>. Our clinical coordinator will reach out shortly to confirm your scheduled slot.
                   </Typography>
 
                   <Alert severity="success" sx={{ textAlign: 'left', borderRadius: 3, mb: 4, maxWidth: 600, mx: 'auto' }}>
-                    <strong>Center Address:</strong> G-104, Fusion Homes, Amrapali Dream Valley, Greater Noida West 201318.<br />
+                    <strong>Clinic Location:</strong> G-104, Fusion Homes, Amrapali Dream Valley, Greater Noida West 201318.<br />
                     <strong>Coordinator Phone:</strong> {CLINIC_INFO.phone}
                   </Alert>
 
@@ -125,14 +189,14 @@ const BookAppointmentPage = () => {
                       target="_blank"
                       rel="noopener noreferrer"
                       startIcon={<WhatsAppIcon />}
-                      sx={{ bgcolor: '#22c55e', '&:hover': { bgcolor: '#16a34a' }, fontWeight: 800, px: 3, py: 1.2 }}
+                      sx={{ bgcolor: '#59C36A', '&:hover': { bgcolor: '#46a354' }, fontWeight: 800, px: 3, py: 1.2, borderRadius: 50, color: '#ffffff' }}
                     >
-                      Confirm on WhatsApp
+                      Instant WhatsApp Confirmation
                     </Button>
                     <Button
                       variant="outlined"
                       onClick={() => setSubmitted(false)}
-                      sx={{ fontWeight: 700 }}
+                      sx={{ fontWeight: 700, borderRadius: 50, borderColor: '#02476c', color: '#02476c' }}
                     >
                       Book Another Child
                     </Button>
@@ -140,14 +204,12 @@ const BookAppointmentPage = () => {
                 </Box>
               ) : (
                 <Box component="form" onSubmit={handleSubmit}>
-                  <Typography variant="h5" fontWeight={800} color="#0f172a" sx={{ mb: 1 }}>
-                    Child & Parent Details
-                  </Typography>
-                  <Typography variant="body2" color="#64748b" sx={{ mb: 3 }}>
-                    Please provide the details below so our specialists can prepare for the session.
+                  {/* Step 1: Parent & Contact */}
+                  <Typography variant="subtitle1" fontWeight={800} color="#24102F" sx={{ mb: 2, fontFamily: '"Quicksand", sans-serif' }}>
+                    1. Parent & Contact Details
                   </Typography>
 
-                  <Grid container spacing={2.5}>
+                  <Grid container spacing={2.5} sx={{ mb: 3.5 }}>
                     <Grid item xs={12} sm={6}>
                       <TextField
                         fullWidth
@@ -156,20 +218,30 @@ const BookAppointmentPage = () => {
                         name="parentName"
                         value={formData.parentName}
                         onChange={handleChange}
+                        placeholder="e.g. Priya Sharma"
                       />
                     </Grid>
                     <Grid item xs={12} sm={6}>
                       <TextField
                         fullWidth
                         required
-                        label="Contact Phone / WhatsApp"
+                        label="Mobile Phone / WhatsApp Number"
                         name="phone"
                         value={formData.phone}
                         onChange={handleChange}
                         placeholder="e.g. 9876543210"
                       />
                     </Grid>
+                  </Grid>
 
+                  <Divider sx={{ my: 3 }} />
+
+                  {/* Step 2: Child Details */}
+                  <Typography variant="subtitle1" fontWeight={800} color="#24102F" sx={{ mb: 2, fontFamily: '"Quicksand", sans-serif' }}>
+                    2. Child & Therapy Details
+                  </Typography>
+
+                  <Grid container spacing={2.5} sx={{ mb: 3.5 }}>
                     <Grid item xs={12} sm={6}>
                       <TextField
                         fullWidth
@@ -178,15 +250,17 @@ const BookAppointmentPage = () => {
                         name="childName"
                         value={formData.childName}
                         onChange={handleChange}
+                        placeholder="e.g. Aarav"
                       />
                     </Grid>
                     <Grid item xs={12} sm={6}>
                       <TextField
                         fullWidth
-                        label="Child's Age (e.g. 3 years 6 months)"
+                        label="Child's Age (e.g. 3 yrs 6 mos)"
                         name="childAge"
                         value={formData.childAge}
                         onChange={handleChange}
+                        placeholder="e.g. 3 years"
                       />
                     </Grid>
 
@@ -194,7 +268,7 @@ const BookAppointmentPage = () => {
                       <TextField
                         select
                         fullWidth
-                        label="Primary Service Required"
+                        label="Select Primary Therapy Service"
                         name="service"
                         value={formData.service}
                         onChange={handleChange}
@@ -209,12 +283,21 @@ const BookAppointmentPage = () => {
                         </MenuItem>
                       </TextField>
                     </Grid>
+                  </Grid>
 
+                  <Divider sx={{ my: 3 }} />
+
+                  {/* Step 3: Preferred Date & Notes */}
+                  <Typography variant="subtitle1" fontWeight={800} color="#24102F" sx={{ mb: 2, fontFamily: '"Quicksand", sans-serif' }}>
+                    3. Preferred Schedule & Concerns
+                  </Typography>
+
+                  <Grid container spacing={2.5} sx={{ mb: 3.5 }}>
                     <Grid item xs={12} sm={6}>
                       <TextField
                         fullWidth
                         type="date"
-                        label="Preferred Date"
+                        label="Preferred Assessment Date"
                         name="preferredDate"
                         InputLabelProps={{ shrink: true }}
                         value={formData.preferredDate}
@@ -225,7 +308,7 @@ const BookAppointmentPage = () => {
                       <TextField
                         select
                         fullWidth
-                        label="Preferred Time Slot"
+                        label="Preferred Time Window"
                         name="preferredTime"
                         value={formData.preferredTime}
                         onChange={handleChange}
@@ -241,30 +324,47 @@ const BookAppointmentPage = () => {
                         fullWidth
                         multiline
                         rows={3}
-                        label="Key Developmental Concerns & Goals"
+                        label="Key Developmental Concerns (Optional)"
                         name="concerns"
                         value={formData.concerns}
                         onChange={handleChange}
-                        placeholder="Tell us about speech delay, sensory sensitivity, behavioral challenges, or doctor references..."
+                        placeholder="Describe any speech delays, sensory challenges, behavioral triggers, or previous doctor referrals..."
                       />
                     </Grid>
                   </Grid>
 
-                  <Box sx={{ mt: 4, display: 'flex', gap: 2, justifyContent: 'flex-end', alignItems: 'center' }}>
-                    <Button
-                      component={Link}
-                      to="/"
-                      sx={{ color: '#64748b', fontWeight: 600 }}
-                    >
-                      Back to Home
-                    </Button>
+                  {/* Submission Footer */}
+                  <Box
+                    sx={{
+                      display: 'flex',
+                      flexDirection: { xs: 'column', sm: 'row' },
+                      justifyContent: 'space-between',
+                      alignItems: { xs: 'stretch', sm: 'center' },
+                      gap: 2,
+                      pt: 1
+                    }}
+                  >
+                    <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
+                      <LockIcon sx={{ fontSize: 16, color: '#59C36A' }} />
+                      <Typography variant="caption" color="#757277" fontWeight={600}>
+                        100% Confidential & Secure Pediatric Consultation
+                      </Typography>
+                    </Box>
+
                     <Button
                       type="submit"
                       variant="contained"
-                      color="secondary"
                       size="large"
                       startIcon={<CalendarMonthIcon />}
-                      sx={{ px: 4, py: 1.3, fontWeight: 800, borderRadius: 30 }}
+                      sx={{
+                        px: 4,
+                        py: 1.3,
+                        fontWeight: 900,
+                        borderRadius: 50,
+                        bgcolor: '#F6D469',
+                        color: '#24102F',
+                        '&:hover': { bgcolor: '#fcb720' }
+                      }}
                     >
                       Confirm Booking Request
                     </Button>
@@ -274,54 +374,80 @@ const BookAppointmentPage = () => {
             </Paper>
           </Grid>
 
-          {/* Side Info */}
-          <Grid item xs={12} md={4}>
-            <Card sx={{ p: 3.5, borderRadius: 4, border: '1px solid #e2e8f0', bgcolor: '#ffffff', mb: 3 }}>
-              <Typography variant="h6" fontWeight={800} color="#0284c7" gutterBottom>
-                What Happens Next?
-              </Typography>
-              <Box sx={{ display: 'flex', flexDirection: 'column', gap: 2, mt: 2 }}>
-                <Box sx={{ display: 'flex', gap: 1.5 }}>
-                  <VerifiedIcon sx={{ color: '#16a34a', mt: 0.2 }} />
-                  <Typography variant="body2" color="#334155">
-                    <strong>1. Phone Briefing:</strong> Our clinical coordinator will call to confirm your appointment and time slot.
-                  </Typography>
-                </Box>
-                <Box sx={{ display: 'flex', gap: 1.5 }}>
-                  <VerifiedIcon sx={{ color: '#0284c7', mt: 0.2 }} />
-                  <Typography variant="body2" color="#334155">
-                    <strong>2. In-Person Assessment:</strong> Comprehensive 45-min observation with senior therapist at Fusion Homes.
-                  </Typography>
-                </Box>
-                <Box sx={{ display: 'flex', gap: 1.5 }}>
-                  <VerifiedIcon sx={{ color: '#ea580c', mt: 0.2 }} />
-                  <Typography variant="body2" color="#334155">
-                    <strong>3. Personalized Plan:</strong> Receive an Individualized Education Plan (IEP) tailored for your child.
-                  </Typography>
-                </Box>
-              </Box>
-            </Card>
-
-            <Card sx={{ p: 3.5, borderRadius: 4, border: '1px solid #bae6fd', bgcolor: '#f0f9ff' }}>
-              <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, mb: 1 }}>
-                <PhoneIcon sx={{ color: '#0284c7' }} />
-                <Typography variant="subtitle1" fontWeight={800} color="#0369a1">
-                  Need Help Booking?
+          {/* Right Info Column */}
+          <Grid item xs={12} lg={4}>
+            <Stack spacing={3}>
+              <Card sx={{ p: 3, borderRadius: 4.5, border: '1px solid #EFECE7', bgcolor: '#ffffff' }}>
+                <Typography variant="subtitle1" fontWeight={800} color="#24102F" gutterBottom sx={{ fontFamily: '"Quicksand", sans-serif' }}>
+                  What to Expect:
                 </Typography>
-              </Box>
-              <Typography variant="body2" color="#0c4a6e" sx={{ mb: 2 }}>
-                Call our direct reception hotline for immediate assistance or same-day scheduling.
-              </Typography>
-              <Button
-                variant="contained"
-                fullWidth
-                component="a"
-                href={`tel:${CLINIC_INFO.phone}`}
-                sx={{ bgcolor: '#0284c7', fontWeight: 800 }}
-              >
-                Call: {CLINIC_INFO.phone}
-              </Button>
-            </Card>
+                <Stack spacing={2} sx={{ mt: 1.5 }}>
+                  <Box sx={{ display: 'flex', gap: 1.5 }}>
+                    <Box sx={{ width: 28, height: 28, borderRadius: '50%', bgcolor: '#FFFAEA', color: '#02476c', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, fontWeight: 900, fontSize: '0.8rem', border: '1px solid #F6D469' }}>
+                      1
+                    </Box>
+                    <Box>
+                      <Typography variant="body2" fontWeight={800} color="#24102F">
+                        Prompt Phone Confirmation
+                      </Typography>
+                      <Typography variant="caption" color="#757277">
+                        Our coordinator will contact you to verify details and reserve your slot.
+                      </Typography>
+                    </Box>
+                  </Box>
+
+                  <Box sx={{ display: 'flex', gap: 1.5 }}>
+                    <Box sx={{ width: 28, height: 28, borderRadius: '50%', bgcolor: '#fff7ed', color: '#E76100', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, fontWeight: 900, fontSize: '0.8rem', border: '1px solid #E76100' }}>
+                      2
+                    </Box>
+                    <Box>
+                      <Typography variant="body2" fontWeight={800} color="#24102F">
+                        45-Min Play-Based Evaluation
+                      </Typography>
+                      <Typography variant="caption" color="#757277">
+                        Gentle, stress-free clinical milestone observation in our sensory gym.
+                      </Typography>
+                    </Box>
+                  </Box>
+
+                  <Box sx={{ display: 'flex', gap: 1.5 }}>
+                    <Box sx={{ width: 28, height: 28, borderRadius: '50%', bgcolor: '#e8f7ec', color: '#59C36A', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, fontWeight: 900, fontSize: '0.8rem', border: '1px solid #59C36A' }}>
+                      3
+                    </Box>
+                    <Box>
+                      <Typography variant="body2" fontWeight={800} color="#24102F">
+                        Tailored 8-Week IEP
+                      </Typography>
+                      <Typography variant="caption" color="#757277">
+                        A clear developmental roadmap with measurable goals and parent activities.
+                      </Typography>
+                    </Box>
+                  </Box>
+                </Stack>
+              </Card>
+
+              {/* Direct Help Helpline */}
+              <Card sx={{ p: 3, borderRadius: 4.5, border: '1px solid #EFECE7', bgcolor: '#02476c', color: '#ffffff' }}>
+                <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, mb: 1 }}>
+                  <PhoneIcon sx={{ color: '#F6D469', fontSize: 22 }} />
+                  <Typography variant="subtitle1" fontWeight={800} sx={{ color: '#F6D469', fontFamily: '"Quicksand", sans-serif' }}>
+                    Need Immediate Help?
+                  </Typography>
+                </Box>
+                <Typography variant="body2" sx={{ color: '#EFECE7', mb: 2, fontSize: '0.88rem' }}>
+                  Have questions or need same-day scheduling? Call our reception desk directly.
+                </Typography>
+                <Button
+                  variant="contained"
+                  fullWidth
+                  component="a"
+                  href={`tel:${CLINIC_INFO.phone}`}
+                  sx={{ bgcolor: '#F6D469', color: '#24102F', fontWeight: 900, borderRadius: 50, py: 1, '&:hover': { bgcolor: '#fcb720' } }}
+                >
+                  Call: {CLINIC_INFO.phone}
+                </Button>
+              </Card>
+            </Stack>
           </Grid>
         </Grid>
       </Container>

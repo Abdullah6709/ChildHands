@@ -19,6 +19,8 @@ import CheckCircleOutlineIcon from '@mui/icons-material/CheckCircleOutline';
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 import PhoneIcon from '@mui/icons-material/Phone';
 import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
+import FavoriteIcon from '@mui/icons-material/Favorite';
+
 import { SERVICES_DATA, CLINIC_INFO } from '../data/clinicData';
 
 const AppointmentModal = ({ open, onClose, defaultService = '' }) => {
@@ -72,50 +74,70 @@ const AppointmentModal = ({ open, onClose, defaultService = '' }) => {
       fullWidth
       PaperProps={{
         sx: {
-          borderRadius: 4,
-          p: 1,
-          boxShadow: '0 20px 40px rgba(0,0,0,0.2)'
+          borderRadius: 4.5,
+          p: 0.5,
+          boxShadow: '0 24px 48px rgba(2, 71, 108, 0.16)',
+          border: '1px solid #EFECE7',
+          bgcolor: '#ffffff'
         }
       }}
     >
-      <DialogTitle sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', pb: 1 }}>
+      <DialogTitle sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', pb: 1, pt: 2.5, px: 3 }}>
         <Box>
-          <Typography variant="h6" fontWeight={800} color="#0284c7">
-            Book Child Developmental Assessment
-          </Typography>
-          <Typography variant="caption" color="#64748b" fontWeight={600}>
+          <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
+            <FavoriteIcon sx={{ color: '#E76100', fontSize: 20 }} />
+            <Typography variant="h6" fontWeight={900} color="#24102F" sx={{ fontFamily: '"Quicksand", sans-serif' }}>
+              Book Child Assessment
+            </Typography>
+          </Box>
+          <Typography variant="caption" color="#757277" fontWeight={600}>
             Caring Hands Child Development Center • Greater Noida West
           </Typography>
         </Box>
-        <IconButton onClick={handleReset} size="small">
-          <CloseIcon />
+        <IconButton onClick={handleReset} size="small" sx={{ color: '#757277' }}>
+          <CloseIcon fontSize="small" />
         </IconButton>
       </DialogTitle>
 
-      <DialogContent dividers sx={{ py: 2.5 }}>
+      <DialogContent dividers sx={{ py: 2.5, px: 3, borderColor: '#EFECE7' }}>
         {submitted ? (
           <Box sx={{ textAlign: 'center', py: 3 }}>
-            <CheckCircleOutlineIcon sx={{ fontSize: 64, color: '#16a34a', mb: 1.5 }} />
-            <Typography variant="h5" fontWeight={800} color="#0f172a" gutterBottom>
+            <Box
+              sx={{
+                width: 60,
+                height: 60,
+                borderRadius: '50%',
+                bgcolor: '#FFFAEA',
+                color: '#59C36A',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                mx: 'auto',
+                mb: 1.5,
+                border: '2px solid #59C36A'
+              }}
+            >
+              <CheckCircleOutlineIcon sx={{ fontSize: 36 }} />
+            </Box>
+            <Typography variant="h5" fontWeight={900} color="#24102F" gutterBottom sx={{ fontFamily: '"Quicksand", sans-serif' }}>
               Assessment Request Received!
             </Typography>
             <Chip
               label={`Booking Reference: ${bookingId}`}
-              color="primary"
-              sx={{ fontWeight: 800, px: 1, my: 1 }}
+              sx={{ fontWeight: 800, px: 1.5, my: 1, bgcolor: '#FFFAEA', color: '#02476c', border: '1px solid #F6D469', borderRadius: 50 }}
             />
-            <Typography variant="body1" color="#334155" sx={{ mt: 1, mb: 2 }}>
+            <Typography variant="body2" color="#757277" sx={{ mt: 1.5, mb: 2.5, lineHeight: 1.6 }}>
               Dear <strong>{formData.parentName}</strong>, thank you for reaching out for{' '}
               <strong>{formData.childName}</strong>. Our clinical coordinator will call you shortly on{' '}
-              <strong>{formData.phone}</strong> to confirm the exact consultation time slot.
+              <strong>{formData.phone}</strong> to confirm your slot.
             </Typography>
 
-            <Alert severity="info" sx={{ textAlign: 'left', borderRadius: 3, mb: 3 }}>
-              <strong>Location:</strong> G-104, Fusion Homes, Amrapali Dream Valley, Greater Noida West 201318.<br />
-              <strong>Urgent Query?</strong> Call directly at <strong>{CLINIC_INFO.phone}</strong>.
+            <Alert severity="info" sx={{ textAlign: 'left', borderRadius: 3, mb: 3, fontSize: '0.85rem' }}>
+              <strong>Center Address:</strong> G-104 Fusion Homes, Amrapali Dream Valley, Greater Noida West.<br />
+              <strong>Urgent Query?</strong> Call <strong>{CLINIC_INFO.phone}</strong>.
             </Alert>
 
-            <Box sx={{ display: 'flex', gap: 2, justifyContent: 'center' }}>
+            <Box sx={{ display: 'flex', gap: 1.5, justifyContent: 'center', flexWrap: 'wrap' }}>
               <Button
                 variant="contained"
                 component="a"
@@ -123,18 +145,18 @@ const AppointmentModal = ({ open, onClose, defaultService = '' }) => {
                 target="_blank"
                 rel="noopener noreferrer"
                 startIcon={<WhatsAppIcon />}
-                sx={{ bgcolor: '#22c55e', '&:hover': { bgcolor: '#16a34a' }, fontWeight: 700 }}
+                sx={{ bgcolor: '#59C36A', '&:hover': { bgcolor: '#46a354' }, fontWeight: 800, borderRadius: 50, py: 1, color: '#ffffff' }}
               >
                 Send WhatsApp Confirmation
               </Button>
-              <Button variant="outlined" onClick={handleReset} sx={{ fontWeight: 700 }}>
+              <Button variant="outlined" onClick={handleReset} sx={{ fontWeight: 700, borderRadius: 50, borderColor: '#02476c', color: '#02476c' }}>
                 Close
               </Button>
             </Box>
           </Box>
         ) : (
           <Box component="form" onSubmit={handleSubmit}>
-            <Typography variant="body2" color="#64748b" sx={{ mb: 2.5 }}>
+            <Typography variant="body2" color="#757277" sx={{ mb: 2.5, fontSize: '0.88rem' }}>
               Please provide basic details below. Our senior pediatric therapy team will review your requirements and schedule a personalized one-on-one session.
             </Typography>
 
@@ -148,6 +170,7 @@ const AppointmentModal = ({ open, onClose, defaultService = '' }) => {
                   name="parentName"
                   value={formData.parentName}
                   onChange={handleChange}
+                  placeholder="e.g. Priya"
                 />
               </Grid>
               <Grid item xs={12} sm={6}>
@@ -172,16 +195,18 @@ const AppointmentModal = ({ open, onClose, defaultService = '' }) => {
                   name="childName"
                   value={formData.childName}
                   onChange={handleChange}
+                  placeholder="e.g. Aarav"
                 />
               </Grid>
               <Grid item xs={12} sm={6}>
                 <TextField
                   fullWidth
                   size="small"
-                  label="Child's Age (e.g. 3.5 years)"
+                  label="Child's Age (e.g. 3.5 yrs)"
                   name="childAge"
                   value={formData.childAge}
                   onChange={handleChange}
+                  placeholder="e.g. 3.5 years"
                 />
               </Grid>
 
@@ -241,7 +266,7 @@ const AppointmentModal = ({ open, onClose, defaultService = '' }) => {
                   multiline
                   rows={2.5}
                   size="small"
-                  label="Key Developmental Concerns (Speech delay, sensory, focus, tantrums, etc.)"
+                  label="Key Developmental Concerns (Speech delay, sensory, focus, etc.)"
                   name="concerns"
                   value={formData.concerns}
                   onChange={handleChange}
@@ -250,16 +275,23 @@ const AppointmentModal = ({ open, onClose, defaultService = '' }) => {
               </Grid>
             </Grid>
 
-            <Box sx={{ mt: 3, display: 'flex', gap: 2, justifyContent: 'flex-end' }}>
-              <Button variant="text" onClick={handleReset} sx={{ color: '#64748b' }}>
+            <Box sx={{ mt: 3, display: 'flex', gap: 1.5, justifyContent: 'flex-end', alignItems: 'center' }}>
+              <Button variant="text" onClick={handleReset} sx={{ color: '#757277', fontWeight: 700 }}>
                 Cancel
               </Button>
               <Button
                 type="submit"
                 variant="contained"
-                color="secondary"
                 startIcon={<CalendarMonthIcon />}
-                sx={{ px: 3, fontWeight: 700 }}
+                sx={{
+                  px: 3,
+                  py: 1,
+                  fontWeight: 900,
+                  borderRadius: 50,
+                  bgcolor: '#F6D469',
+                  color: '#24102F',
+                  '&:hover': { bgcolor: '#fcb720' }
+                }}
               >
                 Confirm Appointment Request
               </Button>
