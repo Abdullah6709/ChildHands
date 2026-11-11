@@ -1,3 +1,32 @@
+// Service images
+import speechImg from '../assets/services/speech-therapy.jpg';
+import optImg from '../assets/services/oral-placement.jpg';
+import sensoryImg from '../assets/services/sensory-integration.jpg';
+import otImg from '../assets/services/occupational-therapy.jpg';
+import abaImg from '../assets/services/aba-therapy.jpg';
+import groupImg from '../assets/services/group-therapy.jpg';
+import neuroImg from '../assets/services/neurological-care.jpg';
+import counselImg from '../assets/services/parental-counseling.jpg';
+import spedImg from '../assets/services/special-education.jpg';
+
+// Hero image
+import heroChildImg from '../assets/hero/hero-child.jpg';
+
+// Facility images
+import sensoryGymImg from '../assets/facilities/sensory-gym.jpg';
+import speechSuiteImg from '../assets/facilities/speech-suite.jpg';
+import otLabImg from '../assets/facilities/occupational-lab.jpg';
+import counselRoomImg from '../assets/facilities/counseling-room.jpg';
+
+// Project images
+import kalashramImg from '../assets/projects/kalashram.jpg';
+import eduCenterImg from '../assets/projects/education-center.jpg';
+import navTazImg from '../assets/projects/nav-taz-dham.jpg';
+import swayamImg from '../assets/projects/swayamsidha.jpg';
+import sevaImg from '../assets/projects/seva-kutir.jpg';
+
+export const HERO_IMAGE = heroChildImg;
+
 export const CLINIC_INFO = {
   name: "Caring Hands",
   fullName: "Caring Hands Child Development Center",
@@ -50,9 +79,10 @@ export const SERVICES_DATA = [
     title: "Speech Therapy",
     tagline: "Better Communication, Brighter Tomorrow",
     iconName: "RecordVoiceOver",
-    color: "#0284c7",
-    bgLight: "#e0f2fe",
-    borderCol: "#bae6fd",
+    image: speechImg,
+    color: "#02476c",
+    bgLight: "#FFFAEA",
+    borderCol: "#F6D469",
     shortDesc: "Specialized clinical therapy empowering children with speech delays, articulation issues, stammering, and receptive-expressive communication difficulties.",
     overview: "At Caring Hands, our Speech-Language Pathologists design joyful, play-based interventions that stimulate early vocalization, vocabulary acquisition, clarity of pronunciation, and confidence.",
     indications: [
@@ -75,9 +105,10 @@ export const SERVICES_DATA = [
     title: "Oral Placement Therapy",
     tagline: "Stronger Muscles, Clearer Speech",
     iconName: "SentimentSatisfiedAlt",
-    color: "#16a34a",
-    bgLight: "#dcfce7",
-    borderCol: "#bbf7d0",
+    image: optImg,
+    color: "#59C36A",
+    bgLight: "#e8f7ec",
+    borderCol: "#c2ebcb",
     shortDesc: "Tactile-proprioceptive approach targeting jaw stability, lip rounding, tongue movement, and oral muscle coordination for clear speech and safe feeding.",
     overview: "Oral Placement Therapy (OPT) bridges the gap between motor mechanics and speech sound production using therapeutic horns, bubbles, straws, and jaw grading bite blocks.",
     indications: [
@@ -99,8 +130,9 @@ export const SERVICES_DATA = [
     title: "Sensory Integration Therapy",
     tagline: "Calmer Mind, Better Focus",
     iconName: "PanTool",
-    color: "#ea580c",
-    bgLight: "#ffedd5",
+    image: sensoryImg,
+    color: "#E76100",
+    bgLight: "#fff7ed",
     borderCol: "#fed7aa",
     shortDesc: "Comprehensive sensory gym therapies balancing vestibular, proprioceptive, and tactile systems for emotional regulation and sharper focus.",
     overview: "Our state-of-the-art sensory gym features specialized swings, crash pads, climbing walls, and sensory lights that help children process environmental sensory input comfortably.",
@@ -123,9 +155,10 @@ export const SERVICES_DATA = [
     title: "Occupational Therapy",
     tagline: "Build Skills, Gain Independence",
     iconName: "Work",
-    color: "#7c3aed",
-    bgLight: "#f3e8ff",
-    borderCol: "#e9d5ff",
+    image: otImg,
+    color: "#02476c",
+    bgLight: "#f0f9ff",
+    borderCol: "#bae6fd",
     shortDesc: "Helping children master everyday milestones—from pencil grip and scissors to self-dressing, hand-eye coordination, and school readiness.",
     overview: "Pediatric Occupational Therapy at Caring Hands enables children to participate fully in daily life activities, school tasks, and autonomous self-care through tailored skill-building games.",
     indications: [
@@ -147,9 +180,10 @@ export const SERVICES_DATA = [
     title: "ABA Therapy",
     tagline: "Positive Behaviour, Lasting Progress",
     iconName: "Extension",
-    color: "#0d9488",
-    bgLight: "#ccfbf1",
-    borderCol: "#99f6e4",
+    image: abaImg,
+    color: "#297fb0",
+    bgLight: "#eff6ff",
+    borderCol: "#bfdbfe",
     shortDesc: "Applied Behavior Analysis driven by positive reinforcement to teach meaningful communication, social skills, and replace challenging behaviors.",
     overview: "Rooted in scientific behavioral psychology, our ABA specialists break down complex everyday behaviors into small, achievable steps, celebrating every milestone with positive encouragement.",
     indications: [
@@ -171,8 +205,9 @@ export const SERVICES_DATA = [
     title: "Group Therapy",
     tagline: "Together We Grow",
     iconName: "Groups",
-    color: "#db2777",
-    bgLight: "#fce7f3",
+    image: groupImg,
+    color: "#FF1C74",
+    bgLight: "#fdf2f8",
     borderCol: "#fbcfe8",
     shortDesc: "Engaging structured peer sessions fostering sharing, empathy, cooperative playtime, and readiness for mainstream schooling.",
     overview: "Our child-friendly group sessions recreate a welcoming peer ecosystem where children practice taking turns, reading social cues, collaborating on group challenges, and forming genuine friendships.",
@@ -195,9 +230,10 @@ export const SERVICES_DATA = [
     title: "Neurological Conditions",
     tagline: "Special Care for Unique Needs",
     iconName: "Psychology",
-    color: "#4f46e5",
-    bgLight: "#e0e7ff",
-    borderCol: "#c7d2fe",
+    image: neuroImg,
+    color: "#02476c",
+    bgLight: "#e0f2fe",
+    borderCol: "#bae6fd",
     shortDesc: "Holistic, multidisciplinary pediatric care for Cerebral Palsy, Autism Spectrum Disorder, ADHD, Down Syndrome, and neurodevelopmental delays.",
     overview: "Every child with a neurological difference has limitless potential. Our collaborative team of pediatric specialists creates customized therapeutic roadmaps for physical, cognitive, and sensory well-being.",
     indications: [
@@ -220,9 +256,10 @@ export const SERVICES_DATA = [
     title: "Parental Counseling",
     tagline: "Guidance Today, Confidence Tomorrow",
     iconName: "FamilyRestroom",
-    color: "#0891b2",
-    bgLight: "#cffafe",
-    borderCol: "#a5f3fc",
+    image: counselImg,
+    color: "#59C36A",
+    bgLight: "#e8f7ec",
+    borderCol: "#c2ebcb",
     shortDesc: "Empowering parents with compassionate emotional support, milestone tracking, home therapy routines, and practical parenting strategies.",
     overview: "Parents are a child's greatest champions. Our child psychologists and family counselors walk hand-in-hand with parents, turning confusion into confidence and stress into loving clarity.",
     indications: [
@@ -244,9 +281,10 @@ export const SERVICES_DATA = [
     title: "Special Education",
     tagline: "Inclusive Learning for Every Child",
     iconName: "MenuBook",
-    color: "#e11d48",
-    bgLight: "#ffe4e6",
-    borderCol: "#fecdd3",
+    image: spedImg,
+    color: "#E76100",
+    bgLight: "#fff7ed",
+    borderCol: "#fed7aa",
     shortDesc: "Personalized Individualized Education Plans (IEP), remedial learning, multisensory reading, math concepts, and inclusive school readiness.",
     overview: "Our certified Special Educators tailor academic curricula to each child's individual learning pace, unlocking literacy, numeracy, attention span, and cognitive readiness.",
     indications: [
@@ -266,10 +304,49 @@ export const SERVICES_DATA = [
 ];
 
 export const STATS_DATA = [
-  { value: "1,500+", label: "Children Supported", color: "#0284c7" },
-  { value: "9+", label: "Specialized Therapies", color: "#16a34a" },
-  { value: "15+", label: "Certified Specialists", color: "#ea580c" },
-  { value: "99%", label: "Parent Satisfaction", color: "#db2777" }
+  { value: "1,500+", label: "Children Supported", color: "#02476c" },
+  { value: "9+", label: "Specialized Therapies", color: "#59C36A" },
+  { value: "15+", label: "Certified Specialists", color: "#E76100" },
+  { value: "99%", label: "Parent Satisfaction", color: "#FF1C74" }
+];
+
+export const FACILITIES_DATA = [
+  {
+    id: "sensory-gym",
+    title: "Sensory Integration Gym",
+    subtitle: "Vestibular & Proprioceptive Development",
+    desc: "Equipped with suspension bolster swings, tactile climbing wall, foam crash mats, and sensory light modulation to calm anxiety and enhance sensory processing.",
+    image: sensoryGymImg,
+    tag: "High Stimulation & Calming Zone",
+    color: "#E76100"
+  },
+  {
+    id: "speech-suite",
+    title: "Speech & OPT Suite",
+    subtitle: "Acoustic Speech & Oral Placement Lab",
+    desc: "Acoustically sound-insulated room with specialized jaw grading blocks, therapeutic bubble/straw hierarchies, and mirror drills for clear articulation.",
+    image: speechSuiteImg,
+    tag: "Acoustically Calibrated",
+    color: "#02476c"
+  },
+  {
+    id: "occupational-lab",
+    title: "Occupational & Fine Motor Lab",
+    subtitle: "Independence & School Readiness",
+    desc: "Ergonomic handwriting tables, bilateral manipulation puzzles, sensory tactile bins, and daily living simulations to build strong grasp and confidence.",
+    image: otLabImg,
+    tag: "ADL Simulation Corner",
+    color: "#59C36A"
+  },
+  {
+    id: "counseling-room",
+    title: "Quiet Parental Counseling Suite",
+    subtitle: "Confidential Family Guidance",
+    desc: "Warm, private consulting room designed for compassionate parent guidance, milestone reviews, behavioral debriefs, and emotional support.",
+    image: counselRoomImg,
+    tag: "Peaceful & Confidential",
+    color: "#FF1C74"
+  }
 ];
 
 export const TESTIMONIALS_DATA = [
@@ -298,67 +375,62 @@ export const TESTIMONIALS_DATA = [
 
 export const FAQ_DATA = [
   {
-    question: "When should I consult a child development specialist?",
-    answer: "If you notice delays in speech (not speaking single words by 15-18 months), lack of eye contact, extreme sensitivity to sounds or touch, difficulty with motor coordination, or frequent severe meltdowns, an early assessment makes a world of difference."
+    q: "How do I know if my child needs Speech or Sensory Therapy?",
+    a: "If your child is not speaking single words by 16-18 months, struggles to form 2-word phrases by age 2, frequently has tantrums from loud sounds or specific clothes, avoids eye contact, or cannot sit still for simple tasks, a developmental screening is strongly advised. Early intervention between ages 2–6 yields the most rapid progress."
   },
   {
-    question: "What is Oral Placement Therapy (OPT) and how does it differ from regular Speech Therapy?",
-    answer: "Traditional speech therapy works on auditory and visual imitation of sounds. OPT specifically strengthens the muscles of the jaw, lips, and tongue using tactile tools (horns, straws, bite blocks) when muscle weakness or motor planning is preventing clear speech."
+    q: "What happens during the first clinical assessment session?",
+    a: "Our multidisciplinary clinical specialist conducts a friendly, 45-minute play-based screening in our sensory gym or speech room. We observe verbal articulation, oral motor strength, sensory responses, gross/fine motor control, and parent concerns. You will receive an immediate debrief and an 8-week Individualized Education & Therapy Plan (IEP)."
   },
   {
-    question: "Where is Caring Hands Child Development Center located?",
-    answer: "Our primary center is at G-104, Fusion Homes, Amrapali Dream Valley, Greater Noida West 201318. We are easily accessible from Gaur City, Crossing Republik, Noida Sector 76/52, and Indirapuram. We also operate in Pune (Ambi, Talegaon)."
+    q: "Where is the Caring Hands therapy center located in Greater Noida West?",
+    a: "Our clinic is at G-104, Fusion Homes, Amrapali Dream Valley, Greater Noida West (Noida Extension) 201318. It is conveniently accessible from Gaur City 1 & 2, Char Murti Chowk, Crossings Republik, and Noida Sector 52/76 Metro stations."
   },
   {
-    question: "How long does each therapy session last?",
-    answer: "Standard sessions typically last 45 to 60 minutes of intensive 1-on-1 therapeutic engagement, followed by a 10-minute briefing with parents to discuss progress and home practice activities."
+    q: "Are parents allowed to observe or participate in therapy sessions?",
+    a: "Absolutely! We strongly advocate parent empowerment. Parents can observe sessions through one-way viewing setups and receive 10 minutes of debriefing at the end of each session with actionable home activities."
   },
   {
-    question: "Do you offer combined multidisciplinary therapy programs?",
-    answer: "Yes! Many children benefit from integrated therapies (e.g. Speech Therapy + Sensory Integration + Occupational Therapy). We design coordinated Individualized Education Plans (IEP) where all therapists align on shared goals."
+    q: "How many sessions per week are recommended for noticeable improvement?",
+    a: "Depending on the clinical assessment, most children attend 2 to 3 sessions per week (45–60 minutes per session). Milestones are re-evaluated every 8 weeks to track quantifiable progress."
   }
 ];
 
 export const WE_CARE_ABOUT = [
   {
-    title: "Offering a Childhood to Every Child",
-    subtitle: "Joyful Play & Clinical Growth",
-    desc: "Every child deserves a nurturing childhood free from barriers. Play-based therapy, sensory integration, and emotional warmth.",
+    title: "Child Development",
+    desc: "Nurturing cognitive, sensory, and motor milestones in early childhood to lay lifelong foundations.",
     icon: "ChildFriendly",
     color: "#02476c",
-    bg: "#e0f2fe"
+    bg: "#FFFAEA"
   },
   {
-    title: "Imparting Education for Empowerment",
-    subtitle: "Inclusive Learning & IEPs",
-    desc: "Empowering young minds through specialized education, remedial learning, and individualized development roadmaps.",
+    title: "Special Education",
+    desc: "Inclusive curricula, remedial learning, and IEPs ensuring every child thrives in classroom environments.",
     icon: "MenuBook",
-    color: "#E76100",
-    bg: "#ffedd5"
-  },
-  {
-    title: "Nurturing Speech & Communication",
-    subtitle: "Clear Words, Confident Voice",
-    desc: "Overcoming speech delays, articulation difficulties, and oral motor weaknesses with certified speech-language therapists.",
-    icon: "RecordVoiceOver",
     color: "#59C36A",
-    bg: "#dcfce7"
+    bg: "#e8f7ec"
   },
   {
-    title: "Sensory & Physical Equilibrium",
-    subtitle: "Modern Sensory Gym",
-    desc: "Suspended swings, deep proprioceptive therapy, and vestibular activities to balance sensory systems for focused learning.",
+    title: "Communication & Speech",
+    desc: "Fostering speech, articulation, oral motor development, and confident expression for every child.",
+    icon: "RecordVoiceOver",
+    color: "#E76100",
+    bg: "#fff7ed"
+  },
+  {
+    title: "Healthcare & Nutrition",
+    desc: "Delivering community medical camps, nutritional guidance, and holistic sensory well-being.",
     icon: "Spa",
     color: "#297fb0",
-    bg: "#f0f9ff"
+    bg: "#eff6ff"
   },
   {
-    title: "Family Guidance & Parental Harmony",
-    subtitle: "Co-Regulation Coaching",
-    desc: "Direct guidance, stress reduction, and positive home intervention routines to empower parents as lifelong advocates.",
+    title: "Parent Empowerment",
+    desc: "Guiding parents with co-regulation strategies, empathetic counseling, and loving clarity.",
     icon: "FamilyRestroom",
     color: "#FF1C74",
-    bg: "#ffe4e6"
+    bg: "#fdf2f8"
   }
 ];
 
@@ -366,9 +438,10 @@ export const TRUST_PROJECTS = [
   {
     id: "child-development-center",
     title: "Child Development Center (Gr. Noida West)",
-    tag: "Main Therapy Hub",
+    tag: "Main Clinical Hub",
     desc: "State-of-the-art clinical center providing 9 specialized pediatric therapies: Speech, Sensory Gym, OT, ABA & Special Education.",
     location: "G-104, Fusion Homes, Greater Noida West",
+    image: speechImg,
     color: "#02476c"
   },
   {
@@ -377,6 +450,7 @@ export const TRUST_PROJECTS = [
     tag: "Children's Shelter & Care",
     desc: "Providing safe residential shelter, quality education, healthcare, and loving care for rescued and abandoned children.",
     location: "Ambi Village, Talegaon Dabhade, Pune",
+    image: kalashramImg,
     color: "#E76100"
   },
   {
@@ -385,6 +459,7 @@ export const TRUST_PROJECTS = [
     tag: "Inclusive Schooling",
     desc: "Dedicated to providing inclusive, high-quality foundational education for children from underprivileged backgrounds.",
     location: "Pune & Regional Centers",
+    image: eduCenterImg,
     color: "#59C36A"
   },
   {
@@ -393,6 +468,7 @@ export const TRUST_PROJECTS = [
     tag: "Elderly Care Center",
     desc: "A 50-bed compassionate residential care home ensuring dignity, medical attention, and community for senior citizens.",
     location: "Talegaon, Pune",
+    image: navTazImg,
     color: "#297fb0"
   },
   {
@@ -401,6 +477,7 @@ export const TRUST_PROJECTS = [
     tag: "Women Empowerment",
     desc: "Counseling, vocational skill training, and livelihood generation enabling women in crisis to gain financial independence.",
     location: "Maharashtra Communities",
+    image: swayamImg,
     color: "#FF1C74"
   },
   {
@@ -409,6 +486,7 @@ export const TRUST_PROJECTS = [
     tag: "Youth Empowerment",
     desc: "Empowering young boys through academic support, computer literacy, vocational mentorship, and moral leadership.",
     location: "Pali Village, Mira-Bhayandar",
+    image: sevaImg,
     color: "#FCB720"
   }
 ];

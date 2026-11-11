@@ -170,44 +170,55 @@ const ServicesPage = ({ onOpenAppointment }) => {
               <Grid item xs={12} md={5}>
                 <Box
                   sx={{
-                    p: { xs: 3, sm: 4 },
                     borderRadius: 4,
                     bgcolor: '#FFFAEA',
                     border: `1px solid #F6D469`,
-                    textAlign: 'center'
+                    overflow: 'hidden'
                   }}
                 >
-                  <Typography variant="caption" fontWeight={800} color="#02476c" sx={{ textTransform: 'uppercase', letterSpacing: '0.04em' }}>
-                    EXPECTED THERAPEUTIC OUTCOMES
-                  </Typography>
-                  <Typography variant="h6" fontWeight={800} color="#24102F" sx={{ my: 1.5, lineHeight: 1.4, fontSize: '1.05rem', fontFamily: '"Quicksand", sans-serif' }}>
-                    "{selectedService.outcomes}"
-                  </Typography>
+                  {selectedService.image && (
+                    <Box sx={{ height: 190, width: '100%', overflow: 'hidden' }}>
+                      <Box
+                        component="img"
+                        src={selectedService.image}
+                        alt={selectedService.title}
+                        sx={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                      />
+                    </Box>
+                  )}
+                  <Box sx={{ p: { xs: 2.5, sm: 3 }, textAlign: 'center' }}>
+                    <Typography variant="caption" fontWeight={800} color="#02476c" sx={{ textTransform: 'uppercase', letterSpacing: '0.04em' }}>
+                      EXPECTED THERAPEUTIC OUTCOMES
+                    </Typography>
+                    <Typography variant="h6" fontWeight={800} color="#24102F" sx={{ my: 1.5, lineHeight: 1.4, fontSize: '1.05rem', fontFamily: '"Quicksand", sans-serif' }}>
+                      "{selectedService.outcomes}"
+                    </Typography>
 
-                  <Divider sx={{ my: 2, borderColor: '#F6D469' }} />
+                    <Divider sx={{ my: 2, borderColor: '#F6D469' }} />
 
-                  <Typography variant="body2" color="#757277" sx={{ mb: 2.5, fontSize: '0.88rem' }}>
-                    Conducted at <strong>G-104 Fusion Homes, Greater Noida West</strong>.
-                  </Typography>
+                    <Typography variant="body2" color="#757277" sx={{ mb: 2.5, fontSize: '0.88rem' }}>
+                      Conducted at <strong>G-104 Fusion Homes, Greater Noida West</strong>.
+                    </Typography>
 
-                  <Button
-                    variant="contained"
-                    fullWidth
-                    size="large"
-                    onClick={() => onOpenAppointment(selectedService.title)}
-                    startIcon={<CalendarMonthIcon />}
-                    sx={{
-                      bgcolor: '#02476c',
-                      color: '#ffffff',
-                      fontWeight: 800,
-                      py: 1.2,
-                      borderRadius: 50,
-                      boxShadow: 'none',
-                      '&:hover': { bgcolor: '#012d45' }
-                    }}
-                  >
-                    Book {selectedService.title} Assessment
-                  </Button>
+                    <Button
+                      variant="contained"
+                      fullWidth
+                      size="large"
+                      onClick={() => onOpenAppointment(selectedService.title)}
+                      startIcon={<CalendarMonthIcon />}
+                      sx={{
+                        bgcolor: '#02476c',
+                        color: '#ffffff',
+                        fontWeight: 800,
+                        py: 1.2,
+                        borderRadius: 50,
+                        boxShadow: 'none',
+                        '&:hover': { bgcolor: '#012d45' }
+                      }}
+                    >
+                      Book {selectedService.title} Assessment
+                    </Button>
+                  </Box>
                 </Box>
               </Grid>
             </Grid>

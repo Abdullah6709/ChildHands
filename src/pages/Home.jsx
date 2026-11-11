@@ -48,7 +48,9 @@ import {
   FAQ_DATA,
   WE_CARE_ABOUT,
   TRUST_PROJECTS,
-  BANK_DETAILS
+  BANK_DETAILS,
+  HERO_IMAGE,
+  FACILITIES_DATA
 } from '../data/clinicData';
 import ServiceCard from '../components/ServiceCard';
 import MapRouting from '../components/MapRouting';
@@ -272,15 +274,15 @@ const Home = ({ onOpenAppointment }) => {
                 }}
               >
                 {/* Top Header Row */}
-                <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', mb: 2.5 }}>
+                <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', mb: 2 }}>
                   <Box sx={{ display: 'flex', alignItems: 'center', gap: 1.5 }}>
                     <Box
                       component="img"
                       src={logoImg}
                       alt="Caring Hands Logo"
                       sx={{
-                        width: 50,
-                        height: 50,
+                        width: 46,
+                        height: 46,
                         borderRadius: '50%',
                         objectFit: 'contain',
                         border: '2px solid #F6D469',
@@ -305,6 +307,67 @@ const Home = ({ onOpenAppointment }) => {
                     size="small"
                     sx={{ bgcolor: '#dcfce7', color: '#15803d', fontWeight: 700, borderRadius: 50, fontSize: '0.72rem' }}
                   />
+                </Box>
+
+                {/* Hero Feature Image with Floating Badges */}
+                <Box
+                  sx={{
+                    position: 'relative',
+                    height: 210,
+                    borderRadius: 3.5,
+                    overflow: 'hidden',
+                    mb: 2,
+                    border: '1px solid #EFECE7'
+                  }}
+                >
+                  <Box
+                    component="img"
+                    src={HERO_IMAGE}
+                    alt="Child in Pediatric Developmental Therapy"
+                    sx={{
+                      width: '100%',
+                      height: '100%',
+                      objectFit: 'cover'
+                    }}
+                  />
+                  <Box
+                    sx={{
+                      position: 'absolute',
+                      inset: 0,
+                      background: 'linear-gradient(to top, rgba(2, 71, 108, 0.8) 0%, transparent 60%)'
+                    }}
+                  />
+                  <Box
+                    sx={{
+                      position: 'absolute',
+                      bottom: 10,
+                      left: 12,
+                      right: 12,
+                      display: 'flex',
+                      justifyContent: 'space-between',
+                      alignItems: 'center'
+                    }}
+                  >
+                    <Box>
+                      <Typography variant="subtitle2" fontWeight={800} color="#ffffff" lineHeight={1.2}>
+                        Every Child Matters ❤️
+                      </Typography>
+                      <Typography variant="caption" sx={{ color: '#F6D469', fontWeight: 700 }}>
+                        Fusion Homes, Greater Noida West
+                      </Typography>
+                    </Box>
+                    <Chip
+                      label="500+ Milestones"
+                      size="small"
+                      sx={{
+                        bgcolor: '#F6D469',
+                        color: '#24102F',
+                        fontWeight: 800,
+                        fontSize: '0.72rem',
+                        borderRadius: 50
+                      }}
+                    />
+                  </Box>
                 </Box>
 
                 {/* Rating Badge Banner */}
@@ -718,13 +781,95 @@ const Home = ({ onOpenAppointment }) => {
         </Container>
       </Box>
 
+      {/* ================= PURPOSE-BUILT CLINICAL FACILITIES & SENSORY GYM ================= */}
+      <Box sx={{ bgcolor: '#FDFBF7', py: { xs: 8, md: 10 }, borderTop: '1px solid #EFECE7' }}>
+        <Container maxWidth="xl">
+          <Box sx={{ textAlign: 'center', maxWidth: 780, mx: 'auto', mb: 6 }}>
+            <Chip
+              icon={<FavoriteIcon sx={{ color: '#E76100 !important' }} />}
+              label="Therapy Rooms & Environment"
+              size="small"
+              sx={{ bgcolor: '#FFFAEA', color: '#02476c', fontWeight: 800, mb: 1.5, border: '1px solid #F6D469', borderRadius: 50, px: 1 }}
+            />
+            <Typography variant="h2" sx={{ fontFamily: '"Quicksand", sans-serif', fontWeight: 900, color: '#24102F', mb: 1.5, fontSize: { xs: '2rem', sm: '2.8rem' } }}>
+              Purpose-Built Pediatric Therapy Center
+            </Typography>
+            <Typography variant="body1" color="#757277" sx={{ fontSize: '1.05rem', lineHeight: 1.6 }}>
+              Take a visual tour inside our safe, stimulating, and child-ergonomic clinical suites located at <strong>G-104 Fusion Homes, Greater Noida West</strong>.
+            </Typography>
+          </Box>
+
+          <Grid container spacing={3.5}>
+            {FACILITIES_DATA.map((fac) => (
+              <Grid item xs={12} sm={6} md={3} key={fac.id}>
+                <Card
+                  sx={{
+                    height: '100%',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    borderRadius: 4,
+                    overflow: 'hidden',
+                    border: '1px solid #EFECE7',
+                    bgcolor: '#ffffff',
+                    transition: 'all 0.3s ease',
+                    '&:hover': {
+                      transform: 'translateY(-6px)',
+                      boxShadow: '0 16px 36px rgba(2, 71, 108, 0.12)',
+                      borderColor: fac.color,
+                      '& .facility-img': { transform: 'scale(1.06)' }
+                    }
+                  }}
+                >
+                  <Box sx={{ position: 'relative', height: 180, overflow: 'hidden', bgcolor: '#f1f5f9' }}>
+                    <Box
+                      component="img"
+                      src={fac.image}
+                      alt={fac.title}
+                      className="facility-img"
+                      sx={{ width: '100%', height: '100%', objectFit: 'cover', transition: 'transform 0.4s ease' }}
+                    />
+                    <Chip
+                      label={fac.tag}
+                      size="small"
+                      sx={{
+                        position: 'absolute',
+                        bottom: 10,
+                        left: 10,
+                        bgcolor: 'rgba(255, 255, 255, 0.95)',
+                        color: fac.color,
+                        fontWeight: 800,
+                        fontSize: '0.7rem',
+                        borderRadius: 50,
+                        border: '1px solid #EFECE7',
+                        backdropFilter: 'blur(4px)'
+                      }}
+                    />
+                  </Box>
+                  <CardContent sx={{ p: 2.5, flexGrow: 1, display: 'flex', flexDirection: 'column' }}>
+                    <Typography variant="h6" fontWeight={800} color="#24102F" sx={{ fontFamily: '"Quicksand", sans-serif', mb: 0.5, fontSize: '1.1rem' }}>
+                      {fac.title}
+                    </Typography>
+                    <Typography variant="caption" sx={{ color: fac.color, fontWeight: 700, mb: 1.5, display: 'block' }}>
+                      {fac.subtitle}
+                    </Typography>
+                    <Typography variant="body2" color="#757277" sx={{ fontSize: '0.86rem', lineHeight: 1.6, flexGrow: 1 }}>
+                      {fac.desc}
+                    </Typography>
+                  </CardContent>
+                </Card>
+              </Grid>
+            ))}
+          </Grid>
+        </Container>
+      </Box>
+
       {/* ================= COMMUNITY PROJECTS & IMPACT ECOSYSTEM (FROM CARINGHANDS.ORG.IN) ================= */}
       <Box sx={{ bgcolor: '#ffffff', py: { xs: 8, md: 10 }, borderTop: '1px solid #EFECE7' }}>
         <Container maxWidth="xl">
           <Box sx={{ textAlign: 'center', maxWidth: 760, mx: 'auto', mb: 6 }}>
             <Chip
               label="Our Broader Trust Footprint"
-              sx={{ bgcolor: '#F6D469', color: '#24102F', fontWeight: 800, mb: 1.5, px: 1 }}
+              sx={{ bgcolor: '#F6D469', color: '#24102F', fontWeight: 800, mb: 1.5, px: 1, borderRadius: 50 }}
             />
             <Typography variant="h2" sx={{ fontFamily: '"Quicksand", sans-serif', fontWeight: 800, color: '#24102F', mb: 1.5, fontSize: { xs: '2rem', sm: '2.6rem' } }}>
               Caring Hands Projects & Initiatives
@@ -739,43 +884,69 @@ const Home = ({ onOpenAppointment }) => {
               <Grid item xs={12} sm={6} md={4} key={proj.id}>
                 <Card
                   sx={{
-                    p: 3,
-                    height: '100%',
-                    borderRadius: 3.5,
+                    borderRadius: 4,
+                    overflow: 'hidden',
                     border: '1px solid #EFECE7',
                     bgcolor: '#FDFBF7',
                     display: 'flex',
                     flexDirection: 'column',
-                    justifyContent: 'space-between',
-                    transition: 'all 0.25s',
-                    '&:hover': { transform: 'translateY(-4px)', borderColor: proj.color, bgcolor: '#ffffff' }
+                    height: '100%',
+                    transition: 'all 0.3s ease',
+                    '&:hover': {
+                      transform: 'translateY(-6px)',
+                      borderColor: proj.color,
+                      boxShadow: '0 16px 36px rgba(2, 71, 108, 0.1)',
+                      '& .project-card-img': { transform: 'scale(1.06)' }
+                    }
                   }}
                 >
-                  <Box>
-                    <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mb: 1.5 }}>
+                  {/* Project Image */}
+                  {proj.image && (
+                    <Box sx={{ position: 'relative', height: 180, overflow: 'hidden', bgcolor: '#f1f5f9' }}>
+                      <Box
+                        component="img"
+                        src={proj.image}
+                        alt={proj.title}
+                        className="project-card-img"
+                        sx={{ width: '100%', height: '100%', objectFit: 'cover', transition: 'transform 0.4s ease' }}
+                      />
+                      <Box sx={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(36, 16, 47, 0.5) 0%, transparent 60%)' }} />
                       <Chip
                         label={proj.tag}
                         size="small"
-                        sx={{ bgcolor: '#ffffff', color: proj.color, fontWeight: 700, border: '1px solid #EFECE7', fontSize: '0.74rem' }}
+                        sx={{
+                          position: 'absolute',
+                          bottom: 10,
+                          left: 12,
+                          bgcolor: 'rgba(255, 255, 255, 0.95)',
+                          color: proj.color,
+                          fontWeight: 800,
+                          border: '1px solid #EFECE7',
+                          fontSize: '0.74rem',
+                          borderRadius: 50
+                        }}
                       />
-                      <Box sx={{ width: 8, height: 8, borderRadius: '50%', bgcolor: proj.color }} />
+                    </Box>
+                  )}
+
+                  <CardContent sx={{ p: 3, flexGrow: 1, display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+                    <Box>
+                      <Typography variant="h6" fontWeight={800} color="#24102F" sx={{ mb: 1, fontSize: '1.15rem', fontFamily: '"Quicksand", sans-serif' }}>
+                        {proj.title}
+                      </Typography>
+
+                      <Typography variant="body2" color="#757277" sx={{ lineHeight: 1.6, mb: 2 }}>
+                        {proj.desc}
+                      </Typography>
                     </Box>
 
-                    <Typography variant="h6" fontWeight={800} color="#24102F" sx={{ mb: 1, fontSize: '1.15rem' }}>
-                      {proj.title}
-                    </Typography>
-
-                    <Typography variant="body2" color="#757277" sx={{ lineHeight: 1.6, mb: 2 }}>
-                      {proj.desc}
-                    </Typography>
-                  </Box>
-
-                  <Box sx={{ pt: 1.5, borderTop: '1px solid #EFECE7', display: 'flex', alignItems: 'center', gap: 0.8 }}>
-                    <LocationOnIcon sx={{ fontSize: 16, color: proj.color }} />
-                    <Typography variant="caption" fontWeight={600} color="#757277">
-                      {proj.location}
-                    </Typography>
-                  </Box>
+                    <Box sx={{ pt: 1.5, borderTop: '1px solid #EFECE7', display: 'flex', alignItems: 'center', gap: 0.8 }}>
+                      <LocationOnIcon sx={{ fontSize: 16, color: proj.color }} />
+                      <Typography variant="caption" fontWeight={700} color="#757277">
+                        {proj.location}
+                      </Typography>
+                    </Box>
+                  </CardContent>
                 </Card>
               </Grid>
             ))}

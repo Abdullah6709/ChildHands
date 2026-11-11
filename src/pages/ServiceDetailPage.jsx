@@ -186,38 +186,50 @@ const ServiceDetailPage = ({ onOpenAppointment }) => {
             <Grid item xs={12} md={4}>
               <Card
                 sx={{
-                  p: 3,
                   borderRadius: 4,
                   bgcolor: '#ffffff',
                   boxShadow: '0 4px 20px rgba(2, 71, 108, 0.04)',
-                  border: '1px solid #EFECE7'
+                  border: '1px solid #EFECE7',
+                  overflow: 'hidden'
                 }}
               >
-                <Typography variant="subtitle2" fontWeight={900} color="#24102F" gutterBottom sx={{ fontFamily: '"Quicksand", sans-serif' }}>
-                  Program Details at a Glance
-                </Typography>
-                <Divider sx={{ my: 1.5 }} />
+                {service.image && (
+                  <Box sx={{ height: 190, width: '100%', overflow: 'hidden' }}>
+                    <Box
+                      component="img"
+                      src={service.image}
+                      alt={service.title}
+                      sx={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                    />
+                  </Box>
+                )}
+                <Box sx={{ p: 3 }}>
+                  <Typography variant="subtitle2" fontWeight={900} color="#24102F" gutterBottom sx={{ fontFamily: '"Quicksand", sans-serif' }}>
+                    Program Details at a Glance
+                  </Typography>
+                  <Divider sx={{ my: 1.5 }} />
 
-                <Box sx={{ display: 'flex', flexDirection: 'column', gap: 1.5, fontSize: '0.86rem' }}>
-                  <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
-                    <Typography color="#757277" fontWeight={500}>Target Age:</Typography>
-                    <Typography color="#24102F" fontWeight={700}>18 mos – 14 yrs</Typography>
-                  </Box>
-                  <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
-                    <Typography color="#757277" fontWeight={500}>Session Format:</Typography>
-                    <Typography color="#24102F" fontWeight={700}>1-on-1 Individualized</Typography>
-                  </Box>
-                  <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
-                    <Typography color="#757277" fontWeight={500}>Session Duration:</Typography>
-                    <Typography color="#24102F" fontWeight={700}>45 – 60 Minutes</Typography>
-                  </Box>
-                  <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
-                    <Typography color="#757277" fontWeight={500}>Milestone Review:</Typography>
-                    <Typography color="#24102F" fontWeight={700}>8-Week Objective IEP</Typography>
-                  </Box>
-                  <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
-                    <Typography color="#757277" fontWeight={500}>Clinical Location:</Typography>
-                    <Typography color="#02476c" fontWeight={800}>Fusion Homes, Gr. Noida</Typography>
+                  <Box sx={{ display: 'flex', flexDirection: 'column', gap: 1.5, fontSize: '0.86rem' }}>
+                    <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
+                      <Typography color="#757277" fontWeight={500}>Target Age:</Typography>
+                      <Typography color="#24102F" fontWeight={700}>18 mos – 14 yrs</Typography>
+                    </Box>
+                    <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
+                      <Typography color="#757277" fontWeight={500}>Session Format:</Typography>
+                      <Typography color="#24102F" fontWeight={700}>1-on-1 Individualized</Typography>
+                    </Box>
+                    <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
+                      <Typography color="#757277" fontWeight={500}>Session Duration:</Typography>
+                      <Typography color="#24102F" fontWeight={700}>45 – 60 Minutes</Typography>
+                    </Box>
+                    <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
+                      <Typography color="#757277" fontWeight={500}>Milestone Review:</Typography>
+                      <Typography color="#24102F" fontWeight={700}>8-Week Objective IEP</Typography>
+                    </Box>
+                    <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
+                      <Typography color="#757277" fontWeight={500}>Clinical Location:</Typography>
+                      <Typography color="#02476c" fontWeight={800}>Fusion Homes, Gr. Noida</Typography>
+                    </Box>
                   </Box>
                 </Box>
               </Card>
