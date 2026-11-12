@@ -197,7 +197,7 @@ const ServicesPage = ({ onOpenAppointment }) => {
                     <Divider sx={{ my: 2, borderColor: '#F6D469' }} />
 
                     <Typography variant="body2" color="#757277" sx={{ mb: 2.5, fontSize: '0.88rem' }}>
-                      Conducted at <strong>G-104 Fusion Homes, Greater Noida West</strong>.
+                      Conducted at <strong>G-104, Fusion Homes, Tech Zone IV, Greater Noida West 201318</strong>.
                     </Typography>
 
                     <Button

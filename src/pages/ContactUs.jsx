@@ -24,10 +24,8 @@ import SendIcon from '@mui/icons-material/Send';
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import DirectionsIcon from '@mui/icons-material/Directions';
 import FavoriteIcon from '@mui/icons-material/Favorite';
-import AccountBalanceIcon from '@mui/icons-material/AccountBalance';
-import VerifiedUserIcon from '@mui/icons-material/VerifiedUser';
 
-import { CLINIC_INFO, SERVICES_DATA, BANK_DETAILS } from '../data/clinicData';
+import { CLINIC_INFO, SERVICES_DATA } from '../data/clinicData';
 import MapRouting from '../components/MapRouting';
 
 const ContactUs = ({ onOpenAppointment }) => {
@@ -213,7 +211,7 @@ const ContactUs = ({ onOpenAppointment }) => {
                 Child Development Hub
               </Typography>
               <Typography variant="body2" color="#757277" sx={{ fontSize: '0.82rem', mb: 1.5 }}>
-                G-104, Fusion Homes, Amrapali Dream Valley, Gr. Noida West
+                G-104, Fusion Homes, Tech Zone IV, Greater Noida West 201318
               </Typography>
               <Chip label="Mon-Sat: 9am - 7:30pm" size="small" sx={{ fontSize: '0.72rem', fontWeight: 700, borderRadius: 50, bgcolor: '#FFFAEA', color: '#02476c' }} />
             </Card>
@@ -462,7 +460,7 @@ const ContactUs = ({ onOpenAppointment }) => {
                   Public Transit & Driving Notes:
                 </Typography>
                 <Box component="ul" sx={{ pl: 2.5, m: 0, fontSize: '0.88rem', color: '#757277', lineHeight: 1.7 }}>
-                  <li><strong>From Gaur City / Ek Murti:</strong> Take the road towards Amrapali Dream Valley (approx 5-7 minutes drive).</li>
+                  <li><strong>From Gaur City / Ek Murti:</strong> Take the road towards Tech Zone IV, Greater Noida West (approx 5-7 minutes drive).</li>
                   <li><strong>Nearest Metro Stations:</strong> Noida Sector 52 & Noida Sector 76. Regular shared autos, e-rickshaws, and cabs directly connect to Fusion Homes.</li>
                   <li><strong>From Ghaziabad / Indirapuram:</strong> Accessible via NH-24 / Crossings Republik exit.</li>
                   <li><strong>Parking:</strong> Secure designated visitor parking inside Fusion Homes complex.</li>
@@ -498,93 +496,6 @@ const ContactUs = ({ onOpenAppointment }) => {
             </Card>
           </Grid>
         </Grid>
-
-        {/* Bank & Trust Details from live site */}
-        <Paper
-          elevation={0}
-          sx={{
-            p: { xs: 3, sm: 4.5 },
-            borderRadius: 4.5,
-            bgcolor: '#02476c',
-            color: '#ffffff',
-            border: '2px solid #F6D469'
-          }}
-        >
-          <Grid container spacing={3} alignItems="center">
-            <Grid item xs={12} md={8}>
-              <Box sx={{ display: 'flex', alignItems: 'center', gap: 1.5, mb: 1 }}>
-                <AccountBalanceIcon sx={{ color: '#F6D469', fontSize: 32 }} />
-                <Typography variant="h5" fontWeight={900} sx={{ color: '#F6D469', fontFamily: '"Quicksand", sans-serif' }}>
-                  Official Trust Details • Caring Hands
-                </Typography>
-              </Box>
-              <Typography variant="body2" sx={{ color: '#EFECE7', lineHeight: 1.7, mb: 2 }}>
-                Caring Hands is an officially registered non-profit trust dedicated to child development and community welfare. For corporate partnerships, CSR initiatives, or fee transfers:
-              </Typography>
-              <Grid container spacing={2}>
-                <Grid item xs={12} sm={6}>
-                  <Typography variant="caption" sx={{ color: '#F6D469', fontWeight: 800, display: 'block' }}>
-                    ACCOUNT NAME
-                  </Typography>
-                  <Typography variant="body2" fontWeight={700}>
-                    {BANK_DETAILS.accountName}
-                  </Typography>
-                </Grid>
-                <Grid item xs={12} sm={6}>
-                  <Typography variant="caption" sx={{ color: '#F6D469', fontWeight: 800, display: 'block' }}>
-                    BANK & BRANCH
-                  </Typography>
-                  <Typography variant="body2" fontWeight={700}>
-                    {BANK_DETAILS.bankName} ({BANK_DETAILS.branch})
-                  </Typography>
-                </Grid>
-                <Grid item xs={12} sm={6}>
-                  <Typography variant="caption" sx={{ color: '#F6D469', fontWeight: 800, display: 'block' }}>
-                    ACCOUNT NUMBER
-                  </Typography>
-                  <Typography variant="body2" fontWeight={700}>
-                    {BANK_DETAILS.accountNumber}
-                  </Typography>
-                </Grid>
-                <Grid item xs={12} sm={6}>
-                  <Typography variant="caption" sx={{ color: '#F6D469', fontWeight: 800, display: 'block' }}>
-                    IFSC CODE
-                  </Typography>
-                  <Typography variant="body2" fontWeight={700}>
-                    {BANK_DETAILS.ifsc}
-                  </Typography>
-                </Grid>
-              </Grid>
-            </Grid>
-
-            <Grid item xs={12} md={4} sx={{ textAlign: { xs: 'left', md: 'center' } }}>
-              <Box sx={{ p: 2.5, borderRadius: 3, bgcolor: 'rgba(255,255,255,0.08)', border: '1px solid rgba(246, 212, 105, 0.3)' }}>
-                <VerifiedUserIcon sx={{ color: '#F6D469', fontSize: 40, mb: 1 }} />
-                <Typography variant="subtitle2" fontWeight={800} sx={{ color: '#ffffff', mb: 0.5 }}>
-                  Transparent & Registered
-                </Typography>
-                <Typography variant="caption" sx={{ color: '#EFECE7', display: 'block', mb: 2 }}>
-                  Official registration under Indian Trust Act • Greater Noida West Clinical Center
-                </Typography>
-                <Button
-                  variant="contained"
-                  onClick={() => onOpenAppointment()}
-                  sx={{
-                    bgcolor: '#F6D469',
-                    color: '#24102F',
-                    fontWeight: 900,
-                    borderRadius: 50,
-                    py: 1,
-                    px: 3,
-                    '&:hover': { bgcolor: '#fcb720' }
-                  }}
-                >
-                  Book Consultation
-                </Button>
-              </Box>
-            </Grid>
-          </Grid>
-        </Paper>
       </Container>
     </Box>
   );

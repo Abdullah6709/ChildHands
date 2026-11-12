@@ -133,7 +133,7 @@ const AppointmentModal = ({ open, onClose, defaultService = '' }) => {
             </Typography>
 
             <Alert severity="info" sx={{ textAlign: 'left', borderRadius: 3, mb: 3, fontSize: '0.85rem' }}>
-              <strong>Center Address:</strong> G-104 Fusion Homes, Amrapali Dream Valley, Greater Noida West.<br />
+              <strong>Center Address:</strong> G-104, Fusion Homes, Tech Zone IV, Greater Noida West 201318.<br />
               <strong>Urgent Query?</strong> Call <strong>{CLINIC_INFO.phone}</strong>.
             </Alert>
 

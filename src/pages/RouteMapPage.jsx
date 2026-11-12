@@ -76,7 +76,7 @@ const RouteMapPage = ({ onOpenAppointment }) => {
             Give a helping hand for a child ☀️
           </Typography>
           <Typography variant="h6" sx={{ color: '#757277', fontWeight: 500, lineHeight: 1.6, fontSize: { xs: '1rem', sm: '1.15rem' } }}>
-            Located at <strong>G-104, Fusion Homes, Amrapali Dream Valley, Greater Noida West</strong>. Select your starting hub or use live GPS to calculate driving time, transit routes, and launch Google Maps turn-by-turn navigation.
+            Located at <strong>G-104, Fusion Homes, Tech Zone IV, Greater Noida West 201318</strong>. Select your starting hub or use live GPS to calculate driving time, transit routes, and launch Google Maps turn-by-turn navigation.
           </Typography>
         </Box>
 

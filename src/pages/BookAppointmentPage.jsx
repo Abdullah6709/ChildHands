@@ -115,7 +115,7 @@ const BookAppointmentPage = () => {
             Give a helping hand for a child ☀️
           </Typography>
           <Typography variant="body1" sx={{ color: '#757277', fontSize: '1.05rem', lineHeight: 1.6 }}>
-            Take the first step toward your child's milestone leap. Meet senior pediatric specialists at G-104 Fusion Homes, Greater Noida West.
+            Take the first step toward your child's milestone leap. Meet senior pediatric specialists at G-104, Fusion Homes, Tech Zone IV, Greater Noida West 201318.
           </Typography>
         </Box>
 
@@ -177,7 +177,7 @@ const BookAppointmentPage = () => {
                   </Typography>
 
                   <Alert severity="success" sx={{ textAlign: 'left', borderRadius: 3, mb: 4, maxWidth: 600, mx: 'auto' }}>
-                    <strong>Clinic Location:</strong> G-104, Fusion Homes, Amrapali Dream Valley, Greater Noida West 201318.<br />
+                    <strong>Clinic Location:</strong> G-104, Fusion Homes, Tech Zone IV, Greater Noida West 201318.<br />
                     <strong>Coordinator Phone:</strong> {CLINIC_INFO.phone}
                   </Alert>
 

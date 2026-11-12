@@ -41,21 +41,21 @@ export const CLINIC_INFO = {
   primaryAddress: {
     title: "Greater Noida West Center (Main Therapy Hub)",
     line1: "G-104, Fusion Homes",
-    line2: "Amrapali Dream Valley",
+    line2: "Tech Zone IV",
     city: "Greater Noida West",
     state: "Uttar Pradesh",
     pincode: "201318",
-    full: "G-104, Fusion Homes, Amrapali Dream Valley, Greater Noida West 201318",
+    full: "G-104, Fusion Homes, Tech Zone IV, Greater Noida West 201318",
     lat: 28.5985,
     lng: 77.4472,
-    landmark: "Near Gaur City 2 & Ak Murti Chowk",
+    landmark: "Ek Murti Chowk",
     hours: "Monday – Saturday: 9:00 AM – 7:30 PM (Sunday by Appointment)"
   },
   branches: [
     {
       id: "noida",
       name: "Greater Noida West Center",
-      address: "G-104, Fusion Homes, Amrapali Dream Valley, Greater Noida West 201318",
+      address: "G-104, Fusion Homes, Tech Zone IV, Greater Noida West 201318",
       phone: "+91 8650909777",
       lat: 28.5985,
       lng: 77.4472,
@@ -375,7 +375,7 @@ export const FAQ_DATA = [
   },
   {
     q: "Where is the Caring Hands therapy center located in Greater Noida West?",
-    a: "Our clinic is at G-104, Fusion Homes, Amrapali Dream Valley, Greater Noida West (Noida Extension) 201318. It is conveniently accessible from Gaur City 1 & 2, Ak Murti Chowk, Crossings Republik, and Noida Sector 52/76 Metro stations."
+    a: "Our clinic is at G-104, Fusion Homes, Tech Zone IV, Greater Noida West 201318. It is conveniently accessible from Gaur City 1 & 2, Ek Murti Chowk, Crossings Republik, and Noida Sector 52/76 Metro stations."
   },
   {
     q: "Are parents allowed to observe or participate in therapy sessions?",
@@ -431,7 +431,7 @@ export const TRUST_PROJECTS = [
     title: "Child Development Center (Gr. Noida West)",
     tag: "Main Clinical Hub",
     desc: "State-of-the-art clinical center providing 9 specialized pediatric therapies: Speech, Sensory Gym, OT, ABA & Special Education.",
-    location: "G-104, Fusion Homes, Greater Noida West",
+    location: "G-104, Fusion Homes, Tech Zone IV, Greater Noida West 201318",
     image: speechImg,
     color: "#02476c"
   },
@@ -481,12 +481,3 @@ export const TRUST_PROJECTS = [
     color: "#FCB720"
   }
 ];
-
-export const BANK_DETAILS = {
-  accountName: "Caring Hands",
-  bankName: "Axis Bank",
-  branch: "Axis Bank",
-  accountNo: "919010084255237",
-  ifsc: "UTIB0003144",
-  note: "Contributions and therapy sponsorships are eligible for tax exemption under Caring Hands Trust."
-};

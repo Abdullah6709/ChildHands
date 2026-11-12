@@ -461,7 +461,7 @@ const AboutUs = ({ onOpenAppointment }) => {
         <Box sx={{ mb: 8 }}>
           <Box sx={{ textAlign: 'center', maxWidth: 780, mx: 'auto', mb: 5 }}>
             <Chip
-              label="Fusion Homes Greater Noida West"
+              label="Fusion Homes, Tech Zone IV, Greater Noida West"
               size="small"
               sx={{ bgcolor: '#FFFAEA', color: '#02476c', fontWeight: 800, mb: 1.5, border: '1px solid #F6D469', borderRadius: 50 }}
             />
@@ -469,7 +469,7 @@ const AboutUs = ({ onOpenAppointment }) => {
               Purpose-Built Pediatric Therapy Center
             </Typography>
             <Typography variant="body1" color="#757277">
-              Located at <strong>G-104, Fusion Homes, Amrapali Dream Valley, Greater Noida West</strong>, our clinic is ergonomically designed for maximum safety, sensory stimulation, and comfortable milestone progress.
+              Located at <strong>G-104, Fusion Homes, Tech Zone IV, Greater Noida West 201318</strong>, our clinic is ergonomically designed for maximum safety, sensory stimulation, and comfortable milestone progress.
             </Typography>
           </Box>
 

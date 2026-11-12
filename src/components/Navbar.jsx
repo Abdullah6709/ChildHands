@@ -138,7 +138,7 @@ const Navbar = ({ onOpenAppointment }) => {
                 }}
               >
                 <LocationOnIcon sx={{ fontSize: 15, mr: 0.5, color: '#F6D469' }} />
-                <span>G-104 Fusion Homes, Greater Noida West</span>
+                <span>G-104, Fusion Homes, Tech Zone IV, Greater Noida West 201318</span>
               </Box>
             </Box>
 

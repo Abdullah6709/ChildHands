@@ -163,9 +163,9 @@ const Footer = ({ onOpenAppointment }) => {
                     Caring Hands Child Development Center
                   </Typography>
                   <Typography variant="caption" sx={{ color: 'rgba(255,255,255,0.85)', display: 'block', lineHeight: 1.6, mt: 0.5 }}>
-                    G-104, Fusion Homes, Amrapali Dream Valley,<br />
-                    Greater Noida West (Noida Extension) – 201318<br />
-                    (Near Gaur City 2 & Char Murti Chowk)
+                    G-104, Fusion Homes, Tech Zone IV,<br />
+                    Greater Noida West – 201318<br />
+                    ( Ek Murti Chowk)
                   </Typography>
                   <Typography variant="caption" sx={{ color: '#F6D469', fontWeight: 700, display: 'block', mt: 1 }}>
                     🕒 Mon – Sat: 9:00 AM – 7:30 PM (Sunday by Appointment)

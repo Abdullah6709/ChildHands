@@ -226,9 +226,11 @@ const ServiceDetailPage = ({ onOpenAppointment }) => {
                       <Typography color="#757277" fontWeight={500}>Milestone Review:</Typography>
                       <Typography color="#24102F" fontWeight={700}>8-Week Objective IEP</Typography>
                     </Box>
-                    <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
-                      <Typography color="#757277" fontWeight={500}>Clinical Location:</Typography>
-                      <Typography color="#02476c" fontWeight={800}>Fusion Homes, Gr. Noida</Typography>
+                    <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', gap: 2 }}>
+                      <Typography color="#757277" fontWeight={500} sx={{ flexShrink: 0 }}>Clinical Location:</Typography>
+                      <Typography color="#02476c" fontWeight={800} sx={{ textAlign: 'right' }}>
+                        G-104, Fusion Homes, Tech Zone IV, Greater Noida West 201318
+                      </Typography>
                     </Box>
                   </Box>
                 </Box>

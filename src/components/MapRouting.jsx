@@ -225,7 +225,7 @@ const MapRouting = () => {
               </Typography>
             </Box>
             <Typography variant="body2" color="#757277" sx={{ mb: 2.5, lineHeight: 1.6 }}>
-              Directions to <strong>G-104 Fusion Homes, Greater Noida West</strong>. Select your starting hub or click below to calculate live distance and turn-by-turn guidance in Google Maps.
+              Directions to <strong>G-104, Fusion Homes, Tech Zone IV, Greater Noida West 201318</strong>. Select your starting hub or click below to calculate live distance and turn-by-turn guidance in Google Maps.
             </Typography>
 
             {/* Presets and GPS Button */}
@@ -436,8 +436,8 @@ const MapRouting = () => {
               </Typography>
               <Typography variant="body2" color="#24102F" sx={{ mt: 0.5, lineHeight: 1.6 }}>
                 <strong>G-104, Fusion Homes</strong>,<br />
-                Amrapali Dream Valley,<br />
-                Greater Noida West (Noida Extension) – 201318
+                Tech Zone IV,<br />
+                Greater Noida West – 201318
               </Typography>
 
               <Divider sx={{ my: 2 }} />

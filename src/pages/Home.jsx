@@ -38,7 +38,6 @@ import MenuBookIcon from '@mui/icons-material/MenuBook';
 import RecordVoiceOverIcon from '@mui/icons-material/RecordVoiceOver';
 import FamilyRestroomIcon from '@mui/icons-material/FamilyRestroom';
 import VolunteerActivismIcon from '@mui/icons-material/VolunteerActivism';
-import AccountBalanceIcon from '@mui/icons-material/AccountBalance';
 
 import {
   CLINIC_INFO,
@@ -48,7 +47,6 @@ import {
   FAQ_DATA,
   WE_CARE_ABOUT,
   TRUST_PROJECTS,
-  BANK_DETAILS,
   HERO_IMAGE,
   FACILITIES_DATA
 } from '../data/clinicData';
@@ -297,7 +295,7 @@ const Home = ({ onOpenAppointment }) => {
                       <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.5 }}>
                         <LocationOnIcon sx={{ fontSize: 14, color: '#FF1C74' }} />
                         <Typography variant="caption" color="#757277" fontWeight={600}>
-                          G-104 Fusion Homes, Greater Noida West
+                          G-104, Fusion Homes, Tech Zone IV, Greater Noida West 201318
                         </Typography>
                       </Box>
                     </Box>
@@ -353,7 +351,7 @@ const Home = ({ onOpenAppointment }) => {
                         Every Child Matters ❤️
                       </Typography>
                       <Typography variant="caption" sx={{ color: '#F6D469', fontWeight: 700 }}>
-                        Fusion Homes, Greater Noida West
+                        Tech Zone IV, Greater Noida West
                       </Typography>
                     </Box>
                     <Chip
@@ -795,7 +793,7 @@ const Home = ({ onOpenAppointment }) => {
               Purpose-Built Pediatric Therapy Center
             </Typography>
             <Typography variant="body1" color="#757277" sx={{ fontSize: '1.05rem', lineHeight: 1.6 }}>
-              Take a visual tour inside our safe, stimulating, and child-ergonomic clinical suites located at <strong>G-104 Fusion Homes, Greater Noida West</strong>.
+              Take a visual tour inside our safe, stimulating, and child-ergonomic clinical suites located at <strong>G-104, Fusion Homes, Tech Zone IV, Greater Noida West 201318</strong>.
             </Typography>
           </Box>
 
@@ -1019,7 +1017,7 @@ const Home = ({ onOpenAppointment }) => {
         </Container>
       </Box>
 
-      {/* ================= HELP THE CAUSE & TRANSPARENCY (FROM CARINGHANDS.ORG.IN) ================= */}
+      {/* ================= CHILD DEVELOPMENT SUPPORT BANNER ================= */}
       <Box sx={{ bgcolor: '#ffffff', py: { xs: 6, md: 8 }, borderTop: '1px solid #EFECE7' }}>
         <Container maxWidth="xl">
           <Paper
@@ -1034,14 +1032,14 @@ const Home = ({ onOpenAppointment }) => {
             <Grid container spacing={4} alignItems="center">
               <Grid item xs={12} md={7}>
                 <Chip
-                  label="Caring Hands Trust Verification"
+                  label="Caring Hands Child Development Mission"
                   sx={{ bgcolor: '#F6D469', color: '#24102F', fontWeight: 800, mb: 2 }}
                 />
                 <Typography variant="h3" fontWeight={800} sx={{ fontFamily: '"Quicksand", sans-serif', color: '#ffffff', mb: 1.5, fontSize: { xs: '1.8rem', sm: '2.3rem' } }}>
                   Let’s Bridge the Gaps Together
                 </Typography>
                 <Typography variant="body1" sx={{ color: '#EFECE7', lineHeight: 1.7, mb: 3 }}>
-                  Join our pediatric therapy & child rehabilitation mission. Every child deserves equal access to clinical therapies regardless of background.
+                  Every child deserves compassionate, evidence-based pediatric therapy and nurturing milestone support. Reach out to our clinical team in Greater Noida West today.
                 </Typography>
 
                 <Box sx={{ display: 'flex', gap: 2, flexWrap: 'wrap' }}>
@@ -1092,35 +1090,35 @@ const Home = ({ onOpenAppointment }) => {
                   }}
                 >
                   <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, mb: 2 }}>
-                    <AccountBalanceIcon sx={{ color: '#F6D469' }} />
+                    <LocationOnIcon sx={{ color: '#F6D469' }} />
                     <Typography variant="subtitle1" fontWeight={800} color="#F6D469">
-                      Official Trust Account Details
+                      Clinic Timings & Assistance
                     </Typography>
                   </Box>
 
-                  <Box sx={{ display: 'flex', flexDirection: 'column', gap: 1, fontSize: '0.88rem' }}>
-                    <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
-                      <Typography sx={{ color: '#cbd5e1' }}>A/c Name:</Typography>
-                      <Typography fontWeight={700}>{BANK_DETAILS.accountName}</Typography>
+                  <Box sx={{ display: 'flex', flexDirection: 'column', gap: 1.2, fontSize: '0.88rem' }}>
+                    <Box sx={{ display: 'flex', justifyContent: 'space-between', gap: 2 }}>
+                      <Typography sx={{ color: '#cbd5e1' }}>Location:</Typography>
+                      <Typography fontWeight={700} textAlign="right">G-104, Fusion Homes, Tech Zone IV, Greater Noida West 201318</Typography>
                     </Box>
-                    <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
-                      <Typography sx={{ color: '#cbd5e1' }}>Bank & Branch:</Typography>
-                      <Typography fontWeight={700}>{BANK_DETAILS.bankName}, {BANK_DETAILS.branch}</Typography>
+                    <Box sx={{ display: 'flex', justifyContent: 'space-between', gap: 2 }}>
+                      <Typography sx={{ color: '#cbd5e1' }}>Hours:</Typography>
+                      <Typography fontWeight={700} textAlign="right">Mon – Sat: 9:00 AM – 7:30 PM</Typography>
                     </Box>
-                    <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
-                      <Typography sx={{ color: '#cbd5e1' }}>Account Number:</Typography>
-                      <Typography fontWeight={700} sx={{ color: '#F6D469' }}>{BANK_DETAILS.accountNo}</Typography>
+                    <Box sx={{ display: 'flex', justifyContent: 'space-between', gap: 2 }}>
+                      <Typography sx={{ color: '#cbd5e1' }}>Helpline:</Typography>
+                      <Typography fontWeight={700} sx={{ color: '#F6D469' }}>{CLINIC_INFO.displayPhone}</Typography>
                     </Box>
-                    <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
-                      <Typography sx={{ color: '#cbd5e1' }}>IFSC Code:</Typography>
-                      <Typography fontWeight={700}>{BANK_DETAILS.ifsc}</Typography>
+                    <Box sx={{ display: 'flex', justifyContent: 'space-between', gap: 2 }}>
+                      <Typography sx={{ color: '#cbd5e1' }}>Email:</Typography>
+                      <Typography fontWeight={700}>{CLINIC_INFO.emails[1]}</Typography>
                     </Box>
                   </Box>
 
                   <Divider sx={{ my: 1.5, borderColor: 'rgba(255,255,255,0.15)' }} />
 
                   <Typography variant="caption" sx={{ color: '#cbd5e1', display: 'block', lineHeight: 1.5 }}>
-                    {BANK_DETAILS.note}
+                    Walk-in parent consultations & Sunday appointments available by prior scheduling.
                   </Typography>
                 </Paper>
               </Grid>
@@ -1142,7 +1140,7 @@ const Home = ({ onOpenAppointment }) => {
               Visit Our Center in Greater Noida West
             </Typography>
             <Typography variant="body1" color="#757277" sx={{ fontSize: '1.05rem', lineHeight: 1.6 }}>
-              Conveniently located at <strong>G-104, Fusion Homes, Amrapali Dream Valley</strong>. Calculate your live route from Gaur City, Indirapuram, Noida Metro, or launch Google Maps.
+              Conveniently located at <strong>G-104, Fusion Homes, Tech Zone IV, Greater Noida West 201318</strong>. Calculate your live route from Gaur City, Indirapuram, Noida Metro, or launch Google Maps.
             </Typography>
           </Box>
 
