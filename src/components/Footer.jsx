@@ -165,13 +165,16 @@ const Footer = ({ onOpenAppointment }) => {
                   <Typography variant="caption" sx={{ color: 'rgba(255,255,255,0.85)', display: 'block', lineHeight: 1.6, mt: 0.5 }}>
                     G-104, Fusion Homes, Tech Zone IV,<br />
                     Greater Noida West – 201318<br />
-                    ( Ek Murti Chowk)
+                    (Near Cherry Count Road)
                   </Typography>
                   <Typography variant="caption" sx={{ color: '#F6D469', fontWeight: 700, display: 'block', mt: 1 }}>
                     🕒 Mon – Sat: 9:00 AM – 7:30 PM (Sunday by Appointment)
                   </Typography>
                   <Typography variant="caption" sx={{ color: '#F6D469', fontWeight: 800, display: 'block', mt: 0.5 }}>
                     📞 Direct Helpline: +91 8650909777
+                  </Typography>
+                  <Typography variant="caption" sx={{ color: 'rgba(255,255,255,0.9)', display: 'block', mt: 0.5 }}>
+                    ✉️ {CLINIC_INFO.email || 'Caringhandscdc@gmail.com'}
                   </Typography>
                 </Box>
               </Box>

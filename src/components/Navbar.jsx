@@ -113,7 +113,7 @@ const Navbar = ({ onOpenAppointment }) => {
 
               <Box
                 component="a"
-                href="mailto:info@caringhands.org.in"
+                href={`mailto:${CLINIC_INFO.email || 'Caringhandscdc@gmail.com'}`}
                 sx={{
                   display: { xs: 'none', md: 'inline-flex' },
                   alignItems: 'center',
@@ -122,7 +122,7 @@ const Navbar = ({ onOpenAppointment }) => {
                   '&:hover': { color: '#F6D469' }
                 }}
               >
-                <span>info@caringhands.org.in</span>
+                <span>{CLINIC_INFO.email || 'Caringhandscdc@gmail.com'}</span>
               </Box>
 
               <Box

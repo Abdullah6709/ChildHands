@@ -1111,7 +1111,7 @@ const Home = ({ onOpenAppointment }) => {
                     </Box>
                     <Box sx={{ display: 'flex', justifyContent: 'space-between', gap: 2 }}>
                       <Typography sx={{ color: '#cbd5e1' }}>Email:</Typography>
-                      <Typography fontWeight={700}>{CLINIC_INFO.emails[1]}</Typography>
+                      <Typography fontWeight={700}>{CLINIC_INFO.email || CLINIC_INFO.emails[0]}</Typography>
                     </Box>
                   </Box>
 
@@ -1140,7 +1140,7 @@ const Home = ({ onOpenAppointment }) => {
               Visit Our Center in Greater Noida West
             </Typography>
             <Typography variant="body1" color="#757277" sx={{ fontSize: '1.05rem', lineHeight: 1.6 }}>
-              Conveniently located at <strong>G-104, Fusion Homes, Tech Zone IV, Greater Noida West 201318</strong>. Calculate your live route from Gaur City, Indirapuram, Noida Metro, or launch Google Maps.
+              Conveniently located at <strong>G-104, Fusion Homes, Tech Zone IV, Greater Noida West 201318</strong>. Calculate your live route from Cherry Count Road, Indirapuram, Noida Metro, or launch Google Maps.
             </Typography>
           </Box>
 

@@ -37,7 +37,8 @@ export const CLINIC_INFO = {
   displayPhone: "+91 8650909777",
   altPhone: "9011262226",
   displayAltPhone: "+91 9011262226",
-  emails: ["caringhandspune@gmail.com", "info@caringhands.org.in"],
+  emails: ["Caringhandscdc@gmail.com"],
+  email: "Caringhandscdc@gmail.com",
   primaryAddress: {
     title: "Greater Noida West Center (Main Therapy Hub)",
     line1: "G-104, Fusion Homes",
@@ -48,7 +49,7 @@ export const CLINIC_INFO = {
     full: "G-104, Fusion Homes, Tech Zone IV, Greater Noida West 201318",
     lat: 28.5985,
     lng: 77.4472,
-    landmark: "Ek Murti Chowk",
+    landmark: "Near Cherry Count Road & Ek Murti Chowk",
     hours: "Monday – Saturday: 9:00 AM – 7:30 PM (Sunday by Appointment)"
   },
   branches: [
@@ -375,7 +376,7 @@ export const FAQ_DATA = [
   },
   {
     q: "Where is the Caring Hands therapy center located in Greater Noida West?",
-    a: "Our clinic is at G-104, Fusion Homes, Tech Zone IV, Greater Noida West 201318. It is conveniently accessible from Gaur City 1 & 2, Ek Murti Chowk, Crossings Republik, and Noida Sector 52/76 Metro stations."
+    a: "Our clinic is at G-104, Fusion Homes, Tech Zone IV, Greater Noida West 201318. It is conveniently accessible from Cherry Count Road, Ek Murti Chowk, Crossings Republik, and Noida Sector 52/76 Metro stations."
   },
   {
     q: "Are parents allowed to observe or participate in therapy sessions?",

@@ -238,13 +238,13 @@ const ContactUs = ({ onOpenAppointment }) => {
                 Email Inquiries
               </Typography>
               <Typography variant="body2" color="#757277" sx={{ fontSize: '0.82rem', mb: 1 }}>
-                info@caringhands.org.in
+                {CLINIC_INFO.email || 'Caringhandscdc@gmail.com'}
               </Typography>
               <Button
                 variant="outlined"
                 size="small"
                 component="a"
-                href="mailto:info@caringhands.org.in"
+                href={`mailto:${CLINIC_INFO.email || 'Caringhandscdc@gmail.com'}`}
                 sx={{
                   fontWeight: 800,
                   color: '#02476c',
@@ -460,7 +460,7 @@ const ContactUs = ({ onOpenAppointment }) => {
                   Public Transit & Driving Notes:
                 </Typography>
                 <Box component="ul" sx={{ pl: 2.5, m: 0, fontSize: '0.88rem', color: '#757277', lineHeight: 1.7 }}>
-                  <li><strong>From Gaur City / Ek Murti:</strong> Take the road towards Tech Zone IV, Greater Noida West (approx 5-7 minutes drive).</li>
+                  <li><strong>From Cherry Count Road / Ek Murti:</strong> Take the road towards Tech Zone IV, Greater Noida West (approx 5-7 minutes drive).</li>
                   <li><strong>Nearest Metro Stations:</strong> Noida Sector 52 & Noida Sector 76. Regular shared autos, e-rickshaws, and cabs directly connect to Fusion Homes.</li>
                   <li><strong>From Ghaziabad / Indirapuram:</strong> Accessible via NH-24 / Crossings Republik exit.</li>
                   <li><strong>Parking:</strong> Secure designated visitor parking inside Fusion Homes complex.</li>

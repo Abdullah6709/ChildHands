@@ -93,7 +93,7 @@ const ChangeMapView = ({ center, zoom }) => {
 
 // Preset origin locations around Greater Noida West
 const NEARBY_PRESETS = [
-  { name: 'Gaur City 1 & 2', lat: 28.6085, lng: 77.4285, distance: '3.1 km', timeCar: '8 mins', timeBike: '6 mins' },
+  { name: 'Cherry Count Road', lat: 28.6085, lng: 77.4285, distance: '3.1 km', timeCar: '8 mins', timeBike: '6 mins' },
   { name: 'Crossings Republik', lat: 28.6335, lng: 77.4425, distance: '4.8 km', timeCar: '12 mins', timeBike: '9 mins' },
   { name: 'Noida Sector 52 / 62 Metro', lat: 28.5912, lng: 77.3789, distance: '8.4 km', timeCar: '18 mins', timeBike: '14 mins' },
   { name: 'Indirapuram (Ghaziabad)', lat: 28.6415, lng: 77.3725, distance: '9.6 km', timeCar: '22 mins', timeBike: '17 mins' },
@@ -105,13 +105,13 @@ const MapRouting = () => {
   const destination = CLINIC_INFO.primaryAddress;
   const destCoords = [destination.lat, destination.lng];
 
-  const [selectedPreset, setSelectedPreset] = useState('Gaur City 1 & 2');
+  const [selectedPreset, setSelectedPreset] = useState('Cherry Count Road');
   const [originCoords, setOriginCoords] = useState([28.6085, 77.4285]);
   const [routeInfo, setRouteInfo] = useState({
     distance: '3.1 km',
     timeCar: '8 mins',
     timeBike: '6 mins',
-    originName: 'Gaur City 1 & 2'
+    originName: 'Cherry Count Road'
   });
   const [geoLoading, setGeoLoading] = useState(false);
   const [geoError, setGeoError] = useState('');
@@ -446,7 +446,7 @@ const MapRouting = () => {
                 🚗 Landmark & Access Points:
               </Typography>
               <Box component="ul" sx={{ pl: 2.5, m: 0, fontSize: '0.85rem', color: '#757277', lineHeight: 1.7 }}>
-                <li>Near <strong>Ek Murti Chowk</strong> & Gaur City 2</li>
+                <li>Near <strong>Cherry Count Road & Ek Murti Chowk</strong></li>
                 <li>Opposite Fusion Homes Main Gate 1</li>
                 <li>Closest Metro: <strong>Noida Sector 52 & Sector 76</strong> (Quick E-rickshaw / Auto available)</li>
                 <li>Ample visitor parking available within the complex</li>
